@@ -1,0 +1,865 @@
+{
+  "version": "2026.icf",
+  "data": [
+    {
+      "id": 1,
+      "name": "Beaucoup Bakery",
+      "description": "Award-winning French-inspired pastries, croissants, and cafe fare",
+      "instagram": "beaucoupbakery",
+      "website": "https://www.beaucoupbakery.com",
+      "stores": [
+        {
+          "address": "2150 Fir St, Vancouver, BC V6J 3B5",
+          "hours": "Mon-Sun 8am-5pm",
+          "point": [
+            49.2664904,
+            -123.140722
+          ],
+          "name": "Kitsilano"
+        },
+        {
+          "address": "602 Dunsmuir St, Vancouver, BC V6B 1Y6",
+          "hours": "Mon-Fri 7am-5pm Sat-Sun 8am-5pm",
+          "point": [
+            49.2830096,
+            -123.1158959
+          ],
+          "name": "Downtown"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Boketto Dessert Cafe",
+      "description": "Bubble tea and dessert cafe serving organic soft serve and mochi waffles in River District",
+      "instagram": "bokettodessertcafe",
+      "website": "https://bokettoteabar.com",
+      "stores": [
+        {
+          "address": "3471 Sawmill Crescent, Vancouver, BC V5S 0E2",
+          "hours": "Mon Closed Tue-Thu 2pm-9pm Fri-Sun 12pm-10pm",
+          "point": [
+            49.2060583,
+            -123.0315715
+          ],
+          "name": "River District"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Broye Cafe",
+      "description": "Popular Japanese-Vietnamese fusion cafe and bakery",
+      "instagram": "broyecafe",
+      "website": "https://broyecafe.ca",
+      "stores": [
+        {
+          "address": "530 Hornby St, Vancouver, BC V6C 2E7",
+          "hours": "Mon-Fri 8:30am-6pm Sat-Sun Closed",
+          "point": [
+            49.28541173447787,
+            -123.11729218296561
+          ],
+          "name": "Downtown"
+        },
+        {
+          "address": "6414 Fraser St, Vancouver, BC",
+          "hours": "Mon-Fri 9am-9pm Sat-Sun 9am-10pm",
+          "point": [
+            49.226287,
+            -123.091187
+          ],
+          "name": "Fraserhood"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Butter Baked Goods",
+      "description": "Vancouver's home of nostalgic bakes and award-winning marshmallows",
+      "instagram": "butterbakedgoods",
+      "website": "https://www.butterbakedgoods.com",
+      "stores": [
+        {
+          "address": "4907 Mackenzie St, Vancouver, BC V6N 1G8",
+          "hours": "Mon-Sat 8am-5:30pm Sun 9:30am-4:30pm",
+          "point": [
+            49.242201,
+            -123.170403
+          ],
+          "name": "Dunbar"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Che (Bambu)",
+      "description": "Vietnamese desserts and yogurt drinks on Kingsway. Rebrand of Bambu Desserts — same address, currently still operating under the Bambu banner during the transition.",
+      "stores": [
+        {
+          "address": "1090 Kingsway, Vancouver, BC V5V 3C6",
+          "hours": "Mon-Thu 2:30pm-9pm Fri-Sun 12pm-9pm",
+          "point": [
+            49.2529347,
+            -123.0821501
+          ],
+          "name": "Kingsway"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Chocolats Favoris",
+      "description": "Quebec artisanal chocolate shop and creamery known for soft serve dipped in real chocolate",
+      "instagram": "chocolatsfavoris_bc",
+      "website": "https://www.chocolatsfavoris.com",
+      "stores": [
+        {
+          "address": "14 Water St, Vancouver, BC V6B 1A5",
+          "hours": "Mon-Thu 12pm-11pm Fri 12pm-12am Sat 11am-12am Sun 11am-11pm",
+          "point": [
+            49.2845,
+            -123.1088
+          ],
+          "name": "Gastown"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Dolce Amore",
+      "description": "Artisan Italian gelato made from grass-fed milk and organic ingredients",
+      "instagram": "dolceamore.ca",
+      "website": "https://www.dolceamore.ca",
+      "stores": [
+        {
+          "address": "6011 Hastings St, Burnaby, BC V5B 1R8",
+          "hours": "Mon 2pm-11pm Tue-Sun 8am-11pm",
+          "point": [
+            49.2805863,
+            -122.9765802
+          ],
+          "name": "Burnaby"
+        },
+        {
+          "address": "113 2nd St W, North Vancouver, BC V7M 2E7",
+          "hours": "Mon-Sun 9am-11pm",
+          "point": [
+            49.3144037,
+            -123.0818147
+          ],
+          "name": "North Vancouver"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Drunken Chocolatier",
+      "description": "Artisan Vancouver chocolates infused with local beer, liqueur, tea, and farmers market flavours",
+      "instagram": "drunkenchocolatier",
+      "website": "https://drunkenchocolatier.com",
+      "stores": [
+        {
+          "address": "Unit 108-223 W Broadway, Vancouver, BC V5Y 1P5",
+          "hours": "Wed-Fri 11am-5:30pm Sat 11am-6pm Sun 11am-5pm Mon-Tue Closed",
+          "point": [
+            49.2632949,
+            -123.109879
+          ],
+          "name": "Mount Pleasant"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "EGGBOMB+",
+      "description": "Korean fusion brunch and bar with signature egg sandwiches",
+      "instagram": "eggbombplus.ca",
+      "website": "https://eggbombplus.ca",
+      "stores": [
+        {
+          "address": "560-3778 Grande Promenade, Burnaby, BC V3J 1N4",
+          "hours": "Daily 8am-10pm",
+          "point": [
+            49.2503078,
+            -122.8953458
+          ],
+          "name": "Lougheed"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Elephant Garden Creamery",
+      "description": "Artisanal ice cream celebrating Asian-inspired flavours",
+      "instagram": "elephantgardencreamery",
+      "website": "https://www.elephantgarden.ca",
+      "stores": [
+        {
+          "address": "2080 Commercial Dr, Vancouver, BC V5N 4B2",
+          "hours": "Mon 12pm-10pm Tue Closed Wed-Sun 12pm-10pm",
+          "point": [
+            49.266253,
+            -123.0694606
+          ],
+          "name": "Commercial Drive"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Fluffle Cafe",
+      "description": "Korean shaved ice, croffles & coffee in Richmond",
+      "instagram": "fluffle_cafe",
+      "stores": [
+        {
+          "address": "130-9780 Cambie Road, Richmond, BC V6X 1K4",
+          "hours": "Mon-Thu 11am-8:30pm Fri-Sun 12pm-10pm",
+          "point": [
+            49.1843782,
+            -123.114353
+          ],
+          "name": "Richmond"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Fufu Pancake",
+      "description": "Vancouver's first Japanese soufflé pancake specialty café",
+      "instagram": "fufupancakecafe",
+      "website": "https://fufusoufflepancake.com",
+      "stores": [
+        {
+          "address": "1266 West Broadway, Vancouver, BC V6H 1G6",
+          "hours": "Tue-Sun 10am-6pm Closed Mon",
+          "point": [
+            49.263185,
+            -123.132811
+          ],
+          "name": "Kitsilano"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Glenburn Soda Fountain & Confectionery",
+      "description": "Nostalgic ice cream experiences served up daily",
+      "instagram": "glenburnsoda",
+      "website": "https://glenburnsoda.com",
+      "stores": [
+        {
+          "address": "4090 Hastings Street, Burnaby, BC V5C 2H9",
+          "hours": "Mon Closed Tue-Thu 3pm-9pm Fri-Sat 3pm-10pm Sun 3pm-9pm",
+          "point": [
+            49.280802,
+            -123.014588
+          ],
+          "name": "Burnaby Heights"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Ho Yuen Cafe",
+      "description": "Authentic Hong Kong cafe with pineapple buns & HK milk tea",
+      "instagram": "hoyuencafe",
+      "website": "https://hoyuencafe.ca",
+      "stores": [
+        {
+          "address": "113-1750 West 75th Avenue, Vancouver, BC V6P 6G2",
+          "hours": "Mon-Sat 9am-4pm Sun Closed",
+          "point": [
+            49.206463,
+            -123.1476827
+          ],
+          "name": "Vancouver"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Hundo P",
+      "description": "Protein smoothies & real fruit plant-based ice cream",
+      "instagram": "hundopsmoothie",
+      "website": "https://hundop.ca",
+      "stores": [
+        {
+          "address": "6028 McKay Avenue, Burnaby, BC V5H 2B1",
+          "hours": "Mon-Sun 8am-10pm",
+          "point": [
+            49.228955,
+            -123.0030167
+          ],
+          "name": "Metrotown"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Killer Ice Cream",
+      "description": "Real fruit ice cream cones for orca conservation",
+      "instagram": "killer.icecream.kitsilano",
+      "website": "https://killericecream.ca",
+      "stores": [
+        {
+          "address": "3659 West 4th Avenue, Vancouver, BC V6R 1P2",
+          "hours": "Mon-Thu 1pm-10pm Fri-Sat 12pm-11pm Sun 12pm-10pm",
+          "point": [
+            49.268735629014685,
+            -123.18482905800784
+          ],
+          "name": "Kitsilano (flagship)"
+        },
+        {
+          "address": "1818 West 4th Avenue, Vancouver, BC",
+          "hours": "Mon Closed Tue-Sun 12pm-5pm",
+          "point": [
+            49.2686,
+            -123.1487
+          ],
+          "name": "Ooh La La Donuts (Kitsilano)"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "name": "KOBO Ice Cream",
+      "description": "Main Street small batch ice cream shop using local ingredients and every scoop tells a story!",
+      "instagram": "koboicecream",
+      "website": "https://koboicecream.com",
+      "stores": [
+        {
+          "address": "2541 Main Street, Vancouver, BC",
+          "hours": "Mon-Sun 12pm-10pm",
+          "point": [
+            49.2622826,
+            -123.1012922
+          ],
+          "name": "Mount Pleasant"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Koko Monk Chocolates",
+      "description": "Raw, organic, vegan bean-to-bar chocolates",
+      "instagram": "mykokomonk",
+      "website": "https://kokomonk.com",
+      "stores": [
+        {
+          "address": "2883 West Broadway, Vancouver, BC V6K 2G6",
+          "hours": "Tue-Sun 12pm-8pm Closed Mon",
+          "point": [
+            49.2642405,
+            -123.1699374
+          ],
+          "name": "Kitsilano"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Krave Kulture",
+      "description": "Craft yogurt made fresh in-house with organic Canadian milk",
+      "instagram": "kravekultureyogurt",
+      "website": "https://kravekulture.ca",
+      "stores": [
+        {
+          "address": "3151 Edgemont Boulevard, North Vancouver, BC",
+          "hours": "Sun-Thu 10am-9pm Fri-Sat 10am-10pm",
+          "point": [
+            49.3381405,
+            -123.1029686
+          ],
+          "name": "Edgemont"
+        },
+        {
+          "address": "123 Carrie Cates Ct, North Vancouver, BC V7M 3K7",
+          "hours": "Daily 9am-7pm",
+          "point": [
+            49.3100983,
+            -123.0824875
+          ],
+          "name": "Lonsdale Quay"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "name": "La Saison de Patisserie",
+      "description": "French patisserie with seasonal pastries, entremets & chocolate",
+      "instagram": "lasaisondepatisserie",
+      "website": "https://lasaison.ca",
+      "stores": [
+        {
+          "address": "3868 Rupert Street, Vancouver, BC V5R 6E4",
+          "hours": "Mon-Sun 9am-8pm",
+          "point": [
+            49.25014969385658,
+            -123.03354798209449
+          ],
+          "name": "Rupert"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Le Parfait",
+      "description": "Crêperie & Lebanese artisan ice cream in Downtown Vancouver",
+      "instagram": "leparfait.ca",
+      "website": "https://leparfait.ca",
+      "stores": [
+        {
+          "address": "812 Homer Street, Vancouver, BC V6B 2W2",
+          "hours": "Mon-Fri 9am-10pm Sat 8am-11pm Sun 8am-10pm",
+          "point": [
+            49.2791262,
+            -123.1171773
+          ],
+          "name": "Downtown"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Little Pisces",
+      "description": "Taiyaki and soft serve made fresh in mochi-battered fish-shaped cones.",
+      "instagram": "eatlittlepisces",
+      "website": "https://www.littlepisces.com/",
+      "stores": [
+        {
+          "address": "4501 North Rd #202B, Burnaby, BC V3N 4R7",
+          "hours": "Mon-Thu 12pm-11pm Fri-Sat 12pm-12am Sun 12pm-11pm",
+          "point": [
+            49.2437942,
+            -122.8936221
+          ],
+          "name": "Lougheed"
+        },
+        {
+          "address": "1788 Columbia St, Vancouver, BC V5Y 1B8",
+          "hours": "Sun-Thu 8am-11pm Fri-Sat 8am-12am",
+          "point": [
+            49.2696076,
+            -123.109211
+          ],
+          "name": "Olympic Village"
+        },
+        {
+          "address": "8531 Alexandra Rd #128, Richmond, BC",
+          "hours": "Mon-Thu 12:00 PM - 11:00 PM Fri-Sat 12:00 PM - 12:00 AM Sun 12:00 PM - 11:00 PM",
+          "point": [
+            49.1785976,
+            -123.1285888
+          ],
+          "name": "Richmond"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "name": "M Cha Bar",
+      "description": "Toronto-born bubble tea, house-made gelato, and egg waffles.",
+      "instagram": "mchabar.renfrew",
+      "website": "https://www.mchabar.ca/",
+      "stores": [
+        {
+          "address": "2557 Renfrew St, Vancouver, BC",
+          "hours": "Daily 11:00 AM - 9:00 PM",
+          "point": [
+            49.2613911,
+            -123.0445851
+          ],
+          "name": "Renfrew"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Matcha Cafe Maiko",
+      "description": "Kyoto matcha and hojicha soft serve and desserts from Japan.",
+      "instagram": "matchacafemaikocanada",
+      "website": "https://www.matchacafe-maiko.com/eng/",
+      "stores": [
+        {
+          "address": "199-8279 Saba Rd, Richmond, BC V6Y 4B6",
+          "hours": "Tue-Thu 1:00 PM - 8:00 PM Fri-Sat 1:00 PM - 9:00 PM Sun 1:00 PM - 8:00 PM Mon Closed",
+          "point": [
+            49.1690505,
+            -123.1330127
+          ],
+          "name": "Richmond"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Matcha Tea Lab",
+      "description": "No-tip matcha bar with ceremonial-grade matcha from Uji, Kyoto.",
+      "instagram": "matchatealab.ca",
+      "website": "https://matchatealab.com/",
+      "stores": [
+        {
+          "address": "1828-4500 Kingsway, Burnaby, BC",
+          "hours": "Mon-Fri 11am-7pm Sat-Sun 11am-9pm",
+          "point": [
+            49.2290872,
+            -123.0051439
+          ],
+          "name": "Metrotown"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Melt Confectionary",
+      "description": "Handcrafted chocolate and small-batch ice cream made in-house.",
+      "instagram": "meltconfectionary",
+      "website": "https://www.melt-confections.com/",
+      "stores": [
+        {
+          "address": "4895 Main St, Vancouver, BC V5V 5B6",
+          "hours": "Daily 12pm-10pm",
+          "point": [
+            49.24073536228337,
+            -123.1017059040741
+          ],
+          "name": "Little Mountain"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Mister",
+      "description": "Liquid nitrogen ice cream churned to order in seconds.",
+      "instagram": "madebymister",
+      "website": "https://madebymister.com/",
+      "stores": [
+        {
+          "address": "1193 Robson St, Vancouver, BC V6E 4H6",
+          "hours": "Daily 2:00 PM - 10:00 PM",
+          "point": [
+            49.2848,
+            -123.1238
+          ],
+          "name": "Robson"
+        },
+        {
+          "address": "1141 Mainland St, Vancouver, BC",
+          "hours": "Mon-Sun 12:00 PM - 11:00 PM",
+          "point": [
+            49.2751405,
+            -123.1214892
+          ],
+          "name": "Yaletown"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Nana's Green Tea",
+      "description": "Tokyo-born matcha cafe serving Kyoto matcha parfaits, soft serve, and Japanese meals.",
+      "instagram": "nanasgreenteacanada",
+      "website": "https://nanasgreentea.gotoeat.net/",
+      "stores": [
+        {
+          "address": "159 W 4th Ave, Vancouver, BC",
+          "hours": "Daily 8:30 AM - 12:00 AM",
+          "point": [
+            49.2677625,
+            -123.1086059
+          ],
+          "name": "Mount Pleasant"
+        },
+        {
+          "address": "869 Hornby St, Vancouver, BC",
+          "hours": "Daily 8:30 AM - 12:00 AM",
+          "point": [
+            49.2818772,
+            -123.123509
+          ],
+          "name": "Downtown"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Paradiso Caffe e Gelato",
+      "description": "Family-owned Italian gelato and coffee a block from Kits Beach.",
+      "instagram": "paradisocaffeegelato",
+      "website": "https://www.paradisocaffeegelato.com/",
+      "stores": [
+        {
+          "address": "1520 Yew St, Vancouver, BC V6K 3E4",
+          "hours": "Mon-Tue 11am-10pm Wed-Sun 10am-10pm",
+          "point": [
+            49.2721909,
+            -123.1547904
+          ],
+          "name": "Kitsilano"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Plain Jane Ice Cream",
+      "description": "New Zealand-style soft serve blended with real frozen fruit.",
+      "instagram": "plainjaneicecream",
+      "website": "https://www.nottoosweet.ca/",
+      "stores": [
+        {
+          "address": "2295 E Hastings St, Vancouver, BC V5L 1V3",
+          "hours": "Daily 12:00 PM - 10:00 PM",
+          "point": [
+            49.2813707,
+            -123.0581217
+          ],
+          "name": "Hastings-Sunrise"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Soft Peaks Ice Cream",
+      "description": "Handcrafted organic milk soft serve.",
+      "instagram": "softpeaksicecream",
+      "website": "http://softpeaks.ca/",
+      "stores": [
+        {
+          "address": "25 Alexander St, Vancouver, BC V6A 1B2",
+          "hours": "Daily 12:00 PM - 10:00 PM",
+          "point": [
+            49.2836044,
+            -123.1036863
+          ],
+          "name": "Gastown"
+        },
+        {
+          "address": "115-4603 Kingsway, Burnaby, BC V5H 4M4",
+          "hours": "Daily 10am-10pm",
+          "point": [
+            49.2294706,
+            -123.00195
+          ],
+          "name": "Metrotown"
+        },
+        {
+          "address": "1000-7899 Templeton Station Rd, Richmond, BC V7B 0B7",
+          "hours": "Not joining the festival first half. Working to open for second half (target Jul 12). Regular hours: Daily 11am-9pm",
+          "point": [
+            49.1975504,
+            -123.1400876
+          ],
+          "name": "Richmond (Festival second half target)"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "name": "Something Sweet Cafe",
+      "description": "Asian-themed dessert cafe with croffles, bubble waffles, bingsu, and bubble tea.",
+      "instagram": "something_sweet_burnaby",
+      "stores": [
+        {
+          "address": "101-6888 Royal Oak Ave, Burnaby, BC V5J 4J2",
+          "hours": "Mon-Wed 10am-9pm Thu 10am-6pm Fri-Sat 10am-10pm Sun 10am-9pm",
+          "point": [
+            49.2209612,
+            -122.9884416
+          ],
+          "name": "Royal Oak"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "name": "Sweet Surrender Gelato",
+      "description": "Artisan gelato made with local organic milk and natural ingredients.",
+      "instagram": "sweetsurrendergelato",
+      "website": "https://sweetsurrendergelato.com/",
+      "stores": [
+        {
+          "address": "108-12211 No. 1 Rd, Richmond, BC V7E 1T6",
+          "hours": "Mon-Fri 3:30 PM - 9:00 PM Sat-Sun 12:00 PM - 9:00 PM",
+          "point": [
+            49.1236988,
+            -123.1797972
+          ],
+          "name": "Steveston"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "name": "SWEET7",
+      "description": "Global Mango Drinks and Fruit Tea Brand",
+      "instagram": "sweet7ca",
+      "website": "https://sweet7.ca/",
+      "stores": [
+        {
+          "address": "1696 Robson St, Vancouver, BC V6G 1C7",
+          "hours": "Mon-Thu 11:30am-9pm Fri-Sun 11:30am-9:30pm",
+          "point": [
+            49.2858,
+            -123.129
+          ],
+          "name": "West End"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "name": "The Alley",
+      "description": "Taiwanese bubble tea known for Brown Sugar Deerioca.",
+      "instagram": "thealley.ca",
+      "website": "https://www.the-alley.ca/",
+      "stores": [
+        {
+          "address": "985 Hornby St, Vancouver, BC V6Z 1V3",
+          "hours": "Daily 11am-11pm",
+          "point": [
+            49.2807802,
+            -123.1248665
+          ],
+          "name": "Downtown"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "name": "The Bunny Cafe",
+      "description": "Coffee, vegan snacks, and adoptable bunnies.",
+      "instagram": "bunnycafevancouver",
+      "website": "https://www.bunnycafe.ca/",
+      "stores": [
+        {
+          "address": "1696 Venables St, Vancouver, BC V5L 2H1",
+          "hours": "Mon-Fri 1pm-7pm Sat-Sun 10am-7pm Closed Tue Jun 23 only",
+          "point": [
+            49.2755,
+            -123.0684
+          ],
+          "name": "Commercial Drive"
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "name": "The Praguery",
+      "description": "Hand-rolled Czech chimney cakes with soft-serve ice cream.",
+      "instagram": "thepraguery",
+      "website": "https://www.praguery.com/",
+      "stores": [
+        {
+          "address": "1000-7899 Templeton Station Rd, Richmond, BC V7B 0B7",
+          "hours": "Daily 11am-9pm",
+          "point": [
+            49.1975504,
+            -123.1400876
+          ],
+          "name": "Richmond"
+        },
+        {
+          "address": "1207 Pinetree Way, Coquitlam, BC V3B 2P7",
+          "hours": "Mon-Thu 9am-9pm Fri-Sun 9am-10pm",
+          "point": [
+            49.2855377,
+            -122.7905027
+          ],
+          "name": "Coquitlam"
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "name": "Tutto Belle Il Gelato",
+      "description": "Italian gelato made with local Vancouver ingredients.",
+      "instagram": "tuttobellegelato",
+      "website": "https://tuttobelleilgelato.ca/",
+      "stores": [
+        {
+          "address": "2151 W 4th Ave, Vancouver, BC V6K 1N7",
+          "hours": "Mon-Thu 1pm-10:30pm Fri-Sat 1pm-11pm Sun 1pm-10:30pm",
+          "point": [
+            49.2682772,
+            -123.1539631
+          ],
+          "name": "Kitsilano"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "name": "Uno Gelato",
+      "description": "All natural farm-to-cone gelato and sorbetto.",
+      "instagram": "unogelato.yvr",
+      "website": "https://unogelato.com/",
+      "stores": [
+        {
+          "address": "2579 W Broadway, Vancouver, BC V6K 2E9",
+          "hours": "Daily 12pm-10pm",
+          "point": [
+            49.2638718,
+            -123.1553759
+          ],
+          "name": "Kitsilano"
+        },
+        {
+          "address": "601 Stamps Landing, Vancouver, BC V5Z 3Z1",
+          "hours": "Sun-Thu 12:00 PM - 10:30 PM Fri-Sat 12:00 PM - 11:00 PM",
+          "point": [
+            49.2691241,
+            -123.1185881
+          ],
+          "name": "False Creek"
+        },
+        {
+          "address": "200 Granville St, Vancouver, BC",
+          "hours": "Tue-Sun 11am-6pm Mon Closed (open BC Day + Labour Day)",
+          "point": [
+            49.2867868,
+            -123.1123342
+          ],
+          "name": "Junction Public Market Pop Up"
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "name": "Virtuous Pie",
+      "description": "100% plant-based pizza and ice cream.",
+      "instagram": "virtuous_pie",
+      "website": "https://www.virtuouspie.com/",
+      "stores": [
+        {
+          "address": "583 Main St, Vancouver, BC V6A 2V1",
+          "hours": "Daily 12pm-10pm",
+          "point": [
+            49.2796992,
+            -123.099992
+          ],
+          "name": "Chinatown"
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "name": "Whisk Matcha Cafe",
+      "description": "Mount Pleasant premium vegan matcha cafe",
+      "instagram": "whiskmatchayvr",
+      "website": "https://whiskmatcha.ca/",
+      "stores": [
+        {
+          "address": "39 Kingsway, Vancouver, BC V5T 3H7",
+          "hours": "Daily 9am-6pm",
+          "point": [
+            49.26388,
+            -123.100276
+          ],
+          "name": "Mount Pleasant"
+        }
+      ]
+    }
+  ]
+}

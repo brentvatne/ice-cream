@@ -1,0 +1,1398 @@
+{
+  "version": "2026.icf",
+  "data": [
+    {
+      "id": 1,
+      "name": "Brown Butter Honeycomb",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-07-11T08:00:00Z",
+      "description": "Brown butter waffle base, honeycomb and milk chocolate semifreddo finished with milk chocolate glaze.",
+      "price": "$12.00",
+      "location": 1,
+      "tags": []
+    },
+    {
+      "id": 2,
+      "name": "Strawberry Basil",
+      "startDate": "2026-07-12T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Strawberry compote, basil and vanilla ice cream with Biscoff cookie base.",
+      "price": "$12.00",
+      "location": 1,
+      "tags": []
+    },
+    {
+      "id": 3,
+      "name": "Turon Dream Sundae",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-07-11T08:00:00Z",
+      "description": "Dalgona, caramel-stewed banana, jackfruit and condensed milk over soft serve, finished with a toasted spring roll wrapper and a meringue cloud. A nod to Filipino heritage month.",
+      "price": "$11.50",
+      "location": 2,
+      "tags": [
+        "Nut Free"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Cendol Dream Sundae",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-07-11T08:00:00Z",
+      "description": "Pandan soft serve made with real pandan leaves and loaded with pearls, grass jelly, lychee jelly and red bean. Refreshing and fragrant.",
+      "price": "$11.50",
+      "location": 2,
+      "tags": [
+        "Nut Free"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Mango Sticky Rice Dream Sundae",
+      "startDate": "2026-07-12T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Real mango sorbet swirled with vanilla soft serve, topped with toasted-coconut mochi, a drizzle of coconut cream, and a meringue cloud cookie. Staff favourite. Vegan option will be a modified version of the sundae.",
+      "price": "$10.50",
+      "location": 2,
+      "tags": [
+        "Vegan-Friendly",
+        "Nut Free"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Vietnamese Coffee Dream Sundae",
+      "startDate": "2026-07-12T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Vietnamese coffee soft serve topped with house-made dalgona, a drizzle of condensed milk, and a meringue cloud cookie.",
+      "price": "$10.50",
+      "location": 2,
+      "tags": [
+        "Nut Free"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Labubu On-sen",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "By popular request, Labubu returns. Inspired by the relaxing experience of Japanese onsen bathing, this summer dessert is our playful way of turning that feeling into something cool, refreshing, and edible. Choose your favourite creamy shaved ice flavour — Ube, Peach, Mango, Strawberry, or Milky — and customise it with mochi balls and other toppings of your choice. On top sits our signature edible Labubu, crafted from Vanilla or Matcha ice cream and coated in a delicate crispy chocolate shell. Back for another summer. Made for Labubu lovers.",
+      "price": "$9.50",
+      "location": 3,
+      "tags": [
+        "Nut Free",
+        "Gluten-Free"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Croissant Kem Chuoi",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Buttery flaky croissant filled with creamy Vietnamese-style kem chuoi: cold, coconutty, slightly chewy, with roasted peanuts and tropical flavour, finished with a signature chocolate drizzle. Three variants: classic Kem Chuoi, Coco-Ube, and Matcha. Limited quantities daily.",
+      "price": "$8.75",
+      "location": 3,
+      "tags": []
+    },
+    {
+      "id": 9,
+      "name": "Vintage Cream Freeze",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "An ice cream cake version of one of our classic mango cake flavours in a signature pastel pink buttercream coating.",
+      "price": "$13.50",
+      "location": 4,
+      "tags": [
+        "Nut Free",
+        "Gluten-Free"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Sugar Cone Cake by the Slice",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "A unique spin on our daily \"cake by the slice\" using sugar cones with berry-infused soft serve instead of buttercream. Choose either buttercream or housemade soft serve per slice.",
+      "price": "$12.50",
+      "location": 4,
+      "tags": []
+    },
+    {
+      "id": 11,
+      "name": "Butter Baked Alaska",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "A Butter Baked Alaska with lemon infusion layered over sponge cake, enveloped in a silky toasted meringue.",
+      "price": "$10.50",
+      "location": 4,
+      "tags": []
+    },
+    {
+      "id": 12,
+      "name": "Chè Number One",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Classic coconut milk chè with red tapioca, grass jelly, and fragrant pandan jelly.",
+      "price": "$9 (regular) / $11 (large)",
+      "location": 5,
+      "tags": []
+    },
+    {
+      "id": 13,
+      "name": "Chè Triple",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Creamy three-colour chè layered with red beans, mung beans, taro, pandan jelly, coconut jelly, and coconut milk.",
+      "price": "$9 (regular) / $11 (large)",
+      "location": 5,
+      "tags": []
+    },
+    {
+      "id": 14,
+      "name": "Mango Yonami",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "A Vietnamese inspired yogurt with sweet mango toppings and boba.",
+      "price": "$9.50 (regular) / $11 (large)",
+      "location": 5,
+      "tags": []
+    },
+    {
+      "id": 15,
+      "name": "Ube Mochi Waffle",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Waffle with ultra chewy, mochi-like centers and a light, crispy crust.",
+      "price": "$6.50",
+      "location": 5,
+      "tags": []
+    },
+    {
+      "id": 16,
+      "name": "Gummylicious Kooky Cone",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-07-31T08:00:00Z",
+      "description": "Gummylicious flavoured white chocolate dipped cone with red chocolate drizzle, multicoloured candies and gummy bears.",
+      "price": "Various",
+      "location": 6,
+      "tags": []
+    },
+    {
+      "id": 17,
+      "name": "Blueberry Crumble Kooky Cone",
+      "startDate": "2026-07-01T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Blueberry crumble milk chocolate dipped cone with purple chocolate drizzle, graham cracker crumble and dried blueberries.",
+      "price": "Various",
+      "location": 6,
+      "tags": []
+    },
+    {
+      "id": 18,
+      "name": "PB&J Brioche Sammie",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Peanut butter gelato, #MafiaMade peanut butter cup chunks, and an organic raspberry variegato ripple, all wrapped up in a toasted Dolce Amore brioche bun.",
+      "price": "$11.00",
+      "location": 7,
+      "tags": []
+    },
+    {
+      "id": 19,
+      "name": "Blackberry Lilac Ice Cream Sandwich",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-07-11T08:00:00Z",
+      "description": "Blackberry sorbet and lilac ice cream sandwiched between a house-made stroopwafel.",
+      "price": "$8.00",
+      "location": 8,
+      "tags": [
+        "Nut Free"
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Strawberry Pepper Lapsang Ice Cream Bar",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-07-11T08:00:00Z",
+      "description": "Strawberry, bell and black pepper sorbet and smoky lapsang ice cream bar, dipped in dark chocolate.",
+      "price": "$8.00",
+      "location": 8,
+      "tags": [
+        "Vegan-Friendly",
+        "Nut Free",
+        "Lactose Free"
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Hojicha Raspberry Beet Ice Cream Sandwich",
+      "startDate": "2026-07-12T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Hojicha ice cream and raspberry beet sorbet sandwiched between a black cocoa stroopwafel.",
+      "price": "$8.00",
+      "location": 8,
+      "tags": [
+        "Nut Free"
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Peach Osmanthus",
+      "startDate": "2026-07-12T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Local peach sorbet and osmanthus green tea ice cream bar, dipped in dark chocolate.",
+      "price": "$8.00",
+      "location": 8,
+      "tags": [
+        "Vegan-Friendly",
+        "Nut Free",
+        "Lactose Free"
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Pina Colada Bingsu",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Finely shaved ice topped with strawberries, bananas, and whipped cream, blended with classic pina colada and coconut notes for a light and refreshing tropical dessert.",
+      "price": "$12.00",
+      "location": 9,
+      "tags": [
+        "Nut Free",
+        "Gluten-Free"
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Taro Bingsu",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Finely shaved ice layered with taro-infused cream, ice cream, crunchy flakes, and chocolate pieces for a lightly sweet, creamy dessert with soft taro notes.",
+      "price": "$12.00",
+      "location": 9,
+      "tags": [
+        "Gluten-Free",
+        "Nut Free"
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Mango Coconut Sticky Rice Sundae",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-07-10T08:00:00Z",
+      "description": "Coconut sticky rice, fresh mango cubes, mango coconut sticky rice ice cream, salted coconut cream, toasted mung beans.",
+      "price": "$13.50",
+      "location": 10,
+      "tags": [
+        "Vegan-Friendly",
+        "Nut Free",
+        "Lactose Free",
+        "Gluten-Free"
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Mango Coconut Sticky Purple Rice Sundae",
+      "startDate": "2026-07-11T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Coconut mixed purple sticky rice, fresh mango cubes, mango coconut sticky rice ice cream, salted coconut cream, toasted mung beans.",
+      "price": "$13.50",
+      "location": 10,
+      "tags": [
+        "Vegan-Friendly",
+        "Nut Free",
+        "Lactose Free",
+        "Gluten-Free"
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Mango Coconut Slush",
+      "startDate": "2026-07-11T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Fresh mango slush, salted coconut cream, fresh mango chunks.",
+      "price": "$11.00",
+      "location": 10,
+      "tags": [
+        "Vegan-Friendly",
+        "Nut Free",
+        "Lactose Free",
+        "Gluten-Free"
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Mango Coconut Sticky Rice Latte Float",
+      "startDate": "2026-07-11T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Fresh mango coconut sticky rice smoothie, salted coconut cream, fresh mango cubes, mango coconut sticky rice ice cream.",
+      "price": "$11.00 (drink only $8)",
+      "location": 10,
+      "tags": [
+        "Vegan-Friendly",
+        "Nut Free",
+        "Lactose Free",
+        "Gluten-Free"
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Peach Bingsoo",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Fresh peach with peach ice sorbet and puree.",
+      "price": "$12.50",
+      "location": 11,
+      "tags": []
+    },
+    {
+      "id": 30,
+      "name": "DaeJi Bar Bingsoo",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Korean ice cream flavour DaeJibar (piggy bar). Chocolate crumble with strawberry jam ice cream flavour with mochi brownie on top.",
+      "price": "$12.50",
+      "location": 11,
+      "tags": []
+    },
+    {
+      "id": 31,
+      "name": "Injeolmi Croffle",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Croffle topped with soybean powder, red bean and mochi.",
+      "price": "$8.50",
+      "location": 11,
+      "tags": []
+    },
+    {
+      "id": 32,
+      "name": "Blueberry Yuzu Cheese Kakigori",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Shaved ice filled with yuzu whipped cream, fresh blueberries, and our house-made mini cheesecakes, topped with Fufu's signature cheese whipped cream, then drizzled with condensed milk sauce and blueberry purée.",
+      "price": "$16.50",
+      "location": 12,
+      "tags": [
+        "Nut Free"
+      ]
+    },
+    {
+      "id": 33,
+      "name": "Mango Matcha Coconut Kakigori",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Shaved ice filled with mango whipped cream, fresh mango, and our house-made pandan coconut jelly, topped with matcha whipped cream and freeze-dried coconut, then drizzled with coconut condensed milk sauce and mango purée.",
+      "price": "$16.50",
+      "location": 12,
+      "tags": [
+        "Nut Free"
+      ]
+    },
+    {
+      "id": 34,
+      "name": "Snack Size Dough Boy",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Smaller Dough Boy: chocolate chip cookie dough pieces, cookies and cream ice cream and hot fudge topped with whipped cream.",
+      "price": "$9.00",
+      "location": 13,
+      "tags": [
+        "Nut Free"
+      ]
+    },
+    {
+      "id": 35,
+      "name": "Snack Size Peanut Butter Dream",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Snack-size version: vanilla or chocolate ice cream, peanut butter sauce, magic shell, peanuts and peanut butter cups, all topped with whipped cream.",
+      "price": "$9.00",
+      "location": 13,
+      "tags": [
+        "Gluten-Free"
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Snack Size Canadian Mint",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Mint chocolate chip ice cream, hot fudge, magic shell and roasted salted almonds. Topped with whipped cream.",
+      "price": "$9.00",
+      "location": 13,
+      "tags": [
+        "Gluten-Free"
+      ]
+    },
+    {
+      "id": 37,
+      "name": "Snack Size Blackout",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Chocolate ice cream, hot fudge, chocolate cookie crumb, and magic shell. Topped with chocolate whipped cream and jimmies.",
+      "price": "$9.00",
+      "location": 13,
+      "tags": []
+    },
+    {
+      "id": 38,
+      "name": "HK Milk Tea Gelato Pineapple Bun",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-07-11T08:00:00Z",
+      "description": "Premium HK-style milk tea gelato served inside Ho Yuen's signature pineapple bun.",
+      "price": "$9.75",
+      "location": 14,
+      "tags": []
+    },
+    {
+      "id": 39,
+      "name": "Evil Angel Chocolate Pineapple Bun",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-07-11T08:00:00Z",
+      "description": "Vanilla gelato and caramel syrup served inside Ho Yuen's chocolate pineapple bun.",
+      "price": "$11.75",
+      "location": 14,
+      "tags": []
+    },
+    {
+      "id": 40,
+      "name": "Golden Pudding Pineapple Bun",
+      "startDate": "2026-07-12T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Smooth egg pudding served inside Ho Yuen's pineapple bun.",
+      "price": "$10.75",
+      "location": 14,
+      "tags": []
+    },
+    {
+      "id": 41,
+      "name": "Pineapple Meets Pineapple Bun",
+      "startDate": "2026-07-12T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Refreshing pineapple sorbetto served inside Ho Yuen's pineapple bun.",
+      "price": "$10.75",
+      "location": 14,
+      "tags": []
+    },
+    {
+      "id": 42,
+      "name": "Cereal Swirl: Fruity Pebbles",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Silky non-dairy ice cream with your favourite cereal for a rainbow scoop.",
+      "price": "$8.50",
+      "location": 15,
+      "tags": [
+        "Vegan-Friendly",
+        "Lactose Free",
+        "Gluten-Free"
+      ]
+    },
+    {
+      "id": 43,
+      "name": "Cereal Swirl: Cinnamon Toast Crunch",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Creamy, dairy-free bliss meets cinnamon-toast crunch.",
+      "price": "$8.50",
+      "location": 15,
+      "tags": [
+        "Lactose Free"
+      ]
+    },
+    {
+      "id": 44,
+      "name": "Juicy Pear Fro-Yo Donut",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "A fresh dipped OohLaLa donut sliced in half and sandwiched around freshly-churned pear frozen yogurt.",
+      "price": "$9.00",
+      "location": 16,
+      "tags": [
+        "Nut Free"
+      ]
+    },
+    {
+      "id": 45,
+      "name": "Summer Melon Ice Cream Donut",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "A fresh dipped OohLaLa donut sliced in half and sandwiched around freshly-churned watermelon ice cream.",
+      "price": "$9.00",
+      "location": 16,
+      "tags": [
+        "Nut Free"
+      ]
+    },
+    {
+      "id": 46,
+      "name": "Vanilla Baklava Sundae",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Crispy fluffy pastry base filled with pistachio paste and crunchy kataifi, topped with a scoop of house-made vanilla ice cream and finished with warm chocolate sauce.",
+      "price": "$10.75",
+      "location": 17,
+      "tags": []
+    },
+    {
+      "id": 47,
+      "name": "Pistachio Baklava Sundae",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Crispy fluffy pastry layered with pistachio paste and toasted kataifi, topped with a scoop of pistachio ice cream and drizzled with chocolate sauce.",
+      "price": "$10.75",
+      "location": 17,
+      "tags": []
+    },
+    {
+      "id": 48,
+      "name": "Gingirella and the Prince: The Sugar-Free Garden",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-07-03T08:00:00Z",
+      "description": "Keto, functional, diabetic-friendly, zero-refined sugar gelato: a botanical romance where the floral sweetness of lychee meets the deep, amber warmth of house-steeped candied ginger. Festival Flight Days (Sun Jun 22 + Sun Jun 29): $19.95 for a 3-flavour kid-size flight pairing this festival flavour with two more of your choice from the regular menu.",
+      "price": "$13.95",
+      "location": 18,
+      "tags": [
+        "Keto",
+        "Sugar Free",
+        "Nut Free",
+        "Gluten-Free"
+      ]
+    },
+    {
+      "id": 49,
+      "name": "Black Dahlia",
+      "startDate": "2026-07-04T08:00:00Z",
+      "endDate": "2026-07-17T08:00:00Z",
+      "description": "A noir expression of fruit and cacao: a velvet-textured vegan blackberry gelato infused with the smoky, floral warmth of green cardamom. Festival Flight Days (Sun Jul 6 + Sun Jul 13): $19.95 for a 3-flavour kid-size flight pairing this festival flavour with two more of your choice from the regular menu.",
+      "price": "$12.95",
+      "location": 18,
+      "tags": [
+        "Vegan-Friendly",
+        "Nut Free",
+        "Lactose Free",
+        "Gluten-Free"
+      ]
+    },
+    {
+      "id": 50,
+      "name": "Blue Velvet",
+      "startDate": "2026-07-18T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Floral, aromatic, serene. A dream-like infusion of wild organic lavender and calming chamomile. Festival Flight Days (Sun Jul 20 + Sun Jul 27): $19.95 for a 3-flavour kid-size flight pairing this festival flavour with two more of your choice from the regular menu.",
+      "price": "$12.95",
+      "location": 18,
+      "tags": [
+        "Nut Free",
+        "Gluten-Free"
+      ]
+    },
+    {
+      "id": 51,
+      "name": "Dubai Chocolate Sundae",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Raspberry frozen yogurt, chocolate frozen yogurt, kanafeh, strawberries, pistachios, chocolate shavings, and chocolate sauce.",
+      "price": "$11.00",
+      "location": 19,
+      "tags": []
+    },
+    {
+      "id": 52,
+      "name": "Tiramisu Sundae",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Tiramisu cake, vanilla frozen yogurt, Nespresso powder, chocolate shavings, and chocolate sauce.",
+      "price": "$12.00",
+      "location": 19,
+      "tags": []
+    },
+    {
+      "id": 53,
+      "name": "Frozen Fruity Popsicle",
+      "startDate": "2026-07-12T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Frozen fruit (strawberry, mango, raspberry, orange, cherry) popsicles dipped in chocolate to create a crunch.",
+      "price": "$15.00",
+      "location": 20,
+      "tags": [
+        "Nut Free",
+        "Gluten-Free"
+      ]
+    },
+    {
+      "id": 54,
+      "name": "Ice Cream Onigiri",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-07-11T08:00:00Z",
+      "description": "House-made (mango / black sesame) ice cream sandwiches with chiffon and wrapped with our house-made seaweed (crepe).",
+      "price": "$12.50",
+      "location": 20,
+      "tags": [
+        "Nut Free"
+      ]
+    },
+    {
+      "id": 55,
+      "name": "Go Canada Go",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Strawberry apple slush decorated with our Canada flag: white milk soccer ball and a red maple leaf.",
+      "price": "$9.95",
+      "location": 20,
+      "tags": [
+        "Nut Free",
+        "Gluten-Free"
+      ]
+    },
+    {
+      "id": 56,
+      "name": "East Meets Maple",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "A waffle bowl filled with our signature ashta and Lotus Biscoff ice cream, topped with whipped cream, crushed pistachios, and a rich maple syrup drizzle.",
+      "price": "$12.99",
+      "location": 21,
+      "tags": []
+    },
+    {
+      "id": 57,
+      "name": "Fruity Cup",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Three scoops of vegan ice cream topped with cotton candy and fresh strawberry.",
+      "price": "$9.99",
+      "location": 21,
+      "tags": [
+        "Vegan-Friendly",
+        "Nut Free",
+        "Lactose Free",
+        "Gluten-Free"
+      ]
+    },
+    {
+      "id": 58,
+      "name": "Ashta Crunch Nest",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "A nest of crispy knefeh pastry filled with Ashta ice cream, sweet syrup and cotton candy.",
+      "price": "$7.99",
+      "location": 21,
+      "tags": []
+    },
+    {
+      "id": 59,
+      "name": "Hwachae Float",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "We re-imagined the popular Korean summer dessert in the form of a pink soft serve float! Juicy watermelon sorbet, creamy strawberry soft serve, and fizzy milkis (milk soda) all on a bed of mango coconut stars. You'll like this one.",
+      "price": "$11.00",
+      "location": 22,
+      "tags": [
+        "Nut Free"
+      ]
+    },
+    {
+      "id": 60,
+      "name": "Lychee Osmanthus Float",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Osmanthus has been the flower of 2026 so far - floral, sweet, with hints of stone fruits. We combined it with our favourite stone fruit of all: lychee. Served as a float with club soda over a bed of lychee and osmanthus jelly.",
+      "price": "$11.00",
+      "location": 22,
+      "tags": [
+        "Nut Free",
+        "Vegan-Friendly",
+        "Lactose Free",
+        "Gluten-Free"
+      ]
+    },
+    {
+      "id": 61,
+      "name": "Tokyo Bananana",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Inspired by every Japanese tourist's go-to souvenir. Triple banana: (1) banana pudding soft serve made with real banana puree, (2) banana custard filling in our taiyaki cone, and (3) banana chiffon cake.",
+      "price": "$11.00",
+      "location": 22,
+      "tags": [
+        "Nut Free"
+      ]
+    },
+    {
+      "id": 62,
+      "name": "The Ultimate Pistachio Crunch",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "DOP pistachio paste from Sicily wrapped in crispy pistachio kataifi, coated in a chewy chocolate shell and dusted with cocoa powder. Nutty, chocolatey, crunchy, chewy.",
+      "price": "$9.99",
+      "location": 23,
+      "tags": []
+    },
+    {
+      "id": 63,
+      "name": "The Pistachio Obsession",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "DOP pistachio gelato folded with crushed pistachio nuts and topped with whipped cream. For the pistachio devoted.",
+      "price": "$8.99",
+      "location": 23,
+      "tags": []
+    },
+    {
+      "id": 64,
+      "name": "Ferrero Rocher",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Ultra-rich chocolate hazelnut gelato over crisp wafer shards and premium roasted hazelnuts. Ferrero Rocher reimagined in scoop form.",
+      "price": "$6.99",
+      "location": 23,
+      "tags": []
+    },
+    {
+      "id": 65,
+      "name": "White Rabbit",
+      "startDate": "2026-07-11T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Velvety creamy gelato that captures the iconic White Rabbit candy's milk flavour. No added sugar so the nostalgic sweetness of the candy shines through.",
+      "price": "$6.99",
+      "location": 23,
+      "tags": [
+        "Nut Free"
+      ]
+    },
+    {
+      "id": 66,
+      "name": "Maiko Halo-Halo",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "A cool twist on the Filipino classic. Creamy matcha ice cream, red bean, coconut jelly, tapioca pearls, ube, caramel flan, and crunchy cornflakes. Sweet, chewy, refreshing.",
+      "price": "$15.45",
+      "location": 24,
+      "tags": []
+    },
+    {
+      "id": 67,
+      "name": "Matcha Pineapple Paradise Parfait",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Layers of fluffy matcha sponge cake, sweet-tart pineapple compote, crunchy crumble, chewy warabi mochi, and a matcha-pineapple soft serve swirl. Finished with fresh pineapple and a dusting of premium matcha.",
+      "price": "$15.45",
+      "location": 24,
+      "tags": []
+    },
+    {
+      "id": 68,
+      "name": "Matcha Screamer",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "First-harvest matcha by Yamamasa Koyamaen slushie with oat milk base and topped with a creamy rich matcha ice cream from Ice Keem.",
+      "price": "$12.75",
+      "location": 25,
+      "tags": []
+    },
+    {
+      "id": 69,
+      "name": "Matcha-Colada Slushie",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Matcha slushie with a twist. Made with house-made pineapple puree, first-harvest matcha by Yamamasa Koyamaen, and topped with a rich creamy coconut ice cream from Ice Keem.",
+      "price": "$13.50",
+      "location": 25,
+      "tags": []
+    },
+    {
+      "id": 70,
+      "name": "HK Matcha Float",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "A nostalgic Cha Chaan Teng classic. Red bean paste and grass jelly in a refreshing slushie with first-harvest matcha from Yamamasa Koyamaen, topped with a scoop of classic vanilla ice cream from Ice Keem.",
+      "price": "$13.50",
+      "location": 25,
+      "tags": []
+    },
+    {
+      "id": 71,
+      "name": "Hojicha Screamer",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Premium hojicha slushie topped with a creamy hojicha ice cream from Ice Keem.",
+      "price": "$12.75",
+      "location": 25,
+      "tags": []
+    },
+    {
+      "id": 72,
+      "name": "Pistachio Kataifi (Dubai-style)",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Roasted, salted pistachio ice cream with toasted kataifi and pistachio paste. Dipped in milk chocolate (dairy and vegan available).",
+      "price": "$8.60",
+      "location": 26,
+      "tags": [
+        "Vegan-Friendly"
+      ]
+    },
+    {
+      "id": 73,
+      "name": "Hojicha Horchata Slush",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-07-11T08:00:00Z",
+      "description": "A super refreshing hojicha horchata slush with a honey cold foam. One size.",
+      "price": "$7.40",
+      "location": 26,
+      "tags": [
+        "Gluten-Free",
+        "Nut Free"
+      ]
+    },
+    {
+      "id": 74,
+      "name": "Corn on the Cup",
+      "startDate": "2026-07-12T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Caramel corn ice cream sundae with warm salted caramel and corn-themed toppings.",
+      "price": "$9.00",
+      "location": 26,
+      "tags": [
+        "Nut Free",
+        "Gluten-Free"
+      ]
+    },
+    {
+      "id": 75,
+      "name": "Fruit Fruits",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Festival-exclusive flavour. Fruit Loops cereal milk ice cream with fruit roll-up chips. Scoop pricing ($5 to $8).",
+      "price": "$5.00",
+      "location": 26,
+      "tags": [
+        "Nut Free",
+        "Gluten-Free",
+        "Vegan-Friendly"
+      ]
+    },
+    {
+      "id": 76,
+      "name": "Cookie Monster Donut Ice Cream Sandwich",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-07-11T08:00:00Z",
+      "description": "Blue vanilla ice cream with Oreo cookies and cookie dough in between a glazed donut.",
+      "price": "$12.00",
+      "location": 27,
+      "tags": []
+    },
+    {
+      "id": 77,
+      "name": "Strawberry Biscoff Donut Ice Cream Sandwich",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-07-11T08:00:00Z",
+      "description": "Sweet milk ice cream with strawberry swirl and Biscoff biscuits in toasted glazed donut.",
+      "price": "$12.00",
+      "location": 27,
+      "tags": []
+    },
+    {
+      "id": 78,
+      "name": "Ube Oreo Donut Ice Cream Sammies",
+      "startDate": "2026-07-12T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Ube ice cream and Oreo cookies in toasted glazed donut.",
+      "price": "$12.00",
+      "location": 27,
+      "tags": []
+    },
+    {
+      "id": 79,
+      "name": "Chocolate Hazelnut Donut Ice Cream Sammies",
+      "startDate": "2026-07-12T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Chocolate hazelnut ice cream in toasted glazed donut.",
+      "price": "$12.00",
+      "location": 27,
+      "tags": []
+    },
+    {
+      "id": 80,
+      "name": "Premium Matcha Parfait",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Signature parfait layered with house-made matcha jelly, chocolate sauce, matcha ice cream, Lotus Biscoff cookies and corn flakes, topped with matcha whipped cream, shiratama mochi balls, matcha nama chocolate, and premium matcha powder.",
+      "price": "$19.75",
+      "location": 28,
+      "tags": [
+        "Nut Free"
+      ]
+    },
+    {
+      "id": 81,
+      "name": "Triple Matcha Soft Serve",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Matcha soft serve drizzled with matcha syrup and finished with premium matcha powder.",
+      "price": "$8.95",
+      "location": 28,
+      "tags": [
+        "Nut Free"
+      ]
+    },
+    {
+      "id": 82,
+      "name": "Champion's Charm",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Canadian maple swirled with pistachio to kick off the World Cup teams. Scoop pricing ($5 to $8); waffle cone extra.",
+      "price": "$5.00",
+      "location": 29,
+      "tags": [
+        "Gluten-Free"
+      ]
+    },
+    {
+      "id": 83,
+      "name": "Cherry Moonkiss",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Condensed milk smeared with sweet roasted cherries. Scoop pricing ($5 to $8); waffle cone extra.",
+      "price": "$5.00",
+      "location": 29,
+      "tags": [
+        "Gluten-Free",
+        "Nut Free"
+      ]
+    },
+    {
+      "id": 84,
+      "name": "Peach Golden Hour",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Peach and a hint of black tea sorbetto to match a Kitsilano sunset. Scoop pricing ($5 to $8).",
+      "price": "$5.00",
+      "location": 29,
+      "tags": [
+        "Vegan-Friendly",
+        "Nut Free",
+        "Lactose Free",
+        "Gluten-Free"
+      ]
+    },
+    {
+      "id": 85,
+      "name": "Chocolate Noir",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Chocolate gelato sprinkled with in-house baked chocolate chunk cookies. Scoop pricing ($5 to $8).",
+      "price": "$5.00",
+      "location": 29,
+      "tags": []
+    },
+    {
+      "id": 86,
+      "name": "Strawberry White Chocolate Matcha Dipped Cone",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "A twist on our classic strawberry soft serve cone, dipped in silky white chocolate matcha and finished with a delicate dusting of freeze-dried strawberries.",
+      "price": "$12.00",
+      "location": 30,
+      "tags": [
+        "Nut Free"
+      ]
+    },
+    {
+      "id": 87,
+      "name": "Mixed Berry 99",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "A blend of strawberry, raspberry, blackberry and blueberry mixed with Plain Jane's signature ice cream topped with the iconic 99 flake. Available in cup.",
+      "price": "$12.00",
+      "location": 30,
+      "tags": [
+        "Gluten-Free",
+        "Nut Free"
+      ]
+    },
+    {
+      "id": 88,
+      "name": "Summer Winterland",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-07-11T08:00:00Z",
+      "description": "Winter melon tea lemonade sorbet with house-made salted cheese foam and grass jelly, topped with lime zest. Available at all locations.",
+      "price": "$8.50",
+      "location": 31,
+      "tags": [
+        "Nut Free"
+      ]
+    },
+    {
+      "id": 89,
+      "name": "HK Afternoon Tea",
+      "startDate": "2026-07-12T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Hong Kong milk tea soft serve with condensed milk drizzle and Ceylon tea powder dust, complemented with mini house-made Hong Kong-style French toast with kaya filling.",
+      "price": "$11.00",
+      "location": 31,
+      "tags": [
+        "Nut Free"
+      ]
+    },
+    {
+      "id": 90,
+      "name": "Tropical Heat",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Egg bun, pandan caramel cheese foam, coconut shredded, almond slice, peanut, coconut ice cream, coconut cream.",
+      "price": "$13.95",
+      "location": 32,
+      "tags": [
+        "Vegan-Friendly"
+      ]
+    },
+    {
+      "id": 91,
+      "name": "Stinky Wave",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Fresh durian, coconut shred, durian ice cream, milk, coconut cream.",
+      "price": "$12.95",
+      "location": 32,
+      "tags": [
+        "Vegan-Friendly"
+      ]
+    },
+    {
+      "id": 92,
+      "name": "Ginger Oolong Gelato",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Zesty ginger with the robust flavours of oolong tea.",
+      "price": "$6.75",
+      "location": 33,
+      "tags": [
+        "Nut Free",
+        "Gluten-Free"
+      ]
+    },
+    {
+      "id": 93,
+      "name": "Graham Cookie Butter",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "The taste of caramelized brown sugar with warm spices.",
+      "price": "$6.75",
+      "location": 33,
+      "tags": [
+        "Gluten-Free"
+      ]
+    },
+    {
+      "id": 94,
+      "name": "Strawberry Matcha Mochi Sundae",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Fresh house-made strawberry sauce under vanilla soft serve, drizzled with premium matcha sauce and finished with chewy mochi balls. Earthy matcha balanced against sweet strawberry.",
+      "price": "$8.55",
+      "location": 34,
+      "tags": [
+        "Nut Free",
+        "Gluten-Free"
+      ]
+    },
+    {
+      "id": 95,
+      "name": "Go Canada! FIFA World Cup Sundae",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Vancouver's FIFA World Cup 2026 tribute. Strawberry sauce and vanilla soft serve in red and white, decorated with maple leaf cookies, soccer-themed candy, coconut jelly, and a Canadian flag pick.",
+      "price": "$8.25",
+      "location": 34,
+      "tags": []
+    },
+    {
+      "id": 96,
+      "name": "Crunchy Tiramisu Milk Tea",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Ice-blended coffee-based milk tea topped with pearls, a rich house-made tiramisu foam, buttercrisp and cocoa.",
+      "price": "$9.25",
+      "location": 35,
+      "tags": []
+    },
+    {
+      "id": 97,
+      "name": "Crunchy Strawberry Milk Tea",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Ice-blended strawberry milk tea drink with jasmine green tea base, topped with pearls, house-made sweet cream and buttercrisp.",
+      "price": "$9.25",
+      "location": 35,
+      "tags": []
+    },
+    {
+      "id": 98,
+      "name": "Latte's Hojicha Osmanthus Soft Serve",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-07-11T08:00:00Z",
+      "description": "Hojicha (roasted green tea) infused vegan soft serve topped with sweet, floral osmanthus syrup. Cup $6.95, cone $7.95, waffle $8.95. Gluten-free if served in a cup.",
+      "price": "$6.95",
+      "location": 36,
+      "tags": [
+        "Vegan-Friendly",
+        "Nut Free",
+        "Lactose Free",
+        "Gluten-Free"
+      ]
+    },
+    {
+      "id": 99,
+      "name": "Pepper's Ginger Guava Soft Serve",
+      "startDate": "2026-07-12T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Guava-flavoured vegan soft serve, lightly spiced with ginger and topped with fresh house-made ginger syrup. Cup $6.95, cone $7.95, waffle $8.95. Gluten-free in a cup.",
+      "price": "$6.95",
+      "location": 36,
+      "tags": [
+        "Vegan-Friendly",
+        "Nut Free",
+        "Lactose Free",
+        "Gluten-Free"
+      ]
+    },
+    {
+      "id": 100,
+      "name": "Hojicha Osmanthus Ice Cream Sandwich",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Vegan hojicha soft serve and osmanthus syrup sandwiched between two oatmeal cookies.",
+      "price": "$4.95",
+      "location": 36,
+      "tags": [
+        "Vegan-Friendly",
+        "Nut Free",
+        "Lactose Free"
+      ]
+    },
+    {
+      "id": 101,
+      "name": "Ginger Guava Ice Cream Sandwich",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Vegan ginger-guava soft serve sandwiched between two mini ginger snap cookies.",
+      "price": "$3.95",
+      "location": 36,
+      "tags": [
+        "Vegan-Friendly",
+        "Nut Free",
+        "Lactose Free",
+        "Gluten-Free"
+      ]
+    },
+    {
+      "id": 102,
+      "name": "Caramelized Pear & Toasted Coconut Cone",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Vanilla soft serve topped with our house-made pear sauce, toasted coconut, and a piece of house-made caramelized pear.",
+      "price": "$12.99 (Lafarge) / $13 (McArthur Outlet)",
+      "location": 37,
+      "tags": []
+    },
+    {
+      "id": 103,
+      "name": "Caramelized Pear & Toasted Coconut Sundae",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Vanilla soft serve topped with our house-made pear sauce, toasted coconut, and a piece of house-made caramelized pear.",
+      "price": "$8.99 (Lafarge) / $9.00 (McArthurGlen)",
+      "location": 37,
+      "tags": []
+    },
+    {
+      "id": 104,
+      "name": "Double Strawberry Mochi",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Strawberry flavour gelato mixed with freeze-dried strawberries.",
+      "price": "$8.85",
+      "location": 38,
+      "tags": [
+        "Nut Free",
+        "Gluten-Free"
+      ]
+    },
+    {
+      "id": 105,
+      "name": "Mint Chocolate Chips Mochi",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Mint chocolate flavour gelato mixed with chocolate chips.",
+      "price": "$8.85",
+      "location": 38,
+      "tags": [
+        "Nut Free",
+        "Gluten-Free"
+      ]
+    },
+    {
+      "id": 106,
+      "name": "White Peach and Oolong Fruit Shell Gelato",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Peach fruit shell filled with white peach and oolong flavour gelato.",
+      "price": "$16.00",
+      "location": 38,
+      "tags": [
+        "Nut Free",
+        "Gluten-Free"
+      ]
+    },
+    {
+      "id": 107,
+      "name": "Mint Green Apple Fruit Shell Gelato",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Apple fruit shell filled with mint green apple sorbet.",
+      "price": "$13.00",
+      "location": 38,
+      "tags": [
+        "Vegan-Friendly",
+        "Nut Free",
+        "Gluten-Free",
+        "Lactose Free"
+      ]
+    },
+    {
+      "id": 108,
+      "name": "Summer Sundae",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Tropical layered cup: toasted coconut, mango sorbetto, vegan caramel, coconut sorbetto, mango sauce, toasted coconut flakes. Two fruits, one nut, every layer purposeful.",
+      "price": "$15.00",
+      "location": 39,
+      "tags": [
+        "Vegan-Friendly",
+        "Lactose Free",
+        "Gluten-Free"
+      ]
+    },
+    {
+      "id": 109,
+      "name": "Vivid Vancouver Sundae",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Seven layers: chocolate-hazelnut sauce, pistachio gelato, Biscoff crumbs, strawberry sorbet, pistachio sauce with kataifi, blue vanilla gelato, pistachio dust.",
+      "price": "$15.00",
+      "location": 39,
+      "tags": []
+    },
+    {
+      "id": 110,
+      "name": "Gelato Bonbons (Uno Gelato x Mink Chocolates)",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Box of 8 bonbons. Milk chocolate bonbon filled with Uganda vanilla gelato and rosemary burnt caramel. Dark chocolate bonbon filled with passion fruit sorbetto.",
+      "price": "$19.00",
+      "location": 39,
+      "tags": []
+    },
+    {
+      "id": 111,
+      "name": "Mocha Ice Cream Sundae",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-07-11T08:00:00Z",
+      "description": "House-made mocha ice cream topped with coconut whipped cream, dark chocolate sauce and a Biscoff cookie.",
+      "price": "$9.00",
+      "location": 40,
+      "tags": [
+        "Vegan-Friendly",
+        "Lactose Free"
+      ]
+    },
+    {
+      "id": 112,
+      "name": "Strawberry Matcha Ice Cream Bar",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-07-11T08:00:00Z",
+      "description": "House-made matcha ice cream with strawberry compote inside a dark chocolate shell.",
+      "price": "$9.00",
+      "location": 40,
+      "tags": [
+        "Vegan-Friendly",
+        "Lactose Free",
+        "Gluten-Free"
+      ]
+    },
+    {
+      "id": 113,
+      "name": "Strawberry Ice Cream Sandwich",
+      "startDate": "2026-07-12T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Strawberry cheesecake ice cream in a wafer sandwich, with a dark chocolate coating and topped with crushed almonds.",
+      "price": "$9.00",
+      "location": 40,
+      "tags": [
+        "Vegan-Friendly",
+        "Lactose Free",
+        "Gluten-Free"
+      ]
+    },
+    {
+      "id": 114,
+      "name": "World Cup Sundae",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-07-12T08:00:00Z",
+      "description": "Creamy vanilla soft serve topped with an intense matcha drizzle, and bittersweet cocoa crunch.",
+      "price": "$9.50",
+      "location": 41,
+      "tags": [
+        "Vegan-Friendly",
+        "Nut Free",
+        "Lactose Free"
+      ]
+    },
+    {
+      "id": 115,
+      "name": "FIFA Floatie",
+      "startDate": "2026-06-19T08:00:00Z",
+      "endDate": "2026-07-12T08:00:00Z",
+      "description": "A full stadium moment in a cup! Iced matcha oatmilk latte served in a white chocolate dipped cup, stacked with vanilla soft serve, matcha drizzle, and cocoa crunch. Sub with puffed rice as GF option.",
+      "price": "$12.95",
+      "location": 41,
+      "tags": [
+        "Vegan-Friendly",
+        "Nut Free",
+        "Lactose Free"
+      ]
+    },
+    {
+      "id": 116,
+      "name": "Umaji Mura Kuki-Fizz",
+      "startDate": "2026-07-12T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Bright yuzu soda balanced with the gentle roasted notes of kuki-hojicha and refreshing fizz. Themed merch (tote bags and stickers) is available.",
+      "price": "$8.95",
+      "location": 41,
+      "tags": [
+        "Vegan-Friendly",
+        "Nut Free",
+        "Lactose Free",
+        "Gluten-Free"
+      ]
+    },
+    {
+      "id": 117,
+      "name": "Umaji Mura Floatie",
+      "startDate": "2026-07-12T08:00:00Z",
+      "endDate": "2026-08-03T08:00:00Z",
+      "description": "Smooth matcha and oatmilk topped with creamy yuzu soft serve for a balance of citrus tang and soft umami. Themed merch (tote bags and stickers) is available.",
+      "price": "$12.95",
+      "location": 41,
+      "tags": [
+        "Vegan-Friendly",
+        "Nut Free",
+        "Lactose Free",
+        "Gluten-Free"
+      ]
+    }
+  ]
+}

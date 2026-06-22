@@ -1,0 +1,22 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Waffle cone: tapered shape from under the scoops down to a rounded point -->
+  <path d="M408 600 L616 600 L546 858 C540 880 528 892 512 892 C496 892 484 880 478 858 Z" fill="white"/>
+  <!-- Waffle cross-hatch carved as negative (background-colored) thin lines over the cone -->
+  <!-- We keep cone solid white for a clean silhouette; texture omitted for boldness at small sizes -->
+
+  <!-- Lower scoop: large rounded mound resting on the cone rim -->
+  <circle cx="512" cy="500" r="148" fill="white"/>
+  <!-- Side bumps to give a soft melty look on the lower scoop -->
+  <circle cx="404" cy="556" r="58" fill="white"/>
+  <circle cx="620" cy="556" r="58" fill="white"/>
+
+  <!-- Upper scoop: smaller rounded mound -->
+  <circle cx="512" cy="338" r="118" fill="white"/>
+  <circle cx="430" cy="372" r="46" fill="white"/>
+  <circle cx="594" cy="372" r="46" fill="white"/>
+
+  <!-- Cherry on top -->
+  <circle cx="512" cy="196" r="46" fill="white"/>
+  <!-- Cherry stem -->
+  <path d="M512 158 C516 132 528 116 552 108 C560 105 566 110 564 118 C558 138 544 152 524 158 Z" fill="white"/>
+</svg>

@@ -1,0 +1,64 @@
+{
+  "expo": {
+    "name": "Vancouver Ice Cream Festival",
+    "slug": "ice-cream",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "ice-cream",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.brents.ice-cream",
+      "icon": "./assets/app.icon",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#ffffff",
+          "android": {
+            "image": "./assets/images/icon.png",
+            "imageWidth": 76
+          },
+          "dark": {
+            "backgroundColor": "#000000"
+          }
+        }
+      ],
+      [
+        "expo-maps",
+        {
+          "requestLocationPermission": true
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "This app uses your location to show nearby ice cream spots on the map."
+        }
+      ],
+      "expo-font",
+      "expo-web-browser",
+      "expo-image",
+      "expo-sqlite",
+      "expo-asset",
+      "@bacons/apple-colors"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    },
+    "extra": {
+      "router": {}
+    },
+    "android": {
+      "package": "com.brents.icecream"
+    }
+  }
+}
