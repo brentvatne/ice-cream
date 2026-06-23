@@ -9,7 +9,10 @@ import Animated, {
   useSharedValue,
 } from 'react-native-reanimated';
 
+import { useRef, useState } from 'react';
+
 import { treatImages } from '@/assets/treatImages';
+import { ImageLightbox, type Rect } from '@/components/ImageLightbox';
 import { useFavourites } from '@/context/FavouritesContext';
 import { FlavourList, LocationList } from '@/model';
 
@@ -26,9 +29,27 @@ export default function FlavourDetails() {
   const location = LocationList.find((item) => item.id === flavour?.location);
   const flavourId = Number(id);
   const image = treatImages[flavourId];
+  const heroSource = image ?? PLACEHOLDER_IMAGE;
+
+  const heroRef = useRef<View>(null);
+  const [viewer, setViewer] = useState<{ visible: boolean; origin: Rect | null }>({
+    visible: false,
+    origin: null,
+  });
 
   const heroHeight = Math.min(windowWidth, 300);
   const scrollY = useSharedValue(0);
+
+  const openViewer = () => {
+    heroRef.current?.measureInWindow((x, y, width, height) => {
+      // The Pressable has no transform, but the inner image is parallax-shifted
+      // by `heroStyle` once scrolled. Mirror that here so the lightbox starts
+      // from the image's actual on-screen position, not its layout box.
+      const s = scrollY.value;
+      const parallaxY = s >= 0 ? s * 0.5 : s;
+      setViewer({ visible: true, origin: { x, y: y + parallaxY, width, height } });
+    });
+  };
 
   const scrollHandler = useAnimatedScrollHandler((event) => {
     scrollY.value = event.contentOffset.y;
@@ -71,12 +92,14 @@ export default function FlavourDetails() {
         scrollEventThrottle={16}
         contentInsetAdjustmentBehavior="never"
         contentContainerStyle={styles.content}>
-        <AnimatedImage
-          source={image ?? PLACEHOLDER_IMAGE}
-          style={[{ width: windowWidth, height: heroHeight }, heroStyle]}
-          contentFit="cover"
-          transition={200}
-        />
+        <Pressable ref={heroRef} onPress={openViewer} accessibilityLabel="View full image">
+          <AnimatedImage
+            source={heroSource}
+            style={[{ width: windowWidth, height: heroHeight }, heroStyle]}
+            contentFit="cover"
+            transition={200}
+          />
+        </Pressable>
 
         <View style={styles.body}>
           {location ? (
@@ -124,6 +147,13 @@ export default function FlavourDetails() {
           <Text style={styles.description}>{flavour.description}</Text>
         </View>
       </Animated.ScrollView>
+
+      <ImageLightbox
+        visible={viewer.visible}
+        source={heroSource}
+        origin={viewer.origin}
+        onClose={() => setViewer({ visible: false, origin: null })}
+      />
     </>
   );
 }
