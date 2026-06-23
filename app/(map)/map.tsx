@@ -1,18 +1,25 @@
-import { BottomSheet, Column, FieldGroup, Host, Icon, Row, Spacer, Text } from '@expo/ui';
+import { BottomSheet, Button, Column, Host, Icon, Row, Spacer, Text } from '@expo/ui';
+import { systemGroupedBackground } from '@bacons/apple-colors';
 import * as Haptics from 'expo-haptics';
+import { Stack, useRouter } from 'expo-router';
 import { useState } from 'react';
-import { ActivityIndicator, Linking, StyleSheet, View } from 'react-native';
+import { ActivityIndicator, StyleSheet, View } from 'react-native';
 
-import FlavourGroup from '@/components/FlavourGroup';
 import { SECONDARY_ICON_COLOR } from '@/components/icons';
 import StoreMap from '@/components/StoreMap';
 import { useFavourites } from '@/context/FavouritesContext';
 import { type Flavour, FlavourList, LocationList, type Store } from '@/model';
 
-// iOS-only swift-ui escape hatch; tree-shaken on other platforms.
+// iOS-only swift-ui escape hatches; tree-shaken on other platforms.
 const BOTTOM_SHEET_MODIFIERS =
   process.env.EXPO_OS === 'ios'
     ? [require('@expo/ui/swift-ui/modifiers').presentationBackgroundInteraction('enabled')]
+    : [];
+
+// Fill the sheet height and pin content to the top (vs. SwiftUI centering it).
+const TOP_ALIGN_MODIFIERS =
+  process.env.EXPO_OS === 'ios'
+    ? [require('@expo/ui/swift-ui/modifiers').frame({ maxHeight: Infinity, alignment: 'top' })]
     : [];
 
 const XMARK_CIRCLE_FILLED = Icon.select({
@@ -111,6 +118,7 @@ const STORES: ExtendedStore[] = LocationList.flatMap((location) =>
 );
 
 export default function Tab() {
+  const router = useRouter();
   const [selectedStore, setSelectedStore] = useState<ExtendedStore | null | undefined>(null);
   const [isLoading, setIsLoading] = useState(false);
   const { favourites } = useFavourites();
@@ -144,8 +152,22 @@ export default function Tab() {
     };
   });
 
+  const openLocation = () => {
+    if (!selectedStore) return;
+    const locationId = selectedStore.locationId;
+    setSelectedStore(null);
+    router.navigate(`/locations/${locationId}`);
+  };
+
   return (
     <>
+      <Stack.Screen
+        options={{
+          title: 'Location Map',
+          headerLargeTitle: false,
+          headerStyle: { backgroundColor: systemGroupedBackground },
+        }}
+      />
       <StoreMap
         markers={markers}
         onMarkerClick={(id) => {
@@ -164,37 +186,36 @@ export default function Tab() {
         <BottomSheet
           isPresented={!!selectedStore}
           onDismiss={() => setSelectedStore(null)}
-          snapPoints={['half', 'full']}
+          snapPoints={[{ fraction: 0.32 }]}
           modifiers={BOTTOM_SHEET_MODIFIERS}>
-          <Column alignment="start" spacing={16}>
-            <Row>
+          {/* All @expo/ui (native SwiftUI) so taps work in the sheet. Keep it
+              minimal: name + address, then a native button out to the full
+              location detail page rather than duplicating its content here.
+              TOP_ALIGN_MODIFIERS pins the content to the top of the sheet. */}
+          <Column
+            alignment="start"
+            spacing={10}
+            style={{ padding: 20 }}
+            modifiers={TOP_ALIGN_MODIFIERS}>
+            <Row alignment="center">
+              <Text textStyle={{ fontSize: 22, fontWeight: '700' }}>
+                {selectedStore?.locationName ?? ''}
+              </Text>
               <Spacer />
               <Icon
                 name={XMARK_CIRCLE_FILLED}
+                size={26}
                 color={SECONDARY_ICON_COLOR}
-                size={28}
                 onPress={() => setSelectedStore(null)}
               />
             </Row>
-            <Column alignment="start" spacing={4}>
-              <Text textStyle={{ fontSize: 26, fontWeight: '600' }}>
-                {selectedStore?.locationName ?? ''}
-              </Text>
-              <Row
-                onPress={() =>
-                  Linking.openURL(
-                    `https://maps.apple.com/?ll=${selectedStore?.point[0]},${selectedStore?.point[1]}`
-                  )
-                }>
-                <Text textStyle={{ color: '#007AFF' }}>{selectedStore?.address ?? ''}</Text>
-              </Row>
-              <Text>{selectedStore?.hours ?? ''}</Text>
-            </Column>
-            <FieldGroup style={process.env.EXPO_OS === 'web' ? { width: '100%' } : undefined}>
-              {selectedStore?.locationFlavours.map((flavour) => (
-                <FlavourGroup key={flavour.id} flavour={flavour} />
-              ))}
-            </FieldGroup>
+            {selectedStore?.address ? (
+              <Text textStyle={{ fontSize: 15, color: 'gray' }}>{selectedStore.address}</Text>
+            ) : null}
+            {selectedStore?.hours ? (
+              <Text textStyle={{ fontSize: 15, color: 'gray' }}>{selectedStore.hours}</Text>
+            ) : null}
+            <Button variant="filled" onPress={openLocation} label="View Details" />
           </Column>
         </BottomSheet>
       </Host>

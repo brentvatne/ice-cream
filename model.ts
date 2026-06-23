@@ -1,5 +1,9 @@
-export { data as FlavourList } from './assets/FlavourList.json';
-export { data as LocationList } from './assets/LocationList.json';
+import { data as flavourData } from './assets/FlavourList.json';
+import { data as locationData } from './assets/LocationList.json';
+
+export const FlavourList: Flavour[] = flavourData;
+// JSON infers `point` as number[]; assert the [lat, lng] tuple shape.
+export const LocationList = locationData as unknown as Location[];
 
 export interface Flavour {
   id: number;
@@ -8,8 +12,17 @@ export interface Flavour {
   endDate: string;
   description: string;
   price?: string;
+  /** Number of passport stamps this item earns (e.g. 3). */
+  stamps?: number;
+  /** Filename (relative to assets/treat-images) of the downloaded item photo, if any. */
+  image?: string;
   location: number;
   tags: string[];
+}
+
+export interface Mission {
+  name: string;
+  description: string;
 }
 
 export interface Location {
@@ -19,6 +32,10 @@ export interface Location {
   instagram?: string;
   website?: string;
   logoUrl?: string;
+  /** Vendor-level neighborhood summary, e.g. "Kitsilano · Downtown". */
+  neighborhoods?: string;
+  /** Festival prize "missions" highlighted for this vendor. */
+  missions?: Mission[];
   stores: Store[];
 }
 

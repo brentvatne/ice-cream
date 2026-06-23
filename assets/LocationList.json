@@ -26,6 +26,25 @@
           ],
           "name": "Downtown"
         }
+      ],
+      "neighborhoods": "Kitsilano · Downtown",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "Oldie but Goodie",
+          "description": "Visit a festival vendor that has been around for over 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        },
+        {
+          "name": "Strawberry Lovers",
+          "description": "Order a strawberry festival item and post it tagging @nomsmag."
+        }
       ]
     },
     {
@@ -43,6 +62,25 @@
             -123.0315715
           ],
           "name": "River District"
+        }
+      ],
+      "neighborhoods": "River District",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "New Kid on the Block",
+          "description": "Try an item from a festival vendor that opened in the last 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        },
+        {
+          "name": "Mango Lovers",
+          "description": "Order a mango festival item and post it tagging @nomsmag."
         }
       ]
     },
@@ -71,6 +109,25 @@
           ],
           "name": "Fraserhood"
         }
+      ],
+      "neighborhoods": "Downtown · Fraserhood",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "Oldie but Goodie",
+          "description": "Visit a festival vendor that has been around for over 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        },
+        {
+          "name": "Matcha Crazy",
+          "description": "Order a matcha festival item and post it tagging @nomsmag."
+        }
       ]
     },
     {
@@ -89,6 +146,25 @@
           ],
           "name": "Dunbar"
         }
+      ],
+      "neighborhoods": "Dunbar",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "Oldie but Goodie",
+          "description": "Visit a festival vendor that has been around for over 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        },
+        {
+          "name": "Pistachio Lovers",
+          "description": "Order a pistachio festival item and post it tagging @nomsmag."
+        }
       ]
     },
     {
@@ -104,6 +180,21 @@
             -123.0821501
           ],
           "name": "Kingsway"
+        }
+      ],
+      "neighborhoods": "Kingsway",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "New Kid on the Block",
+          "description": "Try an item from a festival vendor that opened in the last 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
         }
       ]
     },
@@ -122,6 +213,21 @@
             -123.1088
           ],
           "name": "Gastown"
+        }
+      ],
+      "neighborhoods": "Gastown",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "New Kid on the Block",
+          "description": "Try an item from a festival vendor that opened in the last 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
         }
       ]
     },
@@ -150,6 +256,21 @@
           ],
           "name": "North Vancouver"
         }
+      ],
+      "neighborhoods": "Burnaby · North Vancouver",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "Oldie but Goodie",
+          "description": "Visit a festival vendor that has been around for over 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        }
       ]
     },
     {
@@ -167,6 +288,25 @@
             -123.109879
           ],
           "name": "Mount Pleasant"
+        }
+      ],
+      "neighborhoods": "Mount Pleasant",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "Oldie but Goodie",
+          "description": "Visit a festival vendor that has been around for over 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        },
+        {
+          "name": "Strawberry Lovers",
+          "description": "Order a strawberry festival item and post it tagging @nomsmag."
         }
       ]
     },
@@ -186,6 +326,21 @@
           ],
           "name": "Lougheed"
         }
+      ],
+      "neighborhoods": "Lougheed",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "New Kid on the Block",
+          "description": "Try an item from a festival vendor that opened in the last 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        }
       ]
     },
     {
@@ -204,6 +359,25 @@
           ],
           "name": "Commercial Drive"
         }
+      ],
+      "neighborhoods": "Commercial Drive",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "Oldie but Goodie",
+          "description": "Visit a festival vendor that has been around for over 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        },
+        {
+          "name": "Mango Lovers",
+          "description": "Order a mango festival item and post it tagging @nomsmag."
+        }
       ]
     },
     {
@@ -220,6 +394,25 @@
             -123.114353
           ],
           "name": "Richmond"
+        }
+      ],
+      "neighborhoods": "Richmond",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "New Kid on the Block",
+          "description": "Try an item from a festival vendor that opened in the last 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        },
+        {
+          "name": "Strawberry Lovers",
+          "description": "Order a strawberry festival item and post it tagging @nomsmag."
         }
       ]
     },
@@ -239,6 +432,29 @@
           ],
           "name": "Kitsilano"
         }
+      ],
+      "neighborhoods": "Kitsilano",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "Oldie but Goodie",
+          "description": "Visit a festival vendor that has been around for over 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        },
+        {
+          "name": "Matcha Crazy",
+          "description": "Order a matcha festival item and post it tagging @nomsmag."
+        },
+        {
+          "name": "Mango Lovers",
+          "description": "Order a mango festival item and post it tagging @nomsmag."
+        }
       ]
     },
     {
@@ -256,6 +472,21 @@
             -123.014588
           ],
           "name": "Burnaby Heights"
+        }
+      ],
+      "neighborhoods": "Burnaby Heights",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "Oldie but Goodie",
+          "description": "Visit a festival vendor that has been around for over 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
         }
       ]
     },
@@ -275,6 +506,21 @@
           ],
           "name": "Vancouver"
         }
+      ],
+      "neighborhoods": "Vancouver",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "Oldie but Goodie",
+          "description": "Visit a festival vendor that has been around for over 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        }
       ]
     },
     {
@@ -292,6 +538,21 @@
             -123.0030167
           ],
           "name": "Metrotown"
+        }
+      ],
+      "neighborhoods": "Metrotown",
+      "missions": [
+        {
+          "name": "New Kid on the Block",
+          "description": "Try an item from a festival vendor that opened in the last 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        },
+        {
+          "name": "Ice Cream Marathon",
+          "description": "Visit at least 3 different festival vendors in one day."
         }
       ]
     },
@@ -320,6 +581,21 @@
           ],
           "name": "Ooh La La Donuts (Kitsilano)"
         }
+      ],
+      "neighborhoods": "Kitsilano",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "New Kid on the Block",
+          "description": "Try an item from a festival vendor that opened in the last 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        }
       ]
     },
     {
@@ -338,6 +614,25 @@
           ],
           "name": "Mount Pleasant"
         }
+      ],
+      "neighborhoods": "Mount Pleasant",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "New Kid on the Block",
+          "description": "Try an item from a festival vendor that opened in the last 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        },
+        {
+          "name": "Pistachio Lovers",
+          "description": "Order a pistachio festival item and post it tagging @nomsmag."
+        }
       ]
     },
     {
@@ -355,6 +650,21 @@
             -123.1699374
           ],
           "name": "Kitsilano"
+        }
+      ],
+      "neighborhoods": "Kitsilano",
+      "missions": [
+        {
+          "name": "Oldie but Goodie",
+          "description": "Visit a festival vendor that has been around for over 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        },
+        {
+          "name": "Ice Cream Marathon",
+          "description": "Visit at least 3 different festival vendors in one day."
         }
       ]
     },
@@ -383,6 +693,21 @@
           ],
           "name": "Lonsdale Quay"
         }
+      ],
+      "neighborhoods": "Edgemont · Lonsdale Quay",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "Oldie but Goodie",
+          "description": "Visit a festival vendor that has been around for over 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        }
       ]
     },
     {
@@ -401,6 +726,29 @@
           ],
           "name": "Rupert"
         }
+      ],
+      "neighborhoods": "Rupert",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "New Kid on the Block",
+          "description": "Try an item from a festival vendor that opened in the last 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        },
+        {
+          "name": "Mango Lovers",
+          "description": "Order a mango festival item and post it tagging @nomsmag."
+        },
+        {
+          "name": "Strawberry Lovers",
+          "description": "Order a strawberry festival item and post it tagging @nomsmag."
+        }
       ]
     },
     {
@@ -418,6 +766,21 @@
             -123.1171773
           ],
           "name": "Downtown"
+        }
+      ],
+      "neighborhoods": "Downtown",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "New Kid on the Block",
+          "description": "Try an item from a festival vendor that opened in the last 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
         }
       ]
     },
@@ -455,6 +818,21 @@
           ],
           "name": "Richmond"
         }
+      ],
+      "neighborhoods": "Burnaby · Richmond · Vancouver",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "New Kid on the Block",
+          "description": "Try an item from a festival vendor that opened in the last 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        }
       ]
     },
     {
@@ -472,6 +850,25 @@
             -123.0445851
           ],
           "name": "Renfrew"
+        }
+      ],
+      "neighborhoods": "Renfrew",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "New Kid on the Block",
+          "description": "Try an item from a festival vendor that opened in the last 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        },
+        {
+          "name": "Pistachio Lovers",
+          "description": "Order a pistachio festival item and post it tagging @nomsmag."
         }
       ]
     },
@@ -491,6 +888,21 @@
           ],
           "name": "Richmond"
         }
+      ],
+      "neighborhoods": "Richmond",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "Oldie but Goodie",
+          "description": "Visit a festival vendor that has been around for over 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        }
       ]
     },
     {
@@ -509,6 +921,25 @@
           ],
           "name": "Metrotown"
         }
+      ],
+      "neighborhoods": "Metrotown",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "New Kid on the Block",
+          "description": "Try an item from a festival vendor that opened in the last 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        },
+        {
+          "name": "Matcha Crazy",
+          "description": "Order a matcha festival item and post it tagging @nomsmag."
+        }
       ]
     },
     {
@@ -526,6 +957,25 @@
             -123.1017059040741
           ],
           "name": "Little Mountain"
+        }
+      ],
+      "neighborhoods": "Little Mountain",
+      "missions": [
+        {
+          "name": "New Kid on the Block",
+          "description": "Try an item from a festival vendor that opened in the last 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        },
+        {
+          "name": "Ice Cream Marathon",
+          "description": "Visit at least 3 different festival vendors in one day."
+        },
+        {
+          "name": "Pistachio Lovers",
+          "description": "Order a pistachio festival item and post it tagging @nomsmag."
         }
       ]
     },
@@ -554,6 +1004,25 @@
           ],
           "name": "Yaletown"
         }
+      ],
+      "neighborhoods": "Robson · Yaletown",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "Oldie but Goodie",
+          "description": "Visit a festival vendor that has been around for over 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        },
+        {
+          "name": "Strawberry Lovers",
+          "description": "Order a strawberry festival item and post it tagging @nomsmag."
+        }
       ]
     },
     {
@@ -581,6 +1050,25 @@
           ],
           "name": "Downtown"
         }
+      ],
+      "neighborhoods": "Mount Pleasant · Downtown",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "Oldie but Goodie",
+          "description": "Visit a festival vendor that has been around for over 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        },
+        {
+          "name": "Matcha Crazy",
+          "description": "Order a matcha festival item and post it tagging @nomsmag."
+        }
       ]
     },
     {
@@ -599,6 +1087,25 @@
           ],
           "name": "Kitsilano"
         }
+      ],
+      "neighborhoods": "Kitsilano",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "Oldie but Goodie",
+          "description": "Visit a festival vendor that has been around for over 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        },
+        {
+          "name": "Pistachio Lovers",
+          "description": "Order a pistachio festival item and post it tagging @nomsmag."
+        }
       ]
     },
     {
@@ -616,6 +1123,25 @@
             -123.0581217
           ],
           "name": "Hastings-Sunrise"
+        }
+      ],
+      "neighborhoods": "Hastings-Sunrise",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "New Kid on the Block",
+          "description": "Try an item from a festival vendor that opened in the last 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        },
+        {
+          "name": "Matcha Crazy",
+          "description": "Order a matcha festival item and post it tagging @nomsmag."
         }
       ]
     },
@@ -653,6 +1179,21 @@
           ],
           "name": "Richmond (Festival second half target)"
         }
+      ],
+      "neighborhoods": "Vancouver · Burnaby · Richmond",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "Oldie but Goodie",
+          "description": "Visit a festival vendor that has been around for over 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        }
       ]
     },
     {
@@ -669,6 +1210,21 @@
             -122.9884416
           ],
           "name": "Royal Oak"
+        }
+      ],
+      "neighborhoods": "Royal Oak",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "New Kid on the Block",
+          "description": "Try an item from a festival vendor that opened in the last 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
         }
       ]
     },
@@ -688,6 +1244,21 @@
           ],
           "name": "Steveston"
         }
+      ],
+      "neighborhoods": "Steveston",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "Oldie but Goodie",
+          "description": "Visit a festival vendor that has been around for over 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        }
       ]
     },
     {
@@ -705,6 +1276,25 @@
             -123.129
           ],
           "name": "West End"
+        }
+      ],
+      "neighborhoods": "West End",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "New Kid on the Block",
+          "description": "Try an item from a festival vendor that opened in the last 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        },
+        {
+          "name": "Strawberry Lovers",
+          "description": "Order a strawberry festival item and post it tagging @nomsmag."
         }
       ]
     },
@@ -724,6 +1314,25 @@
           ],
           "name": "Downtown"
         }
+      ],
+      "neighborhoods": "Downtown",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "Oldie but Goodie",
+          "description": "Visit a festival vendor that has been around for over 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        },
+        {
+          "name": "Strawberry Lovers",
+          "description": "Order a strawberry festival item and post it tagging @nomsmag."
+        }
       ]
     },
     {
@@ -741,6 +1350,21 @@
             -123.0684
           ],
           "name": "Commercial Drive"
+        }
+      ],
+      "neighborhoods": "Commercial Drive",
+      "missions": [
+        {
+          "name": "Oldie but Goodie",
+          "description": "Visit a festival vendor that has been around for over 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        },
+        {
+          "name": "Ice Cream Marathon",
+          "description": "Visit at least 3 different festival vendors in one day."
         }
       ]
     },
@@ -769,6 +1393,21 @@
           ],
           "name": "Coquitlam"
         }
+      ],
+      "neighborhoods": "Richmond · Coquitlam",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "Oldie but Goodie",
+          "description": "Visit a festival vendor that has been around for over 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        }
       ]
     },
     {
@@ -786,6 +1425,25 @@
             -123.1539631
           ],
           "name": "Kitsilano"
+        }
+      ],
+      "neighborhoods": "Kitsilano",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "New Kid on the Block",
+          "description": "Try an item from a festival vendor that opened in the last 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        },
+        {
+          "name": "Strawberry Lovers",
+          "description": "Order a strawberry festival item and post it tagging @nomsmag."
         }
       ]
     },
@@ -823,6 +1481,25 @@
           ],
           "name": "Junction Public Market Pop Up"
         }
+      ],
+      "neighborhoods": "Kitsilano · False Creek · Pop Up",
+      "missions": [
+        {
+          "name": "BC Dairy Discovery Trail",
+          "description": "Order any festival item made with dairy and snap a photo at the vendor."
+        },
+        {
+          "name": "Oldie but Goodie",
+          "description": "Visit a festival vendor that has been around for over 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        },
+        {
+          "name": "Pistachio Lovers",
+          "description": "Order a pistachio festival item and post it tagging @nomsmag."
+        }
       ]
     },
     {
@@ -841,6 +1518,25 @@
           ],
           "name": "Chinatown"
         }
+      ],
+      "neighborhoods": "Chinatown",
+      "missions": [
+        {
+          "name": "Oldie but Goodie",
+          "description": "Visit a festival vendor that has been around for over 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        },
+        {
+          "name": "Ice Cream Marathon",
+          "description": "Visit at least 3 different festival vendors in one day."
+        },
+        {
+          "name": "Strawberry Lovers",
+          "description": "Order a strawberry festival item and post it tagging @nomsmag."
+        }
       ]
     },
     {
@@ -858,6 +1554,25 @@
             -123.100276
           ],
           "name": "Mount Pleasant"
+        }
+      ],
+      "neighborhoods": "Mount Pleasant",
+      "missions": [
+        {
+          "name": "Oldie but Goodie",
+          "description": "Visit a festival vendor that has been around for over 5 years."
+        },
+        {
+          "name": "Summer Fashion",
+          "description": "Coordinate an outfit matching a festival item and pose with it."
+        },
+        {
+          "name": "Ice Cream Marathon",
+          "description": "Visit at least 3 different festival vendors in one day."
+        },
+        {
+          "name": "Matcha Crazy",
+          "description": "Order a matcha festival item and post it tagging @nomsmag."
         }
       ]
     }

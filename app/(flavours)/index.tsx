@@ -1,30 +1,50 @@
-import { Host, Icon, List, ListItem, Row, Text } from '@expo/ui';
+import { systemGroupedBackground } from '@bacons/apple-colors';
+import * as Location from 'expo-location';
 import { Stack, useRouter } from 'expo-router';
-import { useMemo, useState } from 'react';
-import { useColorScheme } from 'react-native';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import { FlatList, StyleSheet, useColorScheme } from 'react-native';
 
+import { TreatRow, TreatRowSeparator } from '@/components/TreatRow';
 import {
-  SECONDARY_ICON_COLOR,
   TOOLBAR_FILTER_ACTIVE_ICON,
   TOOLBAR_FILTER_INACTIVE_ICON,
+  TOOLBAR_SORT_ICON,
 } from '@/components/icons';
 import { useFavourites } from '@/context/FavouritesContext';
 import { FlavourList, LocationList } from '@/model';
 
-const CHEVRON = Icon.select({
-  ios: 'chevron.right',
-  android: require('@expo/material-symbols/chevron_right.xml'),
-});
+const DEFAULT_LOCATION = {
+  latitude: 49.282729,
+  longitude: -123.120735,
+};
+
+const SORT_OPTIONS = ['Distance', 'Featured'] as const;
+
+function getDistanceKm(
+  from: { latitude: number; longitude: number },
+  to: { latitude: number; longitude: number }
+): number {
+  const R = 6371; // Earth's radius in kilometers
+  const lat1 = (from.latitude * Math.PI) / 180;
+  const lat2 = (to.latitude * Math.PI) / 180;
+  const deltaLat = ((to.latitude - from.latitude) * Math.PI) / 180;
+  const deltaLon = ((to.longitude - from.longitude) * Math.PI) / 180;
+
+  const a =
+    Math.sin(deltaLat / 2) * Math.sin(deltaLat / 2) +
+    Math.cos(lat1) * Math.cos(lat2) * Math.sin(deltaLon / 2) * Math.sin(deltaLon / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return R * c;
+}
 
 interface Filters {
   showFavouritesOnly: boolean;
   showCurrentOnly: boolean;
   showOpenNowOnly: boolean;
   showVeganOnly: boolean;
-  showDairyFreeOnly: boolean;
+  showLactoseFreeOnly: boolean;
   showGlutenFreeOnly: boolean;
   showNutFreeOnly: boolean;
-  showAlcoholFreeOnly: boolean;
 }
 
 const defaultFilters: Filters = {
@@ -32,10 +52,9 @@ const defaultFilters: Filters = {
   showCurrentOnly: false,
   showOpenNowOnly: false,
   showVeganOnly: false,
-  showDairyFreeOnly: false,
+  showLactoseFreeOnly: false,
   showGlutenFreeOnly: false,
   showNutFreeOnly: false,
-  showAlcoholFreeOnly: false,
 };
 
 function isCurrentlyAvailable(startDate: string, endDate: string): boolean {
@@ -117,6 +136,30 @@ export default function Index() {
   const { favourites } = useFavourites();
   const [searchText, setSearchText] = useState('');
   const [filters, setFilters] = useState<Filters>(defaultFilters);
+  const [sortBy, setSortBy] = useState<(typeof SORT_OPTIONS)[number]>('Distance');
+  const [userLocation, setUserLocation] = useState<{ latitude: number; longitude: number }>(
+    DEFAULT_LOCATION
+  );
+
+  const updateLocation = useCallback(async () => {
+    try {
+      const { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        return;
+      }
+      const location = await Location.getCurrentPositionAsync({});
+      setUserLocation({
+        latitude: location.coords.latitude,
+        longitude: location.coords.longitude,
+      });
+    } catch (error) {
+      console.warn('Failed to get current location, falling back to default:', error);
+    }
+  }, []);
+
+  useEffect(() => {
+    updateLocation();
+  }, [updateLocation]);
 
   const toggleFilter = (key: keyof Filters) => {
     setFilters((prev) => ({ ...prev, [key]: !prev[key] }));
@@ -152,23 +195,39 @@ export default function Index() {
       });
     }
     if (filters.showVeganOnly) {
-      result = result.filter((item) => item.tags.includes('Vegan'));
+      result = result.filter((item) => item.tags.includes('Vegan-Friendly'));
     }
-    if (filters.showDairyFreeOnly) {
-      result = result.filter((item) => item.tags.includes('Dairy-free'));
+    if (filters.showLactoseFreeOnly) {
+      result = result.filter((item) => item.tags.includes('Lactose Free'));
     }
     if (filters.showGlutenFreeOnly) {
-      result = result.filter((item) => item.tags.includes('Gluten-free'));
+      result = result.filter((item) => item.tags.includes('Gluten-Free'));
     }
     if (filters.showNutFreeOnly) {
-      result = result.filter((item) => !item.tags.includes('Nuts'));
+      result = result.filter((item) => item.tags.includes('Nut Free'));
     }
-    if (filters.showAlcoholFreeOnly) {
-      result = result.filter((item) => !item.tags.includes('Alcoholic'));
+
+    // Sort
+    if (sortBy === 'Distance') {
+      const distanceFor = (flavourLocationId: number): number => {
+        const location = LocationList.find((l) => l.id === flavourLocationId);
+        if (!location || location.stores.length === 0) {
+          return Number.POSITIVE_INFINITY;
+        }
+        return Math.min(
+          ...location.stores.map((store) =>
+            getDistanceKm(userLocation, {
+              latitude: store.point[0],
+              longitude: store.point[1],
+            })
+          )
+        );
+      };
+      result.sort((a, b) => distanceFor(a.location) - distanceFor(b.location));
     }
 
     return result;
-  }, [searchText, filters, favourites]);
+  }, [searchText, filters, favourites, sortBy, userLocation]);
 
   return (
     <>
@@ -184,6 +243,16 @@ export default function Index() {
         }}
       />
       <Stack.Toolbar placement="right">
+        <Stack.Toolbar.Menu icon={TOOLBAR_SORT_ICON} tintColor="#007AFF" separateBackground>
+          {SORT_OPTIONS.map((option) => (
+            <Stack.Toolbar.MenuAction
+              key={option}
+              isOn={sortBy === option}
+              onPress={() => setSortBy(option)}>
+              {option}
+            </Stack.Toolbar.MenuAction>
+          ))}
+        </Stack.Toolbar.Menu>
         <Stack.Toolbar.Menu
           tintColor="#007AFF"
           separateBackground
@@ -206,12 +275,12 @@ export default function Index() {
           <Stack.Toolbar.MenuAction
             isOn={filters.showVeganOnly}
             onPress={() => toggleFilter('showVeganOnly')}>
-            Show Vegan Only
+            Show Vegan-Friendly Only
           </Stack.Toolbar.MenuAction>
           <Stack.Toolbar.MenuAction
-            isOn={filters.showDairyFreeOnly}
-            onPress={() => toggleFilter('showDairyFreeOnly')}>
-            Show Dairy Free Only
+            isOn={filters.showLactoseFreeOnly}
+            onPress={() => toggleFilter('showLactoseFreeOnly')}>
+            Show Lactose Free Only
           </Stack.Toolbar.MenuAction>
           <Stack.Toolbar.MenuAction
             isOn={filters.showGlutenFreeOnly}
@@ -223,11 +292,6 @@ export default function Index() {
             onPress={() => toggleFilter('showNutFreeOnly')}>
             Show Nut Free Only
           </Stack.Toolbar.MenuAction>
-          <Stack.Toolbar.MenuAction
-            isOn={filters.showAlcoholFreeOnly}
-            onPress={() => toggleFilter('showAlcoholFreeOnly')}>
-            Show Alcohol Free Only
-          </Stack.Toolbar.MenuAction>
           {activeFilterCount > 0 && (
             <Stack.Toolbar.MenuAction destructive onPress={() => setFilters(defaultFilters)}>
               Clear All Filters
@@ -235,22 +299,31 @@ export default function Index() {
           )}
         </Stack.Toolbar.Menu>
       </Stack.Toolbar>
-      <Host style={{ flex: 1 }} colorScheme={colorScheme === 'dark' ? 'dark' : 'light'}>
-        <List>
-          {filteredFlavours.map((item) => (
-            <ListItem
-              key={item.id}
-              onPress={() => router.push(`/flavours/${item.id}`)}
-              supportingText={item.tags.length > 0 ? item.tags.join(', ') : undefined}
-              trailing={<Icon name={CHEVRON} size={14} color={SECONDARY_ICON_COLOR} />}>
-              <Row spacing={0}>
-                <Text textStyle={{ color: 'gray' }}>{`#${item.id}: `}</Text>
-                <Text>{item.name}</Text>
-              </Row>
-            </ListItem>
-          ))}
-        </List>
-      </Host>
+      {/* React Native FlatList rather than @expo/ui List: the thumbnail must be
+          sized exactly with a tight gap, and an RN view inside a SwiftUI List
+          slot gets a SwiftUI-controlled frame that ignores its width. */}
+      <FlatList
+        style={styles.list}
+        contentInsetAdjustmentBehavior="automatic"
+        contentContainerStyle={styles.listContent}
+        data={filteredFlavours}
+        keyExtractor={(item) => String(item.id)}
+        ItemSeparatorComponent={TreatRowSeparator}
+        renderItem={({ item, index }) => (
+          <TreatRow
+            flavour={item}
+            showVendor
+            first={index === 0}
+            last={index === filteredFlavours.length - 1}
+            onPress={() => router.push(`/flavours/${item.id}`)}
+          />
+        )}
+      />
     </>
   );
 }
+
+const styles = StyleSheet.create({
+  list: { flex: 1, backgroundColor: systemGroupedBackground },
+  listContent: { paddingHorizontal: 16, paddingBottom: 24 },
+});

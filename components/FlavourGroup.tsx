@@ -53,9 +53,16 @@ export default function FlavourGroup({ flavour }: { flavour: Flavour }) {
           />
         </Row>
         <Text textStyle={{ fontSize: 15, color: 'gray' }}>{date}</Text>
-        {flavour.price ? (
-          <Text textStyle={{ fontSize: 15, color: 'gray' }}>{flavour.price}</Text>
-        ) : null}
+        <Row spacing={10} alignment="center">
+          {flavour.price ? (
+            <Text textStyle={{ fontSize: 15, color: 'gray' }}>{flavour.price}</Text>
+          ) : null}
+          {flavour.stamps ? (
+            <Text textStyle={{ fontSize: 15, color: 'gray' }}>
+              {`🎟 ${flavour.stamps} stamp${flavour.stamps === 1 ? '' : 's'}`}
+            </Text>
+          ) : null}
+        </Row>
         {flavour.description ? (
           <Text textStyle={{ fontSize: 15 }}>{flavour.description}</Text>
         ) : null}

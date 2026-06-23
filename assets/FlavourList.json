@@ -9,7 +9,9 @@
       "description": "Brown butter waffle base, honeycomb and milk chocolate semifreddo finished with milk chocolate glaze.",
       "price": "$12.00",
       "location": 1,
-      "tags": []
+      "tags": [],
+      "stamps": 3,
+      "image": "1.jpg"
     },
     {
       "id": 2,
@@ -19,7 +21,9 @@
       "description": "Strawberry compote, basil and vanilla ice cream with Biscoff cookie base.",
       "price": "$12.00",
       "location": 1,
-      "tags": []
+      "tags": [],
+      "stamps": 3,
+      "image": "2.jpg"
     },
     {
       "id": 3,
@@ -31,7 +35,9 @@
       "location": 2,
       "tags": [
         "Nut Free"
-      ]
+      ],
+      "stamps": 2,
+      "image": "3.jpg"
     },
     {
       "id": 4,
@@ -43,7 +49,9 @@
       "location": 2,
       "tags": [
         "Nut Free"
-      ]
+      ],
+      "stamps": 2,
+      "image": "4.jpg"
     },
     {
       "id": 5,
@@ -56,7 +64,9 @@
       "tags": [
         "Vegan-Friendly",
         "Nut Free"
-      ]
+      ],
+      "stamps": 2,
+      "image": "5.jpg"
     },
     {
       "id": 6,
@@ -68,7 +78,9 @@
       "location": 2,
       "tags": [
         "Nut Free"
-      ]
+      ],
+      "stamps": 2,
+      "image": "6.jpg"
     },
     {
       "id": 7,
@@ -81,7 +93,9 @@
       "tags": [
         "Nut Free",
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 2,
+      "image": "7.jpg"
     },
     {
       "id": 8,
@@ -91,7 +105,9 @@
       "description": "Buttery flaky croissant filled with creamy Vietnamese-style kem chuoi: cold, coconutty, slightly chewy, with roasted peanuts and tropical flavour, finished with a signature chocolate drizzle. Three variants: classic Kem Chuoi, Coco-Ube, and Matcha. Limited quantities daily.",
       "price": "$8.75",
       "location": 3,
-      "tags": []
+      "tags": [],
+      "stamps": 2,
+      "image": "8.jpg"
     },
     {
       "id": 9,
@@ -104,7 +120,9 @@
       "tags": [
         "Nut Free",
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 3,
+      "image": "9.jpg"
     },
     {
       "id": 10,
@@ -114,7 +132,9 @@
       "description": "A unique spin on our daily \"cake by the slice\" using sugar cones with berry-infused soft serve instead of buttercream. Choose either buttercream or housemade soft serve per slice.",
       "price": "$12.50",
       "location": 4,
-      "tags": []
+      "tags": [],
+      "stamps": 3,
+      "image": "10.jpg"
     },
     {
       "id": 11,
@@ -124,7 +144,9 @@
       "description": "A Butter Baked Alaska with lemon infusion layered over sponge cake, enveloped in a silky toasted meringue.",
       "price": "$10.50",
       "location": 4,
-      "tags": []
+      "tags": [],
+      "stamps": 2,
+      "image": "11.jpg"
     },
     {
       "id": 12,
@@ -134,7 +156,9 @@
       "description": "Classic coconut milk chè with red tapioca, grass jelly, and fragrant pandan jelly.",
       "price": "$9 (regular) / $11 (large)",
       "location": 5,
-      "tags": []
+      "tags": [],
+      "stamps": 2,
+      "image": "12.jpg"
     },
     {
       "id": 13,
@@ -144,7 +168,9 @@
       "description": "Creamy three-colour chè layered with red beans, mung beans, taro, pandan jelly, coconut jelly, and coconut milk.",
       "price": "$9 (regular) / $11 (large)",
       "location": 5,
-      "tags": []
+      "tags": [],
+      "stamps": 2,
+      "image": "13.jpg"
     },
     {
       "id": 14,
@@ -154,7 +180,9 @@
       "description": "A Vietnamese inspired yogurt with sweet mango toppings and boba.",
       "price": "$9.50 (regular) / $11 (large)",
       "location": 5,
-      "tags": []
+      "tags": [],
+      "stamps": 2,
+      "image": "14.jpg"
     },
     {
       "id": 15,
@@ -164,7 +192,9 @@
       "description": "Waffle with ultra chewy, mochi-like centers and a light, crispy crust.",
       "price": "$6.50",
       "location": 5,
-      "tags": []
+      "tags": [],
+      "stamps": 1,
+      "image": "15.jpg"
     },
     {
       "id": 16,
@@ -174,7 +204,8 @@
       "description": "Gummylicious flavoured white chocolate dipped cone with red chocolate drizzle, multicoloured candies and gummy bears.",
       "price": "Various",
       "location": 6,
-      "tags": []
+      "tags": [],
+      "image": "16.jpg"
     },
     {
       "id": 17,
@@ -194,7 +225,9 @@
       "description": "Peanut butter gelato, #MafiaMade peanut butter cup chunks, and an organic raspberry variegato ripple, all wrapped up in a toasted Dolce Amore brioche bun.",
       "price": "$11.00",
       "location": 7,
-      "tags": []
+      "tags": [],
+      "stamps": 2,
+      "image": "18.jpg"
     },
     {
       "id": 19,
@@ -206,7 +239,9 @@
       "location": 8,
       "tags": [
         "Nut Free"
-      ]
+      ],
+      "stamps": 2,
+      "image": "19.jpg"
     },
     {
       "id": 20,
@@ -220,7 +255,9 @@
         "Vegan-Friendly",
         "Nut Free",
         "Lactose Free"
-      ]
+      ],
+      "stamps": 2,
+      "image": "20.jpg"
     },
     {
       "id": 21,
@@ -232,7 +269,9 @@
       "location": 8,
       "tags": [
         "Nut Free"
-      ]
+      ],
+      "stamps": 2,
+      "image": "21.jpg"
     },
     {
       "id": 22,
@@ -246,7 +285,9 @@
         "Vegan-Friendly",
         "Nut Free",
         "Lactose Free"
-      ]
+      ],
+      "stamps": 2,
+      "image": "22.jpg"
     },
     {
       "id": 23,
@@ -259,7 +300,9 @@
       "tags": [
         "Nut Free",
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 3,
+      "image": "23.jpg"
     },
     {
       "id": 24,
@@ -272,7 +315,9 @@
       "tags": [
         "Gluten-Free",
         "Nut Free"
-      ]
+      ],
+      "stamps": 3,
+      "image": "24.jpg"
     },
     {
       "id": 25,
@@ -287,7 +332,9 @@
         "Nut Free",
         "Lactose Free",
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 3,
+      "image": "25.jpg"
     },
     {
       "id": 26,
@@ -302,7 +349,8 @@
         "Nut Free",
         "Lactose Free",
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 3
     },
     {
       "id": 27,
@@ -317,7 +365,9 @@
         "Nut Free",
         "Lactose Free",
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 2,
+      "image": "27.jpg"
     },
     {
       "id": 28,
@@ -332,7 +382,9 @@
         "Nut Free",
         "Lactose Free",
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 2,
+      "image": "28.jpg"
     },
     {
       "id": 29,
@@ -342,7 +394,9 @@
       "description": "Fresh peach with peach ice sorbet and puree.",
       "price": "$12.50",
       "location": 11,
-      "tags": []
+      "tags": [],
+      "stamps": 3,
+      "image": "29.jpg"
     },
     {
       "id": 30,
@@ -352,7 +406,9 @@
       "description": "Korean ice cream flavour DaeJibar (piggy bar). Chocolate crumble with strawberry jam ice cream flavour with mochi brownie on top.",
       "price": "$12.50",
       "location": 11,
-      "tags": []
+      "tags": [],
+      "stamps": 3,
+      "image": "30.jpg"
     },
     {
       "id": 31,
@@ -362,7 +418,9 @@
       "description": "Croffle topped with soybean powder, red bean and mochi.",
       "price": "$8.50",
       "location": 11,
-      "tags": []
+      "tags": [],
+      "stamps": 2,
+      "image": "31.jpg"
     },
     {
       "id": 32,
@@ -374,7 +432,9 @@
       "location": 12,
       "tags": [
         "Nut Free"
-      ]
+      ],
+      "stamps": 4,
+      "image": "32.jpg"
     },
     {
       "id": 33,
@@ -386,7 +446,9 @@
       "location": 12,
       "tags": [
         "Nut Free"
-      ]
+      ],
+      "stamps": 4,
+      "image": "33.jpg"
     },
     {
       "id": 34,
@@ -398,7 +460,9 @@
       "location": 13,
       "tags": [
         "Nut Free"
-      ]
+      ],
+      "stamps": 2,
+      "image": "34.jpg"
     },
     {
       "id": 35,
@@ -410,7 +474,9 @@
       "location": 13,
       "tags": [
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 2,
+      "image": "35.jpg"
     },
     {
       "id": 36,
@@ -422,7 +488,9 @@
       "location": 13,
       "tags": [
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 2,
+      "image": "36.jpg"
     },
     {
       "id": 37,
@@ -432,7 +500,9 @@
       "description": "Chocolate ice cream, hot fudge, chocolate cookie crumb, and magic shell. Topped with chocolate whipped cream and jimmies.",
       "price": "$9.00",
       "location": 13,
-      "tags": []
+      "tags": [],
+      "stamps": 2,
+      "image": "37.jpg"
     },
     {
       "id": 38,
@@ -442,7 +512,9 @@
       "description": "Premium HK-style milk tea gelato served inside Ho Yuen's signature pineapple bun.",
       "price": "$9.75",
       "location": 14,
-      "tags": []
+      "tags": [],
+      "stamps": 2,
+      "image": "38.jpg"
     },
     {
       "id": 39,
@@ -452,7 +524,9 @@
       "description": "Vanilla gelato and caramel syrup served inside Ho Yuen's chocolate pineapple bun.",
       "price": "$11.75",
       "location": 14,
-      "tags": []
+      "tags": [],
+      "stamps": 2,
+      "image": "39.jpg"
     },
     {
       "id": 40,
@@ -462,7 +536,9 @@
       "description": "Smooth egg pudding served inside Ho Yuen's pineapple bun.",
       "price": "$10.75",
       "location": 14,
-      "tags": []
+      "tags": [],
+      "stamps": 2,
+      "image": "40.jpg"
     },
     {
       "id": 41,
@@ -472,7 +548,9 @@
       "description": "Refreshing pineapple sorbetto served inside Ho Yuen's pineapple bun.",
       "price": "$10.75",
       "location": 14,
-      "tags": []
+      "tags": [],
+      "stamps": 2,
+      "image": "41.jpg"
     },
     {
       "id": 42,
@@ -486,7 +564,9 @@
         "Vegan-Friendly",
         "Lactose Free",
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 2,
+      "image": "42.jpg"
     },
     {
       "id": 43,
@@ -498,7 +578,9 @@
       "location": 15,
       "tags": [
         "Lactose Free"
-      ]
+      ],
+      "stamps": 2,
+      "image": "43.jpg"
     },
     {
       "id": 44,
@@ -510,7 +592,9 @@
       "location": 16,
       "tags": [
         "Nut Free"
-      ]
+      ],
+      "stamps": 2,
+      "image": "44.jpg"
     },
     {
       "id": 45,
@@ -522,7 +606,9 @@
       "location": 16,
       "tags": [
         "Nut Free"
-      ]
+      ],
+      "stamps": 2,
+      "image": "45.jpg"
     },
     {
       "id": 46,
@@ -532,7 +618,9 @@
       "description": "Crispy fluffy pastry base filled with pistachio paste and crunchy kataifi, topped with a scoop of house-made vanilla ice cream and finished with warm chocolate sauce.",
       "price": "$10.75",
       "location": 17,
-      "tags": []
+      "tags": [],
+      "stamps": 2,
+      "image": "46.jpg"
     },
     {
       "id": 47,
@@ -542,7 +630,9 @@
       "description": "Crispy fluffy pastry layered with pistachio paste and toasted kataifi, topped with a scoop of pistachio ice cream and drizzled with chocolate sauce.",
       "price": "$10.75",
       "location": 17,
-      "tags": []
+      "tags": [],
+      "stamps": 2,
+      "image": "47.jpg"
     },
     {
       "id": 48,
@@ -557,7 +647,9 @@
         "Sugar Free",
         "Nut Free",
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 3,
+      "image": "48.jpg"
     },
     {
       "id": 49,
@@ -572,7 +664,9 @@
         "Nut Free",
         "Lactose Free",
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 3,
+      "image": "49.jpg"
     },
     {
       "id": 50,
@@ -585,7 +679,9 @@
       "tags": [
         "Nut Free",
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 3,
+      "image": "50.jpg"
     },
     {
       "id": 51,
@@ -595,7 +691,9 @@
       "description": "Raspberry frozen yogurt, chocolate frozen yogurt, kanafeh, strawberries, pistachios, chocolate shavings, and chocolate sauce.",
       "price": "$11.00",
       "location": 19,
-      "tags": []
+      "tags": [],
+      "stamps": 2,
+      "image": "51.jpg"
     },
     {
       "id": 52,
@@ -605,7 +703,9 @@
       "description": "Tiramisu cake, vanilla frozen yogurt, Nespresso powder, chocolate shavings, and chocolate sauce.",
       "price": "$12.00",
       "location": 19,
-      "tags": []
+      "tags": [],
+      "stamps": 3,
+      "image": "52.jpg"
     },
     {
       "id": 53,
@@ -618,7 +718,9 @@
       "tags": [
         "Nut Free",
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 3,
+      "image": "53.jpg"
     },
     {
       "id": 54,
@@ -630,7 +732,9 @@
       "location": 20,
       "tags": [
         "Nut Free"
-      ]
+      ],
+      "stamps": 3,
+      "image": "54.jpg"
     },
     {
       "id": 55,
@@ -643,7 +747,9 @@
       "tags": [
         "Nut Free",
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 2,
+      "image": "55.jpg"
     },
     {
       "id": 56,
@@ -653,7 +759,9 @@
       "description": "A waffle bowl filled with our signature ashta and Lotus Biscoff ice cream, topped with whipped cream, crushed pistachios, and a rich maple syrup drizzle.",
       "price": "$12.99",
       "location": 21,
-      "tags": []
+      "tags": [],
+      "stamps": 3,
+      "image": "56.jpg"
     },
     {
       "id": 57,
@@ -668,7 +776,9 @@
         "Nut Free",
         "Lactose Free",
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 2,
+      "image": "57.jpg"
     },
     {
       "id": 58,
@@ -678,7 +788,9 @@
       "description": "A nest of crispy knefeh pastry filled with Ashta ice cream, sweet syrup and cotton candy.",
       "price": "$7.99",
       "location": 21,
-      "tags": []
+      "tags": [],
+      "stamps": 1,
+      "image": "58.jpg"
     },
     {
       "id": 59,
@@ -690,7 +802,9 @@
       "location": 22,
       "tags": [
         "Nut Free"
-      ]
+      ],
+      "stamps": 2,
+      "image": "59.jpg"
     },
     {
       "id": 60,
@@ -705,7 +819,9 @@
         "Vegan-Friendly",
         "Lactose Free",
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 2,
+      "image": "60.jpg"
     },
     {
       "id": 61,
@@ -717,7 +833,9 @@
       "location": 22,
       "tags": [
         "Nut Free"
-      ]
+      ],
+      "stamps": 2,
+      "image": "61.jpg"
     },
     {
       "id": 62,
@@ -727,7 +845,8 @@
       "description": "DOP pistachio paste from Sicily wrapped in crispy pistachio kataifi, coated in a chewy chocolate shell and dusted with cocoa powder. Nutty, chocolatey, crunchy, chewy.",
       "price": "$9.99",
       "location": 23,
-      "tags": []
+      "tags": [],
+      "stamps": 2
     },
     {
       "id": 63,
@@ -737,7 +856,9 @@
       "description": "DOP pistachio gelato folded with crushed pistachio nuts and topped with whipped cream. For the pistachio devoted.",
       "price": "$8.99",
       "location": 23,
-      "tags": []
+      "tags": [],
+      "stamps": 2,
+      "image": "63.jpg"
     },
     {
       "id": 64,
@@ -747,7 +868,9 @@
       "description": "Ultra-rich chocolate hazelnut gelato over crisp wafer shards and premium roasted hazelnuts. Ferrero Rocher reimagined in scoop form.",
       "price": "$6.99",
       "location": 23,
-      "tags": []
+      "tags": [],
+      "stamps": 1,
+      "image": "64.jpg"
     },
     {
       "id": 65,
@@ -759,7 +882,9 @@
       "location": 23,
       "tags": [
         "Nut Free"
-      ]
+      ],
+      "stamps": 1,
+      "image": "65.jpg"
     },
     {
       "id": 66,
@@ -769,7 +894,9 @@
       "description": "A cool twist on the Filipino classic. Creamy matcha ice cream, red bean, coconut jelly, tapioca pearls, ube, caramel flan, and crunchy cornflakes. Sweet, chewy, refreshing.",
       "price": "$15.45",
       "location": 24,
-      "tags": []
+      "tags": [],
+      "stamps": 3,
+      "image": "66.jpg"
     },
     {
       "id": 67,
@@ -779,7 +906,8 @@
       "description": "Layers of fluffy matcha sponge cake, sweet-tart pineapple compote, crunchy crumble, chewy warabi mochi, and a matcha-pineapple soft serve swirl. Finished with fresh pineapple and a dusting of premium matcha.",
       "price": "$15.45",
       "location": 24,
-      "tags": []
+      "tags": [],
+      "stamps": 3
     },
     {
       "id": 68,
@@ -789,7 +917,9 @@
       "description": "First-harvest matcha by Yamamasa Koyamaen slushie with oat milk base and topped with a creamy rich matcha ice cream from Ice Keem.",
       "price": "$12.75",
       "location": 25,
-      "tags": []
+      "tags": [],
+      "stamps": 3,
+      "image": "68.jpg"
     },
     {
       "id": 69,
@@ -799,7 +929,9 @@
       "description": "Matcha slushie with a twist. Made with house-made pineapple puree, first-harvest matcha by Yamamasa Koyamaen, and topped with a rich creamy coconut ice cream from Ice Keem.",
       "price": "$13.50",
       "location": 25,
-      "tags": []
+      "tags": [],
+      "stamps": 3,
+      "image": "69.jpg"
     },
     {
       "id": 70,
@@ -809,7 +941,9 @@
       "description": "A nostalgic Cha Chaan Teng classic. Red bean paste and grass jelly in a refreshing slushie with first-harvest matcha from Yamamasa Koyamaen, topped with a scoop of classic vanilla ice cream from Ice Keem.",
       "price": "$13.50",
       "location": 25,
-      "tags": []
+      "tags": [],
+      "stamps": 3,
+      "image": "70.jpg"
     },
     {
       "id": 71,
@@ -819,7 +953,9 @@
       "description": "Premium hojicha slushie topped with a creamy hojicha ice cream from Ice Keem.",
       "price": "$12.75",
       "location": 25,
-      "tags": []
+      "tags": [],
+      "stamps": 3,
+      "image": "71.jpg"
     },
     {
       "id": 72,
@@ -831,7 +967,9 @@
       "location": 26,
       "tags": [
         "Vegan-Friendly"
-      ]
+      ],
+      "stamps": 2,
+      "image": "72.jpg"
     },
     {
       "id": 73,
@@ -844,7 +982,9 @@
       "tags": [
         "Gluten-Free",
         "Nut Free"
-      ]
+      ],
+      "stamps": 1,
+      "image": "73.jpg"
     },
     {
       "id": 74,
@@ -857,7 +997,8 @@
       "tags": [
         "Nut Free",
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 2
     },
     {
       "id": 75,
@@ -871,7 +1012,9 @@
         "Nut Free",
         "Gluten-Free",
         "Vegan-Friendly"
-      ]
+      ],
+      "stamps": 1,
+      "image": "75.jpg"
     },
     {
       "id": 76,
@@ -881,7 +1024,9 @@
       "description": "Blue vanilla ice cream with Oreo cookies and cookie dough in between a glazed donut.",
       "price": "$12.00",
       "location": 27,
-      "tags": []
+      "tags": [],
+      "stamps": 3,
+      "image": "76.jpg"
     },
     {
       "id": 77,
@@ -891,7 +1036,9 @@
       "description": "Sweet milk ice cream with strawberry swirl and Biscoff biscuits in toasted glazed donut.",
       "price": "$12.00",
       "location": 27,
-      "tags": []
+      "tags": [],
+      "stamps": 3,
+      "image": "77.jpg"
     },
     {
       "id": 78,
@@ -901,7 +1048,9 @@
       "description": "Ube ice cream and Oreo cookies in toasted glazed donut.",
       "price": "$12.00",
       "location": 27,
-      "tags": []
+      "tags": [],
+      "stamps": 3,
+      "image": "78.jpg"
     },
     {
       "id": 79,
@@ -911,7 +1060,9 @@
       "description": "Chocolate hazelnut ice cream in toasted glazed donut.",
       "price": "$12.00",
       "location": 27,
-      "tags": []
+      "tags": [],
+      "stamps": 3,
+      "image": "79.jpg"
     },
     {
       "id": 80,
@@ -923,7 +1074,8 @@
       "location": 28,
       "tags": [
         "Nut Free"
-      ]
+      ],
+      "stamps": 4
     },
     {
       "id": 81,
@@ -935,7 +1087,8 @@
       "location": 28,
       "tags": [
         "Nut Free"
-      ]
+      ],
+      "stamps": 2
     },
     {
       "id": 82,
@@ -947,7 +1100,9 @@
       "location": 29,
       "tags": [
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 1,
+      "image": "82.jpg"
     },
     {
       "id": 83,
@@ -960,7 +1115,9 @@
       "tags": [
         "Gluten-Free",
         "Nut Free"
-      ]
+      ],
+      "stamps": 1,
+      "image": "83.jpg"
     },
     {
       "id": 84,
@@ -975,7 +1132,9 @@
         "Nut Free",
         "Lactose Free",
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 1,
+      "image": "84.jpg"
     },
     {
       "id": 85,
@@ -985,7 +1144,9 @@
       "description": "Chocolate gelato sprinkled with in-house baked chocolate chunk cookies. Scoop pricing ($5 to $8).",
       "price": "$5.00",
       "location": 29,
-      "tags": []
+      "tags": [],
+      "stamps": 1,
+      "image": "85.jpg"
     },
     {
       "id": 86,
@@ -997,7 +1158,9 @@
       "location": 30,
       "tags": [
         "Nut Free"
-      ]
+      ],
+      "stamps": 3,
+      "image": "86.jpg"
     },
     {
       "id": 87,
@@ -1010,7 +1173,9 @@
       "tags": [
         "Gluten-Free",
         "Nut Free"
-      ]
+      ],
+      "stamps": 3,
+      "image": "87.jpg"
     },
     {
       "id": 88,
@@ -1022,7 +1187,9 @@
       "location": 31,
       "tags": [
         "Nut Free"
-      ]
+      ],
+      "stamps": 2,
+      "image": "88.jpg"
     },
     {
       "id": 89,
@@ -1034,7 +1201,9 @@
       "location": 31,
       "tags": [
         "Nut Free"
-      ]
+      ],
+      "stamps": 2,
+      "image": "89.jpg"
     },
     {
       "id": 90,
@@ -1046,7 +1215,9 @@
       "location": 32,
       "tags": [
         "Vegan-Friendly"
-      ]
+      ],
+      "stamps": 3,
+      "image": "90.jpg"
     },
     {
       "id": 91,
@@ -1058,7 +1229,9 @@
       "location": 32,
       "tags": [
         "Vegan-Friendly"
-      ]
+      ],
+      "stamps": 3,
+      "image": "91.jpg"
     },
     {
       "id": 92,
@@ -1071,7 +1244,9 @@
       "tags": [
         "Nut Free",
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 1,
+      "image": "92.jpg"
     },
     {
       "id": 93,
@@ -1083,7 +1258,9 @@
       "location": 33,
       "tags": [
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 1,
+      "image": "93.jpg"
     },
     {
       "id": 94,
@@ -1096,7 +1273,9 @@
       "tags": [
         "Nut Free",
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 2,
+      "image": "94.jpg"
     },
     {
       "id": 95,
@@ -1106,7 +1285,9 @@
       "description": "Vancouver's FIFA World Cup 2026 tribute. Strawberry sauce and vanilla soft serve in red and white, decorated with maple leaf cookies, soccer-themed candy, coconut jelly, and a Canadian flag pick.",
       "price": "$8.25",
       "location": 34,
-      "tags": []
+      "tags": [],
+      "stamps": 1,
+      "image": "95.jpg"
     },
     {
       "id": 96,
@@ -1116,7 +1297,9 @@
       "description": "Ice-blended coffee-based milk tea topped with pearls, a rich house-made tiramisu foam, buttercrisp and cocoa.",
       "price": "$9.25",
       "location": 35,
-      "tags": []
+      "tags": [],
+      "stamps": 2,
+      "image": "96.jpg"
     },
     {
       "id": 97,
@@ -1126,7 +1309,9 @@
       "description": "Ice-blended strawberry milk tea drink with jasmine green tea base, topped with pearls, house-made sweet cream and buttercrisp.",
       "price": "$9.25",
       "location": 35,
-      "tags": []
+      "tags": [],
+      "stamps": 2,
+      "image": "97.jpg"
     },
     {
       "id": 98,
@@ -1141,7 +1326,9 @@
         "Nut Free",
         "Lactose Free",
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 1,
+      "image": "98.jpg"
     },
     {
       "id": 99,
@@ -1156,7 +1343,9 @@
         "Nut Free",
         "Lactose Free",
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 1,
+      "image": "99.jpg"
     },
     {
       "id": 100,
@@ -1170,7 +1359,9 @@
         "Vegan-Friendly",
         "Nut Free",
         "Lactose Free"
-      ]
+      ],
+      "stamps": 1,
+      "image": "100.jpg"
     },
     {
       "id": 101,
@@ -1185,7 +1376,9 @@
         "Nut Free",
         "Lactose Free",
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 1,
+      "image": "101.jpg"
     },
     {
       "id": 102,
@@ -1195,7 +1388,9 @@
       "description": "Vanilla soft serve topped with our house-made pear sauce, toasted coconut, and a piece of house-made caramelized pear.",
       "price": "$12.99 (Lafarge) / $13 (McArthur Outlet)",
       "location": 37,
-      "tags": []
+      "tags": [],
+      "stamps": 3,
+      "image": "102.jpg"
     },
     {
       "id": 103,
@@ -1205,7 +1400,9 @@
       "description": "Vanilla soft serve topped with our house-made pear sauce, toasted coconut, and a piece of house-made caramelized pear.",
       "price": "$8.99 (Lafarge) / $9.00 (McArthurGlen)",
       "location": 37,
-      "tags": []
+      "tags": [],
+      "stamps": 2,
+      "image": "103.jpg"
     },
     {
       "id": 104,
@@ -1218,7 +1415,9 @@
       "tags": [
         "Nut Free",
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 2,
+      "image": "104.jpg"
     },
     {
       "id": 105,
@@ -1231,7 +1430,9 @@
       "tags": [
         "Nut Free",
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 2,
+      "image": "105.jpg"
     },
     {
       "id": 106,
@@ -1244,7 +1445,9 @@
       "tags": [
         "Nut Free",
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 4,
+      "image": "106.jpg"
     },
     {
       "id": 107,
@@ -1259,7 +1462,9 @@
         "Nut Free",
         "Gluten-Free",
         "Lactose Free"
-      ]
+      ],
+      "stamps": 3,
+      "image": "107.jpg"
     },
     {
       "id": 108,
@@ -1273,7 +1478,9 @@
         "Vegan-Friendly",
         "Lactose Free",
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 3,
+      "image": "108.jpg"
     },
     {
       "id": 109,
@@ -1283,7 +1490,9 @@
       "description": "Seven layers: chocolate-hazelnut sauce, pistachio gelato, Biscoff crumbs, strawberry sorbet, pistachio sauce with kataifi, blue vanilla gelato, pistachio dust.",
       "price": "$15.00",
       "location": 39,
-      "tags": []
+      "tags": [],
+      "stamps": 3,
+      "image": "109.jpg"
     },
     {
       "id": 110,
@@ -1293,7 +1502,9 @@
       "description": "Box of 8 bonbons. Milk chocolate bonbon filled with Uganda vanilla gelato and rosemary burnt caramel. Dark chocolate bonbon filled with passion fruit sorbetto.",
       "price": "$19.00",
       "location": 39,
-      "tags": []
+      "tags": [],
+      "stamps": 4,
+      "image": "110.jpg"
     },
     {
       "id": 111,
@@ -1306,7 +1517,9 @@
       "tags": [
         "Vegan-Friendly",
         "Lactose Free"
-      ]
+      ],
+      "stamps": 2,
+      "image": "111.jpg"
     },
     {
       "id": 112,
@@ -1320,7 +1533,9 @@
         "Vegan-Friendly",
         "Lactose Free",
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 2,
+      "image": "112.jpg"
     },
     {
       "id": 113,
@@ -1334,7 +1549,9 @@
         "Vegan-Friendly",
         "Lactose Free",
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 2,
+      "image": "113.jpg"
     },
     {
       "id": 114,
@@ -1348,7 +1565,9 @@
         "Vegan-Friendly",
         "Nut Free",
         "Lactose Free"
-      ]
+      ],
+      "stamps": 2,
+      "image": "114.jpg"
     },
     {
       "id": 115,
@@ -1362,7 +1581,9 @@
         "Vegan-Friendly",
         "Nut Free",
         "Lactose Free"
-      ]
+      ],
+      "stamps": 3,
+      "image": "115.jpg"
     },
     {
       "id": 116,
@@ -1377,7 +1598,9 @@
         "Nut Free",
         "Lactose Free",
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 2,
+      "image": "116.jpg"
     },
     {
       "id": 117,
@@ -1392,7 +1615,8 @@
         "Nut Free",
         "Lactose Free",
         "Gluten-Free"
-      ]
+      ],
+      "stamps": 3
     }
   ]
 }

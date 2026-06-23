@@ -10,7 +10,7 @@ import {
   TOOLBAR_FILTER_INACTIVE_ICON,
   TOOLBAR_SORT_ICON,
 } from '@/components/icons';
-import { LocationList } from '@/model';
+import { FlavourList, LocationList } from '@/model';
 
 const CHEVRON = Icon.select({
   ios: 'chevron.right',
@@ -193,7 +193,7 @@ export default function Locations() {
     <>
       <Stack.Screen
         options={{
-          title: 'Location List',
+          title: 'Locations',
           headerLargeTitle: true,
           headerSearchBarOptions: {
             hideWhenScrolling: true,
@@ -226,26 +226,36 @@ export default function Locations() {
       </Stack.Toolbar>
       <Host style={{ flex: 1 }} colorScheme={colorScheme === 'dark' ? 'dark' : 'light'}>
         <List onRefresh={updateLocation}>
-          {filteredAndSortedLocations.map((item) => (
-            <ListItem
-              key={item.id}
-              onPress={() => router.push(`/locations/${item.id}`)}
-              trailing={
-                <Row spacing={8} alignment="center">
-                  <Text textStyle={{ fontSize: 14, color: '#8E8E93' }}>
-                    {formatDistance(
-                      getDistanceKm(userLocation, {
-                        latitude: item.stores[0].point[0],
-                        longitude: item.stores[0].point[1],
-                      })
-                    )}
-                  </Text>
-                  <Icon name={CHEVRON} size={14} color={SECONDARY_ICON_COLOR} />
-                </Row>
-              }>
-              {item.name}
-            </ListItem>
-          ))}
+          {filteredAndSortedLocations.map((item) => {
+            const treatNames = FlavourList.filter((f) => f.location === item.id)
+              .map((f) => f.name)
+              .join(', ');
+            return (
+              <ListItem
+                key={item.id}
+                onPress={() => router.push(`/locations/${item.id}`)}
+                supportingText={
+                  treatNames ? (
+                    <Text textStyle={{ fontSize: 13, color: '#8E8E93' }}>{treatNames}</Text>
+                  ) : undefined
+                }
+                trailing={
+                  <Row spacing={8} alignment="center">
+                    <Text textStyle={{ fontSize: 14, color: '#8E8E93' }}>
+                      {formatDistance(
+                        getDistanceKm(userLocation, {
+                          latitude: item.stores[0].point[0],
+                          longitude: item.stores[0].point[1],
+                        })
+                      )}
+                    </Text>
+                    <Icon name={CHEVRON} size={14} color={SECONDARY_ICON_COLOR} />
+                  </Row>
+                }>
+                {item.name}
+              </ListItem>
+            );
+          })}
         </List>
       </Host>
     </>

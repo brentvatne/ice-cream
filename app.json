@@ -55,7 +55,10 @@
       "reactCompiler": true
     },
     "extra": {
-      "router": {}
+      "router": {},
+      "eas": {
+        "projectId": "ac987f47-3613-45a5-b7d2-a2fee1401b09"
+      }
     },
     "android": {
       "package": "com.brents.icecream"
