@@ -43,6 +43,11 @@ export const TOOLBAR_SORT_ICON = Icon.select({
   android: require('@expo/material-symbols/swap_vert.xml'),
 });
 
+export const TOOLBAR_DICE_ICON = Icon.select({
+  ios: 'die.face.5',
+  android: require('@expo/material-symbols/casino.xml'),
+});
+
 export const TOOLBAR_FILTER_ACTIVE_ICON = Icon.select({
   ios: 'line.3.horizontal.decrease.circle.fill',
   android: require('@expo/material-symbols/filter_alt.xml'),

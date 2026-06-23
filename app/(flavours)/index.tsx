@@ -6,11 +6,13 @@ import { FlatList, StyleSheet, useColorScheme } from 'react-native';
 
 import { TreatRow, TreatRowSeparator } from '@/components/TreatRow';
 import {
+  TOOLBAR_DICE_ICON,
   TOOLBAR_FILTER_ACTIVE_ICON,
   TOOLBAR_FILTER_INACTIVE_ICON,
   TOOLBAR_SORT_ICON,
 } from '@/components/icons';
 import { useFavourites } from '@/context/FavouritesContext';
+import { distanceToLocationKm } from '@/lib/distance';
 import { FlavourList, LocationList } from '@/model';
 
 const DEFAULT_LOCATION = {
@@ -19,23 +21,6 @@ const DEFAULT_LOCATION = {
 };
 
 const SORT_OPTIONS = ['Distance', 'Featured'] as const;
-
-function getDistanceKm(
-  from: { latitude: number; longitude: number },
-  to: { latitude: number; longitude: number }
-): number {
-  const R = 6371; // Earth's radius in kilometers
-  const lat1 = (from.latitude * Math.PI) / 180;
-  const lat2 = (to.latitude * Math.PI) / 180;
-  const deltaLat = ((to.latitude - from.latitude) * Math.PI) / 180;
-  const deltaLon = ((to.longitude - from.longitude) * Math.PI) / 180;
-
-  const a =
-    Math.sin(deltaLat / 2) * Math.sin(deltaLat / 2) +
-    Math.cos(lat1) * Math.cos(lat2) * Math.sin(deltaLon / 2) * Math.sin(deltaLon / 2);
-  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  return R * c;
-}
 
 interface Filters {
   showFavouritesOnly: boolean;
@@ -207,21 +192,12 @@ export default function Index() {
       result = result.filter((item) => item.tags.includes('Nut Free'));
     }
 
-    // Sort
+    // Sort by distance to the treat's vendor (nearest store) — same metric as
+    // the Locations screen so the two screens agree.
     if (sortBy === 'Distance') {
       const distanceFor = (flavourLocationId: number): number => {
         const location = LocationList.find((l) => l.id === flavourLocationId);
-        if (!location || location.stores.length === 0) {
-          return Number.POSITIVE_INFINITY;
-        }
-        return Math.min(
-          ...location.stores.map((store) =>
-            getDistanceKm(userLocation, {
-              latitude: store.point[0],
-              longitude: store.point[1],
-            })
-          )
-        );
+        return location ? distanceToLocationKm(userLocation, location) : Number.POSITIVE_INFINITY;
       };
       result.sort((a, b) => distanceFor(a.location) - distanceFor(b.location));
     }
@@ -243,6 +219,15 @@ export default function Index() {
         }}
       />
       <Stack.Toolbar placement="right">
+        <Stack.Toolbar.Button
+          icon={TOOLBAR_DICE_ICON}
+          tintColor="#007AFF"
+          onPress={() => {
+            if (filteredFlavours.length === 0) return;
+            const pick = filteredFlavours[Math.floor(Math.random() * filteredFlavours.length)];
+            router.push(`/flavours/${pick.id}`);
+          }}
+        />
         <Stack.Toolbar.Menu icon={TOOLBAR_SORT_ICON} tintColor="#007AFF" separateBackground>
           {SORT_OPTIONS.map((option) => (
             <Stack.Toolbar.MenuAction

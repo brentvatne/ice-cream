@@ -14,6 +14,7 @@ import { useFavourites } from '@/context/FavouritesContext';
 import { FlavourList, LocationList } from '@/model';
 
 const AnimatedImage = Animated.createAnimatedComponent(Image);
+const PLACEHOLDER_IMAGE = require('@/assets/treat-placeholder.png');
 
 export default function FlavourDetails() {
   const { id } = useLocalSearchParams();
@@ -70,14 +71,12 @@ export default function FlavourDetails() {
         scrollEventThrottle={16}
         contentInsetAdjustmentBehavior="never"
         contentContainerStyle={styles.content}>
-        {image ? (
-          <AnimatedImage
-            source={image}
-            style={[{ width: windowWidth, height: heroHeight }, heroStyle]}
-            contentFit="cover"
-            transition={200}
-          />
-        ) : null}
+        <AnimatedImage
+          source={image ?? PLACEHOLDER_IMAGE}
+          style={[{ width: windowWidth, height: heroHeight }, heroStyle]}
+          contentFit="cover"
+          transition={200}
+        />
 
         <View style={styles.body}>
           {location ? (

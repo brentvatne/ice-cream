@@ -10,6 +10,7 @@ import {
   TOOLBAR_FILTER_INACTIVE_ICON,
   TOOLBAR_SORT_ICON,
 } from '@/components/icons';
+import { distanceToLocationKm, formatDistance } from '@/lib/distance';
 import { FlavourList, LocationList } from '@/model';
 
 const CHEVRON = Icon.select({
@@ -95,30 +96,6 @@ function isOpenNow(hoursStr: string): boolean {
   return true;
 }
 
-function getDistanceKm(
-  from: { latitude: number; longitude: number },
-  to: { latitude: number; longitude: number }
-): number {
-  const R = 6371; // Earth's radius in kilometers
-  const lat1 = (from.latitude * Math.PI) / 180;
-  const lat2 = (to.latitude * Math.PI) / 180;
-  const deltaLat = ((to.latitude - from.latitude) * Math.PI) / 180;
-  const deltaLon = ((to.longitude - from.longitude) * Math.PI) / 180;
-
-  const a =
-    Math.sin(deltaLat / 2) * Math.sin(deltaLat / 2) +
-    Math.cos(lat1) * Math.cos(lat2) * Math.sin(deltaLon / 2) * Math.sin(deltaLon / 2);
-  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  return R * c;
-}
-
-function formatDistance(km: number): string {
-  if (km < 1) {
-    return `${Math.round(km * 1000)} m`;
-  }
-  return `${km.toFixed(1)} km`;
-}
-
 const SORT_OPTIONS = ['Name', 'Distance'] as const;
 
 export default function Locations() {
@@ -173,17 +150,9 @@ export default function Locations() {
     if (sortBy === 'Name') {
       result.sort((a, b) => a.name.localeCompare(b.name));
     } else if (sortBy === 'Distance') {
-      result.sort((a, b) => {
-        const distA = getDistanceKm(userLocation, {
-          latitude: a.stores[0].point[0],
-          longitude: a.stores[0].point[1],
-        });
-        const distB = getDistanceKm(userLocation, {
-          latitude: b.stores[0].point[0],
-          longitude: b.stores[0].point[1],
-        });
-        return distA - distB;
-      });
+      result.sort(
+        (a, b) => distanceToLocationKm(userLocation, a) - distanceToLocationKm(userLocation, b)
+      );
     }
 
     return result;
@@ -242,12 +211,7 @@ export default function Locations() {
                 trailing={
                   <Row spacing={8} alignment="center">
                     <Text textStyle={{ fontSize: 14, color: '#8E8E93' }}>
-                      {formatDistance(
-                        getDistanceKm(userLocation, {
-                          latitude: item.stores[0].point[0],
-                          longitude: item.stores[0].point[1],
-                        })
-                      )}
+                      {formatDistance(distanceToLocationKm(userLocation, item))}
                     </Text>
                     <Icon name={CHEVRON} size={14} color={SECONDARY_ICON_COLOR} />
                   </Row>
