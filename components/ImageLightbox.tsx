@@ -48,18 +48,28 @@ export function ImageLightbox({ visible, source, origin, onClose }: Props) {
 
   const progress = useSharedValue(0); // 0 = at thumbnail, 1 = full screen
   const viewerOpacity = useSharedValue(1); // overall fade, used by the X button
-  const scale = useSharedValue(1); // pinch zoom
+
+  // Zoom/pan state, modelled on Software Mansion's react-native-image-zoom. The
+  // pinch writes ONLY `scale` + `focal`; the pan writes ONLY `translate`. Keeping
+  // them in separate shared values (summed in the transform) is what stops the
+  // two gestures from fighting over one value — the root cause of the jank.
+  const scale = useSharedValue(1);
   const savedScale = useSharedValue(1);
-  const tx = useSharedValue(0); // pan while zoomed
-  const ty = useSharedValue(0);
-  const savedTx = useSharedValue(0);
-  const savedTy = useSharedValue(0);
-  // Screen-space focal point captured at the start of a pinch. The pinch math
-  // keeps the image point that was under the fingers anchored beneath them as
-  // the image scales, and (because the live focal is read every frame) lets a
-  // two-finger drag reposition the image — the iOS Photos feel.
-  const pinchOriginX = useSharedValue(0);
-  const pinchOriginY = useSharedValue(0);
+  // Translation contributed by panning.
+  const translateX = useSharedValue(0);
+  const translateY = useSharedValue(0);
+  const savedTranslateX = useSharedValue(0);
+  const savedTranslateY = useSharedValue(0);
+  // Translation contributed by pinch-zooming about a focal point. `initialFocal`
+  // is the focus at pinch-start; `focal` is the running offset that keeps that
+  // point anchored as the scale changes.
+  const focalX = useSharedValue(0);
+  const focalY = useSharedValue(0);
+  const savedFocalX = useSharedValue(0);
+  const savedFocalY = useSharedValue(0);
+  const initialFocalX = useSharedValue(0);
+  const initialFocalY = useSharedValue(0);
+
   const dismiss = useSharedValue(0); // swipe-down-to-dismiss translation
   const closing = useSharedValue(false); // guards against overlapping close paths
 
@@ -84,10 +94,16 @@ export function ImageLightbox({ visible, source, origin, onClose }: Props) {
     if (!visible) return;
     scale.value = 1;
     savedScale.value = 1;
-    tx.value = 0;
-    ty.value = 0;
-    savedTx.value = 0;
-    savedTy.value = 0;
+    translateX.value = 0;
+    translateY.value = 0;
+    savedTranslateX.value = 0;
+    savedTranslateY.value = 0;
+    focalX.value = 0;
+    focalY.value = 0;
+    savedFocalX.value = 0;
+    savedFocalY.value = 0;
+    initialFocalX.value = 0;
+    initialFocalY.value = 0;
     dismiss.value = 0;
     closing.value = false;
     viewerOpacity.value = 1;
@@ -105,8 +121,14 @@ export function ImageLightbox({ visible, source, origin, onClose }: Props) {
     closing.value = true;
     scale.value = withTiming(1);
     savedScale.value = 1;
-    tx.value = withTiming(0);
-    ty.value = withTiming(0);
+    translateX.value = withTiming(0);
+    translateY.value = withTiming(0);
+    savedTranslateX.value = 0;
+    savedTranslateY.value = 0;
+    focalX.value = withTiming(0);
+    focalY.value = withTiming(0);
+    savedFocalX.value = 0;
+    savedFocalY.value = 0;
     // Reset the swipe offset too, or the image lands off the thumbnail.
     dismiss.value = withTiming(0, { duration: 240 });
     progress.value = withTiming(0, { duration: 240 }, (finished) => {
@@ -128,10 +150,14 @@ export function ImageLightbox({ visible, source, origin, onClose }: Props) {
     'worklet';
     scale.value = withTiming(1);
     savedScale.value = 1;
-    tx.value = withTiming(0);
-    ty.value = withTiming(0);
-    savedTx.value = 0;
-    savedTy.value = 0;
+    translateX.value = withTiming(0);
+    translateY.value = withTiming(0);
+    savedTranslateX.value = 0;
+    savedTranslateY.value = 0;
+    focalX.value = withTiming(0);
+    focalY.value = withTiming(0);
+    savedFocalX.value = 0;
+    savedFocalY.value = 0;
   };
 
   // Max pan offset that still keeps the (scaled) image covering the screen.
@@ -144,71 +170,108 @@ export function ImageLightbox({ visible, source, origin, onClose }: Props) {
     };
   };
 
+  // Settle within bounds after a pinch: fold the focal offset into the pan
+  // translation and ease the total to the nearest edge. Because focal→0 and
+  // translate→total animate with the same timing, the visible sum stays put
+  // when already in-bounds (no snap) and only moves when it was past an edge.
+  const clampToBounds = () => {
+    'worklet';
+    if (scale.value <= 1) {
+      resetZoom();
+      return;
+    }
+    const max = maxOffset(scale.value);
+    const totalX = clamp(translateX.value + focalX.value, -max.x, max.x);
+    const totalY = clamp(translateY.value + focalY.value, -max.y, max.y);
+    translateX.value = withTiming(totalX);
+    translateY.value = withTiming(totalY);
+    focalX.value = withTiming(0);
+    focalY.value = withTiming(0);
+    savedScale.value = scale.value;
+    savedTranslateX.value = totalX;
+    savedTranslateY.value = totalY;
+    savedFocalX.value = 0;
+    savedFocalY.value = 0;
+  };
+
   const pinch = Gesture.Pinch()
     .onStart((e) => {
-      // Anchor to the gesture state at the instant the pinch begins, so the
-      // update math is a pure function of how far the fingers have spread and
-      // moved since — no frame-to-frame accumulation that can drift.
+      if (closing.value) return; // a close is animating; don't touch zoom state
       savedScale.value = scale.value;
-      savedTx.value = tx.value;
-      savedTy.value = ty.value;
-      pinchOriginX.value = e.focalX;
-      pinchOriginY.value = e.focalY;
+      savedFocalX.value = focalX.value;
+      savedFocalY.value = focalY.value;
+      initialFocalX.value = e.focalX;
+      initialFocalY.value = e.focalY;
     })
     .onUpdate((e) => {
-      const next = clamp(savedScale.value * e.scale, 1, MAX_SCALE);
-      const ratio = next / savedScale.value;
+      if (closing.value) return;
       const cx = screenWidth / 2;
       const cy = screenHeight / 2;
-      // The image scales about its center C, so a point at local offset d maps
-      // to screen position C + T + s·d. Solving for the translation T that keeps
-      // the point under the fingers at pinch-start fixed beneath them at the new
-      // scale gives the expression below. Reading the *live* focal (e.focalX/Y)
-      // each frame — rather than the start focal — also makes a two-finger drag
-      // pan the image, matching iOS Photos.
-      scale.value = next;
-      tx.value = e.focalX - cx - ratio * (pinchOriginX.value - cx - savedTx.value);
-      ty.value = e.focalY - cy - ratio * (pinchOriginY.value - cy - savedTy.value);
+      scale.value = clamp(savedScale.value * e.scale, 1, MAX_SCALE);
+      // Keep the point under the fingers at pinch-start anchored as the scale
+      // changes. The exact focal formula from Software Mansion's
+      // react-native-image-zoom — deliberately *unclamped* so the gesture tracks
+      // the fingers freely; bounds are settled once, smoothly, in onEnd.
+      focalX.value =
+        savedFocalX.value + (cx - initialFocalX.value) * (scale.value - savedScale.value);
+      focalY.value =
+        savedFocalY.value + (cy - initialFocalY.value) * (scale.value - savedScale.value);
     })
     .onEnd(() => {
-      if (scale.value <= 1) {
-        resetZoom();
-        return;
-      }
-      savedScale.value = scale.value;
-      // Snap any out-of-bounds pan (from the focal math / rubber-banding) back to
-      // the edges so the image can't rest off-center.
-      const max = maxOffset(scale.value);
-      const nx = clamp(tx.value, -max.x, max.x);
-      const ny = clamp(ty.value, -max.y, max.y);
-      tx.value = withTiming(nx);
-      ty.value = withTiming(ny);
-      savedTx.value = nx;
-      savedTy.value = ny;
+      if (closing.value) return;
+      clampToBounds();
     });
 
   const pan = Gesture.Pan()
     // One finger only: two-finger drags belong to the pinch gesture.
     .maxPointers(1)
+    .onStart(() => {
+      if (closing.value) return;
+      // Re-baseline from wherever the image currently sits, so the handoff from
+      // a just-ended pinch is seamless.
+      savedTranslateX.value = translateX.value;
+      savedTranslateY.value = translateY.value;
+    })
     .onUpdate((e) => {
+      // A close is animating (e.g. a dismiss fly-off). Writing dismiss/translate
+      // here would cancel that animation's `withTiming` mid-flight — its
+      // `finished` callback then never fires `onClose`, wedging the viewer open.
+      if (closing.value) return;
       if (scale.value > 1) {
-        // Pan the zoomed image, clamped so its edges can't leave the screen.
+        // Pan the zoomed image. The bounds already include the focal offset, so
+        // clamping live keeps an edge from leaving the screen with no release
+        // snap. (Pure translation here never fights the focal value.)
         const max = maxOffset(scale.value);
-        tx.value = clamp(savedTx.value + e.translationX, -max.x, max.x);
-        ty.value = clamp(savedTy.value + e.translationY, -max.y, max.y);
+        translateX.value = clamp(
+          savedTranslateX.value + e.translationX,
+          -max.x - focalX.value,
+          max.x - focalX.value
+        );
+        translateY.value = clamp(
+          savedTranslateY.value + e.translationY,
+          -max.y - focalY.value,
+          max.y - focalY.value
+        );
       } else {
         // Swipe to dismiss.
         dismiss.value = e.translationY;
       }
     })
-    .onEnd((e) => {
+    .onEnd((e, success) => {
+      if (closing.value) return;
       if (scale.value > 1) {
-        savedTx.value = tx.value;
-        savedTy.value = ty.value;
-      } else if (Math.abs(dismiss.value) > DISMISS_DISTANCE || Math.abs(e.velocityY) > DISMISS_VELOCITY) {
+        savedTranslateX.value = translateX.value;
+        savedTranslateY.value = translateY.value;
+        return;
+      }
+      // Commit a dismiss only on a clean release (`success`) past the threshold.
+      // A cancelled/interrupted swipe (success === false) — or one that didn't
+      // travel far enough — settles back instead of closing unexpectedly.
+      const pastThreshold =
+        Math.abs(dismiss.value) > DISMISS_DISTANCE || Math.abs(e.velocityY) > DISMISS_VELOCITY;
+      if (success && pastThreshold) {
         // Ride the swipe off-screen in its own direction and fade out, rather
         // than snapping back to the thumbnail.
-        if (closing.value) return;
         closing.value = true;
         const dir = (dismiss.value !== 0 ? dismiss.value : e.velocityY) >= 0 ? 1 : -1;
         const target = dir * screenHeight;
@@ -217,11 +280,15 @@ export function ImageLightbox({ visible, source, origin, onClose }: Props) {
         // quickly and a slow drag-past-threshold eases off gently.
         const speed = Math.max(Math.abs(e.velocityY), 1);
         const duration = clamp((Math.abs(target - dismiss.value) / speed) * 1000, 120, 320);
-        dismiss.value = withTiming(target, { duration, easing: Easing.out(Easing.quad) }, (finished) => {
-          if (finished) scheduleOnRN(onClose);
-        });
+        dismiss.value = withTiming(
+          target,
+          { duration, easing: Easing.out(Easing.quad) },
+          (finished) => {
+            if (finished) scheduleOnRN(onClose);
+          }
+        );
       } else {
-        // Below threshold: settle back, continuing from the gesture's velocity.
+        // Below threshold or cancelled: settle back, continuing from the velocity.
         dismiss.value = withSpring(0, { velocity: e.velocityY });
       }
     });
@@ -229,25 +296,33 @@ export function ImageLightbox({ visible, source, origin, onClose }: Props) {
   const doubleTap = Gesture.Tap()
     .numberOfTaps(2)
     .onEnd((e) => {
+      if (closing.value) return;
       if (scale.value > 1) {
         resetZoom();
         return;
       }
-      // Zoom in toward the tapped point.
+      // Zoom in toward the tapped point, carrying the offset in `focal` (same as
+      // a pinch). Clamp so a tap near an edge can't reveal background.
       const cx = screenWidth / 2;
       const cy = screenHeight / 2;
       const max = maxOffset(DOUBLE_TAP_SCALE);
-      const nx = clamp((e.x - cx) * (1 - DOUBLE_TAP_SCALE), -max.x, max.x);
-      const ny = clamp((e.y - cy) * (1 - DOUBLE_TAP_SCALE), -max.y, max.y);
+      const fx = clamp((cx - e.x) * (DOUBLE_TAP_SCALE - 1), -max.x, max.x);
+      const fy = clamp((cy - e.y) * (DOUBLE_TAP_SCALE - 1), -max.y, max.y);
       scale.value = withTiming(DOUBLE_TAP_SCALE);
       savedScale.value = DOUBLE_TAP_SCALE;
-      tx.value = withTiming(nx);
-      ty.value = withTiming(ny);
-      savedTx.value = nx;
-      savedTy.value = ny;
+      focalX.value = withTiming(fx);
+      focalY.value = withTiming(fy);
+      savedFocalX.value = fx;
+      savedFocalY.value = fy;
     });
 
-  const gesture = Gesture.Simultaneous(pan, pinch, doubleTap);
+  // Race, not Exclusive: all three compete and the first to *activate* wins. Two
+  // fingers → pinch. One finger that stays put through two taps → doubleTap. One
+  // finger that moves → pan (which dismisses at default zoom, or pans when zoomed).
+  // A pan needs real movement to activate, so a stationary double-tap still wins;
+  // nesting pan under Exclusive(doubleTap, …) instead made it wait out the
+  // multi-tap timeout, swallowing quick swipe-to-dismiss gestures.
+  const gesture = Gesture.Race(pinch, doubleTap, pan);
 
   // NOTE: the fade math is inlined into each useAnimatedStyle below rather than
   // shared via a helper. Reanimated derives a style's shared-value dependencies
@@ -285,9 +360,14 @@ export function ImageLightbox({ visible, source, origin, onClose }: Props) {
       top: from.y + (targetY - from.y) * p,
       width: from.width + (targetWidth - from.width) * p,
       height: from.height + (targetHeight - from.height) * p,
+      // Order matches react-native-image-zoom: pan translate, then focal
+      // translate, then scale (applied right-to-left). `dismiss` rides in the
+      // outer, screen-space translate.
       transform: [
-        { translateX: tx.value },
-        { translateY: ty.value + dismiss.value },
+        { translateX: translateX.value },
+        { translateY: translateY.value + dismiss.value },
+        { translateX: focalX.value },
+        { translateY: focalY.value },
         { scale: scale.value },
       ],
     };

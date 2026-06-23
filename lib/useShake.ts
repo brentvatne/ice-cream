@@ -13,6 +13,13 @@ type Options = {
   cooldownMs?: number;
 };
 
+// Shared across every useShake instance. The cooldown must be GLOBAL, not
+// per-component: if a shake fires on one screen and navigates to another, the
+// newly-mounted screen's hook would otherwise start with a fresh (zeroed)
+// cooldown and re-fire on the same continuing shake — causing the double/triple
+// navigations. A module-level timestamp gates all instances against one clock.
+let lastTriggerAt = 0;
+
 /**
  * Calls `onShake` when the device is shaken, but only while the screen using
  * this hook is focused (the listener is torn down on blur to save battery and
@@ -20,10 +27,11 @@ type Options = {
  *
  * A real shake oscillates, so a single jolt crosses the threshold across many
  * samples. We collapse those into discrete "spikes" (a spike is one above-
- * threshold sample after a short quiet gap) and only fire once `requiredSpikes`
- * land within `spikeWindowMs` — i.e. the user has to shake back and forth a
- * couple of times. A `cooldownMs` gate after each trigger keeps a long shake
- * from firing repeatedly.
+ * threshold sample after a short quiet gap) and fire once `requiredSpikes` land
+ * within `spikeWindowMs`. With the default `requiredSpikes` of 1 a single brisk
+ * shake triggers; the debounce plus a `cooldownMs` gate (shared across all
+ * instances, so it survives navigation) keep one shake from firing repeatedly.
+ * Raise `requiredSpikes` to demand a more deliberate back-and-forth.
  *
  * Note: relies on real accelerometer data, so it fires on a physical device.
  * The iOS Simulator's "Shake Gesture" is a UIEvent and does not move the
@@ -31,9 +39,8 @@ type Options = {
  */
 export function useShake(
   onShake: () => void,
-  { threshold = 2.2, requiredSpikes = 2, spikeWindowMs = 1000, cooldownMs = 1000 }: Options = {}
+  { threshold = 2.0, requiredSpikes = 1, spikeWindowMs = 1000, cooldownMs = 1500 }: Options = {}
 ) {
-  const lastTriggerAt = useRef(0);
   const lastSpikeAt = useRef(0);
   const spikeTimes = useRef<number[]>([]);
 
@@ -57,9 +64,9 @@ export function useShake(
         spikeTimes.current.push(now);
 
         if (spikeTimes.current.length < requiredSpikes) return;
-        if (now - lastTriggerAt.current < cooldownMs) return;
+        if (now - lastTriggerAt < cooldownMs) return;
 
-        lastTriggerAt.current = now;
+        lastTriggerAt = now;
         spikeTimes.current = [];
         onShake();
       });

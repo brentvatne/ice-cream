@@ -1,5 +1,4 @@
 import { BottomSheet, Button, Column, Host, Icon, Row, Spacer, Text } from '@expo/ui';
-import { systemGroupedBackground } from '@bacons/apple-colors';
 import * as Haptics from 'expo-haptics';
 import { Stack, useRouter } from 'expo-router';
 import { useState } from 'react';
@@ -161,13 +160,7 @@ export default function Tab() {
 
   return (
     <>
-      <Stack.Screen
-        options={{
-          title: 'Location Map',
-          headerLargeTitle: false,
-          headerStyle: { backgroundColor: systemGroupedBackground },
-        }}
-      />
+      <Stack.Screen options={{ headerShown: false }} />
       <StoreMap
         markers={markers}
         onMarkerClick={(id) => {

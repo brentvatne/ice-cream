@@ -1,4 +1,10 @@
-import { label, link, secondaryLabel, systemGroupedBackground } from '@bacons/apple-colors';
+import {
+  label,
+  link,
+  secondaryLabel,
+  systemGray5,
+  systemGroupedBackground,
+} from '@bacons/apple-colors';
 import { Ionicons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 import { Image } from 'expo-image';
@@ -32,6 +38,7 @@ export default function FlavourDetails() {
   const flavourId = Number(id);
   const image = treatImages[flavourId];
   const heroSource = image ?? PLACEHOLDER_IMAGE;
+  const hasImage = Boolean(image);
 
   const heroRef = useRef<View>(null);
   const [viewer, setViewer] = useState<{ visible: boolean; origin: Rect | null }>({
@@ -109,14 +116,24 @@ export default function FlavourDetails() {
         scrollEventThrottle={16}
         contentInsetAdjustmentBehavior="never"
         contentContainerStyle={styles.content}>
-        <Pressable ref={heroRef} onPress={openViewer} accessibilityLabel="View full image">
-          <AnimatedImage
-            source={heroSource}
-            style={[{ width: windowWidth, height: heroHeight }, heroStyle]}
-            contentFit="cover"
-            transition={200}
-          />
-        </Pressable>
+        {hasImage ? (
+          <Pressable ref={heroRef} onPress={openViewer} accessibilityLabel="View full image">
+            <AnimatedImage
+              source={heroSource}
+              style={[{ width: windowWidth, height: heroHeight }, heroStyle]}
+              contentFit="cover"
+              // Bias the crop downward so the subject sits a little below the box
+              // center, clear of the translucent nav bar overlapping the top.
+              contentPosition={{ top: '30%' }}
+              transition={200}
+            />
+          </Pressable>
+        ) : (
+          <Animated.View
+            style={[styles.placeholderHero, { width: windowWidth, height: heroHeight }, heroStyle]}>
+            <Text style={styles.placeholderEmoji}>🍦</Text>
+          </Animated.View>
+        )}
 
         <View style={styles.body}>
           {location ? (
@@ -202,4 +219,10 @@ const styles = StyleSheet.create({
   meta: { fontSize: 14, color: secondaryLabel },
   priceRow: { flexDirection: 'row', alignItems: 'center', gap: 10 },
   description: { fontSize: 16, color: label, paddingTop: 8 },
+  placeholderHero: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: systemGray5,
+  },
+  placeholderEmoji: { fontSize: 72 },
 });
