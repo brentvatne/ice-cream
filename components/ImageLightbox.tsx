@@ -1,9 +1,11 @@
 import { Ionicons } from '@expo/vector-icons';
+import { GlassView, isLiquidGlassAvailable } from 'expo-glass-effect';
 import { Image } from 'expo-image';
 import { useEffect } from 'react';
 import { Image as RNImage, Modal, Pressable, StyleSheet, useWindowDimensions } from 'react-native';
 import { Gesture, GestureDetector, GestureHandlerRootView } from 'react-native-gesture-handler';
 import Animated, {
+  Easing,
   useAnimatedStyle,
   useSharedValue,
   withSpring,
@@ -14,6 +16,7 @@ import { scheduleOnRN } from 'react-native-worklets';
 
 const AnimatedImage = Animated.createAnimatedComponent(Image);
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
+const hasLiquidGlass = isLiquidGlassAvailable();
 
 export type Rect = { x: number; y: number; width: number; height: number };
 
@@ -31,6 +34,13 @@ type Props = {
 // Drag distance (or fling velocity) past which a swipe dismisses the viewer.
 const DISMISS_DISTANCE = 120;
 const DISMISS_VELOCITY = 800;
+const MAX_SCALE = 4;
+const DOUBLE_TAP_SCALE = 2.5;
+
+function clamp(value: number, min: number, max: number) {
+  'worklet';
+  return Math.min(Math.max(value, min), max);
+}
 
 export function ImageLightbox({ visible, source, origin, onClose }: Props) {
   const { width: screenWidth, height: screenHeight } = useWindowDimensions();
@@ -44,6 +54,8 @@ export function ImageLightbox({ visible, source, origin, onClose }: Props) {
   const ty = useSharedValue(0);
   const savedTx = useSharedValue(0);
   const savedTy = useSharedValue(0);
+  const focalX = useSharedValue(0); // pinch focal point, captured on start
+  const focalY = useSharedValue(0);
   const dismiss = useSharedValue(0); // swipe-down-to-dismiss translation
   const closing = useSharedValue(false); // guards against overlapping close paths
 
@@ -118,24 +130,56 @@ export function ImageLightbox({ visible, source, origin, onClose }: Props) {
     savedTy.value = 0;
   };
 
+  // Max pan offset that still keeps the (scaled) image covering the screen.
+  // Returns 0 when the image is smaller than the screen on that axis.
+  const maxOffset = (s: number) => {
+    'worklet';
+    return {
+      x: Math.max(0, (targetWidth * s - screenWidth) / 2),
+      y: Math.max(0, (targetHeight * s - screenHeight) / 2),
+    };
+  };
+
   const pinch = Gesture.Pinch()
+    .onStart((e) => {
+      focalX.value = e.focalX;
+      focalY.value = e.focalY;
+    })
     .onUpdate((e) => {
-      scale.value = Math.max(0.5, savedScale.value * e.scale);
+      const next = clamp(savedScale.value * e.scale, 1, MAX_SCALE);
+      const ratio = next / savedScale.value;
+      const cx = screenWidth / 2;
+      const cy = screenHeight / 2;
+      // Keep the point under the fingers anchored while scaling.
+      tx.value = (focalX.value - cx) * (1 - ratio) + ratio * savedTx.value;
+      ty.value = (focalY.value - cy) * (1 - ratio) + ratio * savedTy.value;
+      scale.value = next;
     })
     .onEnd(() => {
-      if (scale.value < 1) {
+      if (scale.value <= 1) {
         resetZoom();
-      } else {
-        savedScale.value = scale.value;
+        return;
       }
+      savedScale.value = scale.value;
+      // Snap any out-of-bounds pan (from the focal math) back to the edges.
+      const max = maxOffset(scale.value);
+      const nx = clamp(tx.value, -max.x, max.x);
+      const ny = clamp(ty.value, -max.y, max.y);
+      tx.value = withTiming(nx);
+      ty.value = withTiming(ny);
+      savedTx.value = nx;
+      savedTy.value = ny;
     });
 
   const pan = Gesture.Pan()
+    // One finger only: two-finger drags belong to the pinch gesture.
+    .maxPointers(1)
     .onUpdate((e) => {
       if (scale.value > 1) {
-        // Panning around the zoomed image.
-        tx.value = savedTx.value + e.translationX;
-        ty.value = savedTy.value + e.translationY;
+        // Pan the zoomed image, clamped so its edges can't leave the screen.
+        const max = maxOffset(scale.value);
+        tx.value = clamp(savedTx.value + e.translationX, -max.x, max.x);
+        ty.value = clamp(savedTy.value + e.translationY, -max.y, max.y);
       } else {
         // Swipe to dismiss.
         dismiss.value = e.translationY;
@@ -151,41 +195,60 @@ export function ImageLightbox({ visible, source, origin, onClose }: Props) {
         if (closing.value) return;
         closing.value = true;
         const dir = (dismiss.value !== 0 ? dismiss.value : e.velocityY) >= 0 ? 1 : -1;
-        dismiss.value = withTiming(dir * screenHeight, { duration: 220 }, (finished) => {
+        const target = dir * screenHeight;
+        // Carry the release velocity: time the fly-off by how fast the finger
+        // was moving (px/s) over the remaining distance, so a hard flick leaves
+        // quickly and a slow drag-past-threshold eases off gently.
+        const speed = Math.max(Math.abs(e.velocityY), 1);
+        const duration = clamp((Math.abs(target - dismiss.value) / speed) * 1000, 120, 320);
+        dismiss.value = withTiming(target, { duration, easing: Easing.out(Easing.quad) }, (finished) => {
           if (finished) scheduleOnRN(onClose);
         });
       } else {
-        dismiss.value = withSpring(0);
+        // Below threshold: settle back, continuing from the gesture's velocity.
+        dismiss.value = withSpring(0, { velocity: e.velocityY });
       }
     });
 
   const doubleTap = Gesture.Tap()
     .numberOfTaps(2)
-    .onEnd(() => {
+    .onEnd((e) => {
       if (scale.value > 1) {
         resetZoom();
-      } else {
-        scale.value = withTiming(2);
-        savedScale.value = 2;
+        return;
       }
+      // Zoom in toward the tapped point.
+      const cx = screenWidth / 2;
+      const cy = screenHeight / 2;
+      const max = maxOffset(DOUBLE_TAP_SCALE);
+      const nx = clamp((e.x - cx) * (1 - DOUBLE_TAP_SCALE), -max.x, max.x);
+      const ny = clamp((e.y - cy) * (1 - DOUBLE_TAP_SCALE), -max.y, max.y);
+      scale.value = withTiming(DOUBLE_TAP_SCALE);
+      savedScale.value = DOUBLE_TAP_SCALE;
+      tx.value = withTiming(nx);
+      ty.value = withTiming(ny);
+      savedTx.value = nx;
+      savedTy.value = ny;
     });
 
   const gesture = Gesture.Simultaneous(pan, pinch, doubleTap);
 
-  // Fades from 1 (centered) to 0 as the image is swiped a full screen height away.
-  const dismissFade = () => {
-    'worklet';
-    return 1 - Math.min(Math.abs(dismiss.value) / screenHeight, 1);
-  };
+  // NOTE: the fade math is inlined into each useAnimatedStyle below rather than
+  // shared via a helper. Reanimated derives a style's shared-value dependencies
+  // from that worklet's own closure; reading `dismiss.value` inside a called
+  // helper hides it from the dependency mapper, so the style would never
+  // re-run when `dismiss` changes (the backdrop wouldn't fade on swipe).
 
   const backdropStyle = useAnimatedStyle(() => {
-    return { opacity: progress.value * dismissFade() * viewerOpacity.value };
+    const fade = 1 - Math.min(Math.abs(dismiss.value) / screenHeight, 1);
+    return { opacity: progress.value * fade * viewerOpacity.value };
   });
 
   // The X button shares the backdrop's fade so it appears with the hero and
   // disappears on every close path.
   const chromeStyle = useAnimatedStyle(() => {
-    return { opacity: progress.value * dismissFade() * viewerOpacity.value };
+    const fade = 1 - Math.min(Math.abs(dismiss.value) / screenHeight, 1);
+    return { opacity: progress.value * fade * viewerOpacity.value };
   });
 
   const imageStyle = useAnimatedStyle(() => {
@@ -198,9 +261,10 @@ export function ImageLightbox({ visible, source, origin, onClose }: Props) {
     // they can't match pixel-for-pixel at the endpoints. Fade the image in/out
     // over the first/last sliver of the transition to mask that difference and
     // to hide the reveal when the modal unmounts.
+    const fade = 1 - Math.min(Math.abs(dismiss.value) / screenHeight, 1);
     return {
       position: 'absolute',
-      opacity: Math.min(p / 0.15, 1) * dismissFade() * viewerOpacity.value,
+      opacity: Math.min(p / 0.15, 1) * fade * viewerOpacity.value,
       left: from.x + (targetX - from.x) * p,
       top: from.y + (targetY - from.y) * p,
       width: from.width + (targetWidth - from.width) * p,
@@ -236,7 +300,15 @@ export function ImageLightbox({ visible, source, origin, onClose }: Props) {
           accessibilityRole="button"
           accessibilityLabel="Close"
           style={[styles.closeButton, { top: Math.max(insets.top, 12) + 4 }, chromeStyle]}>
-          <Ionicons name="close" size={22} color="#fff" />
+          {hasLiquidGlass ? (
+            <GlassView
+              glassEffectStyle="regular"
+              colorScheme="light"
+              isInteractive
+              style={StyleSheet.absoluteFill}
+            />
+          ) : null}
+          <Ionicons name="close" size={20} color="#1c1c1e" />
         </AnimatedPressable>
       </GestureHandlerRootView>
     </Modal>
@@ -248,11 +320,16 @@ const styles = StyleSheet.create({
   closeButton: {
     position: 'absolute',
     right: 16,
-    width: 36,
-    height: 36,
-    borderRadius: 18,
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    overflow: 'hidden', // clip the glass bubble to a circle
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+    // A light fill so the bubble reads on black. Over a pure-black backdrop the
+    // glass has nothing to refract, so the fill is what makes the bubble (and
+    // the dark icon) legible; the glass on top still adds refraction/sheen when
+    // the bubble overlaps the image itself.
+    backgroundColor: 'rgba(255, 255, 255, 0.55)',
   },
 });
