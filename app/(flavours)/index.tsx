@@ -1,4 +1,5 @@
 import { systemGroupedBackground } from '@bacons/apple-colors';
+import * as Haptics from 'expo-haptics';
 import * as Location from 'expo-location';
 import { Stack, useRouter } from 'expo-router';
 import { useCallback, useEffect, useMemo, useState } from 'react';
@@ -13,6 +14,7 @@ import {
 } from '@/components/icons';
 import { useFavourites } from '@/context/FavouritesContext';
 import { distanceToLocationKm } from '@/lib/distance';
+import { useShake } from '@/lib/useShake';
 import { FlavourList, LocationList } from '@/model';
 
 const DEFAULT_LOCATION = {
@@ -205,6 +207,17 @@ export default function Index() {
     return result;
   }, [searchText, filters, favourites, sortBy, userLocation]);
 
+  // Open a random treat from the current (filtered) list — used by both the
+  // dice toolbar button and the shake gesture.
+  const rollRandom = useCallback(() => {
+    if (filteredFlavours.length === 0) return;
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+    const pick = filteredFlavours[Math.floor(Math.random() * filteredFlavours.length)];
+    router.push(`/flavours/${pick.id}`);
+  }, [filteredFlavours, router]);
+
+  useShake(rollRandom);
+
   return (
     <>
       <Stack.Screen
@@ -219,15 +232,7 @@ export default function Index() {
         }}
       />
       <Stack.Toolbar placement="right">
-        <Stack.Toolbar.Button
-          icon={TOOLBAR_DICE_ICON}
-          tintColor="#007AFF"
-          onPress={() => {
-            if (filteredFlavours.length === 0) return;
-            const pick = filteredFlavours[Math.floor(Math.random() * filteredFlavours.length)];
-            router.push(`/flavours/${pick.id}`);
-          }}
-        />
+        <Stack.Toolbar.Button icon={TOOLBAR_DICE_ICON} tintColor="#007AFF" onPress={rollRandom} />
         <Stack.Toolbar.Menu icon={TOOLBAR_SORT_ICON} tintColor="#007AFF" separateBackground>
           {SORT_OPTIONS.map((option) => (
             <Stack.Toolbar.MenuAction

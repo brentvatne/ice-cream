@@ -1,22 +1,17 @@
-import { Host, Icon, List, ListItem, Row, Text } from '@expo/ui';
+import { systemGroupedBackground } from '@bacons/apple-colors';
 import * as Location from 'expo-location';
 import { Stack, useRouter } from 'expo-router';
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { useColorScheme } from 'react-native';
+import { FlatList, StyleSheet, useColorScheme } from 'react-native';
 
+import { LocationRow, LocationRowSeparator } from '@/components/LocationRow';
 import {
-  SECONDARY_ICON_COLOR,
   TOOLBAR_FILTER_ACTIVE_ICON,
   TOOLBAR_FILTER_INACTIVE_ICON,
   TOOLBAR_SORT_ICON,
 } from '@/components/icons';
-import { distanceToLocationKm, formatDistance } from '@/lib/distance';
-import { FlavourList, LocationList } from '@/model';
-
-const CHEVRON = Icon.select({
-  ios: 'chevron.right',
-  android: require('@expo/material-symbols/chevron_right.xml'),
-});
+import { distanceToLocationKm } from '@/lib/distance';
+import { LocationList } from '@/model';
 
 const DEFAULT_LOCATION = {
   latitude: 49.282729,
@@ -101,12 +96,13 @@ const SORT_OPTIONS = ['Name', 'Distance'] as const;
 export default function Locations() {
   const colorScheme = useColorScheme();
   const router = useRouter();
-  const [sortBy, setSortBy] = useState<(typeof SORT_OPTIONS)[number]>('Name');
+  const [sortBy, setSortBy] = useState<(typeof SORT_OPTIONS)[number]>('Distance');
   const [searchText, setSearchText] = useState('');
   const [showOpenOnly, setShowOpenOnly] = useState(false);
   const [userLocation, setUserLocation] = useState<{ latitude: number; longitude: number }>(
     DEFAULT_LOCATION
   );
+  const [refreshing, setRefreshing] = useState(false);
 
   const updateLocation = useCallback(async () => {
     try {
@@ -123,6 +119,17 @@ export default function Locations() {
       console.warn('Failed to get current location, falling back to default:', error);
     }
   }, []);
+
+  // Pull-to-refresh wrapper: drives the spinner around a re-fetch. Kept separate
+  // from `updateLocation` so the mount effect below doesn't set state synchronously.
+  const onRefresh = useCallback(async () => {
+    setRefreshing(true);
+    try {
+      await updateLocation();
+    } finally {
+      setRefreshing(false);
+    }
+  }, [updateLocation]);
 
   useEffect(() => {
     updateLocation();
@@ -193,35 +200,34 @@ export default function Locations() {
           </Stack.Toolbar.MenuAction>
         </Stack.Toolbar.Menu>
       </Stack.Toolbar>
-      <Host style={{ flex: 1 }} colorScheme={colorScheme === 'dark' ? 'dark' : 'light'}>
-        <List onRefresh={updateLocation}>
-          {filteredAndSortedLocations.map((item) => {
-            const treatNames = FlavourList.filter((f) => f.location === item.id)
-              .map((f) => f.name)
-              .join(', ');
-            return (
-              <ListItem
-                key={item.id}
-                onPress={() => router.push(`/locations/${item.id}`)}
-                supportingText={
-                  treatNames ? (
-                    <Text textStyle={{ fontSize: 13, color: '#8E8E93' }}>{treatNames}</Text>
-                  ) : undefined
-                }
-                trailing={
-                  <Row spacing={8} alignment="center">
-                    <Text textStyle={{ fontSize: 14, color: '#8E8E93' }}>
-                      {formatDistance(distanceToLocationKm(userLocation, item))}
-                    </Text>
-                    <Icon name={CHEVRON} size={14} color={SECONDARY_ICON_COLOR} />
-                  </Row>
-                }>
-                {item.name}
-              </ListItem>
-            );
-          })}
-        </List>
-      </Host>
+      {/* React Native FlatList rather than @expo/ui List: the treat thumbnails
+          need an exact size, and an RN view inside a SwiftUI List slot gets a
+          SwiftUI-controlled frame that ignores its dimensions (same reason the
+          Treats screen uses a FlatList). */}
+      <FlatList
+        style={styles.list}
+        contentInsetAdjustmentBehavior="automatic"
+        contentContainerStyle={styles.listContent}
+        data={filteredAndSortedLocations}
+        keyExtractor={(item) => String(item.id)}
+        ItemSeparatorComponent={LocationRowSeparator}
+        refreshing={refreshing}
+        onRefresh={onRefresh}
+        renderItem={({ item, index }) => (
+          <LocationRow
+            location={item}
+            distanceKm={distanceToLocationKm(userLocation, item)}
+            first={index === 0}
+            last={index === filteredAndSortedLocations.length - 1}
+            onPress={() => router.push(`/locations/${item.id}`)}
+          />
+        )}
+      />
     </>
   );
 }
+
+const styles = StyleSheet.create({
+  list: { flex: 1, backgroundColor: systemGroupedBackground },
+  listContent: { paddingHorizontal: 16, paddingBottom: 24 },
+});

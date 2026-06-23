@@ -54,8 +54,12 @@ export function ImageLightbox({ visible, source, origin, onClose }: Props) {
   const ty = useSharedValue(0);
   const savedTx = useSharedValue(0);
   const savedTy = useSharedValue(0);
-  const focalX = useSharedValue(0); // pinch focal point, captured on start
-  const focalY = useSharedValue(0);
+  // Screen-space focal point captured at the start of a pinch. The pinch math
+  // keeps the image point that was under the fingers anchored beneath them as
+  // the image scales, and (because the live focal is read every frame) lets a
+  // two-finger drag reposition the image — the iOS Photos feel.
+  const pinchOriginX = useSharedValue(0);
+  const pinchOriginY = useSharedValue(0);
   const dismiss = useSharedValue(0); // swipe-down-to-dismiss translation
   const closing = useSharedValue(false); // guards against overlapping close paths
 
@@ -142,18 +146,29 @@ export function ImageLightbox({ visible, source, origin, onClose }: Props) {
 
   const pinch = Gesture.Pinch()
     .onStart((e) => {
-      focalX.value = e.focalX;
-      focalY.value = e.focalY;
+      // Anchor to the gesture state at the instant the pinch begins, so the
+      // update math is a pure function of how far the fingers have spread and
+      // moved since — no frame-to-frame accumulation that can drift.
+      savedScale.value = scale.value;
+      savedTx.value = tx.value;
+      savedTy.value = ty.value;
+      pinchOriginX.value = e.focalX;
+      pinchOriginY.value = e.focalY;
     })
     .onUpdate((e) => {
       const next = clamp(savedScale.value * e.scale, 1, MAX_SCALE);
       const ratio = next / savedScale.value;
       const cx = screenWidth / 2;
       const cy = screenHeight / 2;
-      // Keep the point under the fingers anchored while scaling.
-      tx.value = (focalX.value - cx) * (1 - ratio) + ratio * savedTx.value;
-      ty.value = (focalY.value - cy) * (1 - ratio) + ratio * savedTy.value;
+      // The image scales about its center C, so a point at local offset d maps
+      // to screen position C + T + s·d. Solving for the translation T that keeps
+      // the point under the fingers at pinch-start fixed beneath them at the new
+      // scale gives the expression below. Reading the *live* focal (e.focalX/Y)
+      // each frame — rather than the start focal — also makes a two-finger drag
+      // pan the image, matching iOS Photos.
       scale.value = next;
+      tx.value = e.focalX - cx - ratio * (pinchOriginX.value - cx - savedTx.value);
+      ty.value = e.focalY - cy - ratio * (pinchOriginY.value - cy - savedTy.value);
     })
     .onEnd(() => {
       if (scale.value <= 1) {
@@ -161,7 +176,8 @@ export function ImageLightbox({ visible, source, origin, onClose }: Props) {
         return;
       }
       savedScale.value = scale.value;
-      // Snap any out-of-bounds pan (from the focal math) back to the edges.
+      // Snap any out-of-bounds pan (from the focal math / rubber-banding) back to
+      // the edges so the image can't rest off-center.
       const max = maxOffset(scale.value);
       const nx = clamp(tx.value, -max.x, max.x);
       const ny = clamp(ty.value, -max.y, max.y);

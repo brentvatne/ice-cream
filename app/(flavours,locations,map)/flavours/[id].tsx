@@ -1,7 +1,9 @@
 import { label, link, secondaryLabel, systemGroupedBackground } from '@bacons/apple-colors';
 import { Ionicons } from '@expo/vector-icons';
+import * as Haptics from 'expo-haptics';
 import { Image } from 'expo-image';
 import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
+import { useCallback, useRef, useState } from 'react';
 import { Pressable, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
 import Animated, {
   useAnimatedScrollHandler,
@@ -9,11 +11,11 @@ import Animated, {
   useSharedValue,
 } from 'react-native-reanimated';
 
-import { useRef, useState } from 'react';
-
 import { treatImages } from '@/assets/treatImages';
 import { ImageLightbox, type Rect } from '@/components/ImageLightbox';
+import { TOOLBAR_DICE_ICON } from '@/components/icons';
 import { useFavourites } from '@/context/FavouritesContext';
+import { useShake } from '@/lib/useShake';
 import { FlavourList, LocationList } from '@/model';
 
 const AnimatedImage = Animated.createAnimatedComponent(Image);
@@ -73,6 +75,18 @@ export default function FlavourDetails() {
     };
   });
 
+  // Jump to a different random treat — used by the dice button and shake.
+  // `replace` so repeated rolls don't stack; back still returns to the list.
+  const rollRandom = useCallback(() => {
+    const pool = FlavourList.filter((item) => item.id !== flavourId);
+    if (pool.length === 0) return;
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+    const pick = pool[Math.floor(Math.random() * pool.length)];
+    router.replace(`/flavours/${pick.id}`);
+  }, [flavourId, router]);
+
+  useShake(rollRandom);
+
   if (!flavour) {
     return (
       <View style={styles.screen}>
@@ -86,6 +100,9 @@ export default function FlavourDetails() {
   return (
     <>
       <Stack.Screen options={{ title: '' }} />
+      <Stack.Toolbar placement="right">
+        <Stack.Toolbar.Button icon={TOOLBAR_DICE_ICON} tintColor="#007AFF" onPress={rollRandom} />
+      </Stack.Toolbar>
       <Animated.ScrollView
         style={styles.screen}
         onScroll={scrollHandler}
