@@ -79,11 +79,12 @@ export default function LocationDetails() {
             <Pressable
               accessibilityRole="link"
               hitSlop={8}
-              onPress={() =>
+              onPress={() => {
+                const label = encodeURIComponent(selectedStore.address);
                 Linking.openURL(
-                  `https://maps.apple.com/?ll=${selectedStore.point[0]},${selectedStore.point[1]}`
-                )
-              }>
+                  `https://maps.apple.com/?q=${label}&ll=${selectedStore.point[0]},${selectedStore.point[1]}`
+                );
+              }}>
               <Text style={styles.address}>{selectedStore.address}</Text>
             </Pressable>
           ) : null}
