@@ -1,4 +1,4 @@
-import { systemGroupedBackground } from '@bacons/apple-colors';
+import { label, systemGroupedBackground } from '@bacons/apple-colors';
 import * as Haptics from 'expo-haptics';
 import * as Location from 'expo-location';
 import { Stack, useRouter } from 'expo-router';
@@ -232,8 +232,8 @@ export default function Index() {
         }}
       />
       <Stack.Toolbar placement="right">
-        <Stack.Toolbar.Button icon={TOOLBAR_DICE_ICON} tintColor="#007AFF" onPress={rollRandom} />
-        <Stack.Toolbar.Menu icon={TOOLBAR_SORT_ICON} tintColor="#007AFF" separateBackground>
+        <Stack.Toolbar.Button icon={TOOLBAR_DICE_ICON} tintColor={label} onPress={rollRandom} />
+        <Stack.Toolbar.Menu icon={TOOLBAR_SORT_ICON} tintColor={label} separateBackground>
           {SORT_OPTIONS.map((option) => (
             <Stack.Toolbar.MenuAction
               key={option}
@@ -244,7 +244,7 @@ export default function Index() {
           ))}
         </Stack.Toolbar.Menu>
         <Stack.Toolbar.Menu
-          tintColor="#007AFF"
+          tintColor={label}
           separateBackground
           icon={activeFilterCount > 0 ? TOOLBAR_FILTER_ACTIVE_ICON : TOOLBAR_FILTER_INACTIVE_ICON}>
           <Stack.Toolbar.MenuAction

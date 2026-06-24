@@ -1,4 +1,4 @@
-import { systemGroupedBackground } from '@bacons/apple-colors';
+import { label, systemGroupedBackground } from '@bacons/apple-colors';
 import * as Location from 'expo-location';
 import { Stack, useRouter } from 'expo-router';
 import { useCallback, useEffect, useMemo, useState } from 'react';
@@ -179,7 +179,7 @@ export default function Locations() {
         }}
       />
       <Stack.Toolbar placement="right">
-        <Stack.Toolbar.Menu icon={TOOLBAR_SORT_ICON} tintColor="#007AFF" separateBackground>
+        <Stack.Toolbar.Menu icon={TOOLBAR_SORT_ICON} tintColor={label} separateBackground>
           {SORT_OPTIONS.map((option) => (
             <Stack.Toolbar.MenuAction
               key={option}
@@ -190,7 +190,7 @@ export default function Locations() {
           ))}
         </Stack.Toolbar.Menu>
         <Stack.Toolbar.Menu
-          tintColor="#007AFF"
+          tintColor={label}
           separateBackground
           icon={showOpenOnly ? TOOLBAR_FILTER_ACTIVE_ICON : TOOLBAR_FILTER_INACTIVE_ICON}>
           <Stack.Toolbar.MenuAction

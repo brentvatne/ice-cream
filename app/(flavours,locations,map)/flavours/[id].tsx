@@ -133,7 +133,7 @@ export default function FlavourDetails() {
         }}
       />
       <Stack.Toolbar placement="right">
-        <Stack.Toolbar.Button icon={TOOLBAR_DICE_ICON} tintColor="#007AFF" onPress={rollRandom} />
+        <Stack.Toolbar.Button icon={TOOLBAR_DICE_ICON} tintColor={label} onPress={rollRandom} />
       </Stack.Toolbar>
       <Animated.ScrollView
         style={styles.screen}

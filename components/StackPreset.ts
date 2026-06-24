@@ -1,4 +1,4 @@
-import { systemGroupedBackground } from '@bacons/apple-colors';
+import { label, systemGroupedBackground } from '@bacons/apple-colors';
 import { isLiquidGlassAvailable } from 'expo-glass-effect';
 import { Stack } from 'expo-router';
 
@@ -13,5 +13,8 @@ export const SystemScreenStackPreset: StackScreenOptions = {
   headerTransparent: hasLiquidGlass,
   headerBlurEffect: hasLiquidGlass ? undefined : 'systemMaterial',
   headerLargeTitleShadowVisible: false,
+  // Black header buttons (back chevron/label) in light mode; the adaptive
+  // `label` color flips to white in dark mode so they stay legible.
+  headerTintColor: label,
   contentStyle: { backgroundColor: systemGroupedBackground },
 };
