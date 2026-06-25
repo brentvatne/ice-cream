@@ -4,7 +4,11 @@ This is a demo app built with Expo UI, showcasing native components and Expo Rou
 
 The creators of this app are not affiliated with the festival or Noms Magazine.
 
-## Get started
+## Try it out
+
+Install the app with [TestFlight External Beta](https://testflight.apple.com/join/gz9XNDQB)
+
+## Run it locally
 
 1. Install dependencies
 
