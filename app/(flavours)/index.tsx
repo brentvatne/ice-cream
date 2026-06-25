@@ -305,7 +305,7 @@ export default function Index() {
             showVendor
             first={index === 0}
             last={index === filteredFlavours.length - 1}
-            onPress={() => router.push(`/flavours/${item.id}`)}
+            href={`/flavours/${item.id}`}
           />
         )}
       />

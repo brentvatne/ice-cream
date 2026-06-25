@@ -7,6 +7,7 @@ import {
   tertiaryLabel,
 } from '@bacons/apple-colors';
 import { Image } from 'expo-image';
+import { type Href, Link } from 'expo-router';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 import { treatImages } from '@/assets/treatImages';
@@ -35,13 +36,13 @@ function buildSubtitles(flavour: Flavour, showVendor: boolean): [string, string]
 
 export function TreatRow({
   flavour,
-  onPress,
+  href,
   showVendor = false,
   first = false,
   last = false,
 }: {
   flavour: Flavour;
-  onPress: () => void;
+  href: Href;
   showVendor?: boolean;
   first?: boolean;
   last?: boolean;
@@ -49,37 +50,51 @@ export function TreatRow({
   const [primaryInfo, secondaryInfo] = buildSubtitles(flavour, showVendor);
 
   return (
-    <Pressable
-      onPress={onPress}
-      style={({ pressed }) => [
-        styles.row,
-        first && styles.firstRow,
-        last && styles.lastRow,
-        pressed && styles.rowPressed,
-      ]}>
-      <Image
-        source={treatImages[flavour.id] ?? PLACEHOLDER_IMAGE}
-        style={styles.thumb}
-        contentFit="cover"
-        transition={150}
-      />
-      <View style={styles.rowText}>
-        <Text style={styles.title} numberOfLines={2}>
-          {flavour.name}
-        </Text>
-        {primaryInfo ? (
-          <Text style={styles.subtitle} numberOfLines={1}>
-            {primaryInfo}
-          </Text>
-        ) : null}
-        {secondaryInfo ? (
-          <Text style={styles.subtitle} numberOfLines={2}>
-            {secondaryInfo}
-          </Text>
-        ) : null}
-      </View>
-      <Ionicons name="chevron-forward" size={16} color={tertiaryLabel} />
-    </Pressable>
+    <Link href={href} asChild>
+      <Pressable style={({ pressed }) => pressed && styles.rowPressed}>
+        {/* Wrap the whole row as the zoom source so it grows into the
+            flavour-detail hero on iOS 18+ (no-op fallback elsewhere). The
+            native zoom view only accepts a single child and doesn't behave as a
+            flex child itself, so it must wrap the entire row — not sit inside it
+            beside the text, which collapses the horizontal layout. */}
+        <Link.AppleZoom>
+          {/* AppleZoom needs exactly one *native* child view. `collapsable={false}`
+              stops RN from flattening this row View away (otherwise the native
+              zoom view sees the wrong children and paints nothing). Slot also
+              requires a single flattened style object, not a style array. */}
+          <View
+            collapsable={false}
+            style={StyleSheet.flatten([
+              styles.row,
+              first && styles.firstRow,
+              last && styles.lastRow,
+            ])}>
+            <Image
+              source={treatImages[flavour.id] ?? PLACEHOLDER_IMAGE}
+              style={styles.thumb}
+              contentFit="cover"
+              transition={150}
+            />
+            <View style={styles.rowText}>
+              <Text style={styles.title} numberOfLines={2}>
+                {flavour.name}
+              </Text>
+              {primaryInfo ? (
+                <Text style={styles.subtitle} numberOfLines={1}>
+                  {primaryInfo}
+                </Text>
+              ) : null}
+              {secondaryInfo ? (
+                <Text style={styles.subtitle} numberOfLines={2}>
+                  {secondaryInfo}
+                </Text>
+              ) : null}
+            </View>
+            <Ionicons name="chevron-forward" size={16} color={tertiaryLabel} />
+          </View>
+        </Link.AppleZoom>
+      </Pressable>
+    </Link>
   );
 }
 

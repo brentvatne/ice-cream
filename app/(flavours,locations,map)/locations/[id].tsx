@@ -8,7 +8,7 @@ import {
   tertiarySystemFill,
 } from '@bacons/apple-colors';
 import * as Linking from 'expo-linking';
-import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
+import { Stack, useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
@@ -17,7 +17,6 @@ import { FlavourList, LocationList } from '@/model';
 
 export default function LocationDetails() {
   const { id } = useLocalSearchParams();
-  const router = useRouter();
 
   const location = LocationList.find((item) => item.id === Number(id));
   const [selectedStoreName, setSelectedStoreName] = useState<string | null>(null);
@@ -100,7 +99,7 @@ export default function LocationDetails() {
                 flavour={flavour}
                 first={index === 0}
                 last={index === flavours.length - 1}
-                onPress={() => router.push(`/flavours/${flavour.id}`)}
+                href={`/flavours/${flavour.id}`}
               />
             </View>
           ))}

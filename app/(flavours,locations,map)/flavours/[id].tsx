@@ -8,7 +8,7 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 import { Image } from 'expo-image';
-import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
+import { Link, Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { useCallback, useRef, useState } from 'react';
 import { Pressable, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
 import Animated, {
@@ -142,38 +142,44 @@ export default function FlavourDetails() {
         contentInsetAdjustmentBehavior="never"
         contentContainerStyle={styles.content}>
         {hasImage ? (
-          <Pressable ref={heroRef} onPress={openViewer} accessibilityLabel="View full image">
-            <AnimatedImage
-              source={heroSource}
-              // transformOrigin bottom: the overscroll stretch grows the image
-              // upward from its bottom edge, keeping that edge glued to the body.
-              style={[
-                { width: windowWidth, height: heroHeight, transformOrigin: '50% 100%' },
-                heroStyle,
-              ]}
-              contentFit="cover"
-              // Bias the crop downward so the subject sits a little below the box
-              // center, clear of the translucent nav bar overlapping the top.
-              contentPosition={{ top: '30%' }}
-              transition={200}
-            />
-          </Pressable>
+          // Zoom target: the tapped list thumbnail grows into this hero on
+          // iOS 18+ (Apple zoom transition); no-op fallback elsewhere.
+          <Link.AppleZoomTarget>
+            <Pressable ref={heroRef} onPress={openViewer} accessibilityLabel="View full image">
+              <AnimatedImage
+                source={heroSource}
+                // transformOrigin bottom: the overscroll stretch grows the image
+                // upward from its bottom edge, keeping that edge glued to the body.
+                style={[
+                  { width: windowWidth, height: heroHeight, transformOrigin: '50% 100%' },
+                  heroStyle,
+                ]}
+                contentFit="cover"
+                // Bias the crop downward so the subject sits a little below the box
+                // center, clear of the translucent nav bar overlapping the top.
+                contentPosition={{ top: '30%' }}
+                transition={200}
+              />
+            </Pressable>
+          </Link.AppleZoomTarget>
         ) : (
-          <Animated.View
-            style={[
-              styles.placeholderHero,
-              // Pad past the header so the centered emoji sits in the visible
-              // area, not behind the translucent header overlapping the top.
-              {
-                width: windowWidth,
-                height: heroHeight,
-                paddingTop: headerHeight,
-                transformOrigin: '50% 100%',
-              },
-              heroStyle,
-            ]}>
-            <Text style={styles.placeholderEmoji}>🍦</Text>
-          </Animated.View>
+          <Link.AppleZoomTarget>
+            <Animated.View
+              style={[
+                styles.placeholderHero,
+                // Pad past the header so the centered emoji sits in the visible
+                // area, not behind the translucent header overlapping the top.
+                {
+                  width: windowWidth,
+                  height: heroHeight,
+                  paddingTop: headerHeight,
+                  transformOrigin: '50% 100%',
+                },
+                heroStyle,
+              ]}>
+              <Text style={styles.placeholderEmoji}>🍦</Text>
+            </Animated.View>
+          </Link.AppleZoomTarget>
         )}
 
         <View style={styles.body}>
