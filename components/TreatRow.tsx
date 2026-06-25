@@ -52,16 +52,16 @@ export function TreatRow({
   return (
     <Link href={href} asChild>
       <Pressable style={({ pressed }) => pressed && styles.rowPressed}>
-        {/* Wrap the whole row as the zoom source so it grows into the
-            flavour-detail hero on iOS 18+ (no-op fallback elsewhere). The
-            native zoom view only accepts a single child and doesn't behave as a
-            flex child itself, so it must wrap the entire row — not sit inside it
-            beside the text, which collapses the horizontal layout. */}
+        {/* Zoom source must wrap the WHOLE row. The native zoom-source view
+            ignores RN sizing/positioning/clipping on its wrapper and renders at
+            the content's intrinsic size, so scoping it to just the thumbnail (a
+            sibling inside a flexDirection:'row' container) collapses the row and
+            renders the thumbnail oversized — verified exhaustively, including the
+            maintainer's suggested structure. Wrapping the full row works because
+            the row legitimately fills the width in a column context.
+            collapsable={false} keeps it a single native view; Slot also needs a
+            single flattened style object, not a style array. */}
         <Link.AppleZoom>
-          {/* AppleZoom needs exactly one *native* child view. `collapsable={false}`
-              stops RN from flattening this row View away (otherwise the native
-              zoom view sees the wrong children and paints nothing). Slot also
-              requires a single flattened style object, not a style array. */}
           <View
             collapsable={false}
             style={StyleSheet.flatten([
