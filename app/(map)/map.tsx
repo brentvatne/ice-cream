@@ -1,4 +1,5 @@
 import { BottomSheet, Button, Column, Host, Icon, Row, Spacer, Text } from '@expo/ui';
+import { frame, presentationBackgroundInteraction } from '@expo/ui/swift-ui/modifiers';
 import * as Haptics from 'expo-haptics';
 import { Stack, useRouter } from 'expo-router';
 import { useState } from 'react';
@@ -9,22 +10,12 @@ import StoreMap from '@/components/StoreMap';
 import { useFavourites } from '@/context/FavouritesContext';
 import { type Flavour, FlavourList, LocationList, type Store } from '@/model';
 
-// iOS-only swift-ui escape hatches; tree-shaken on other platforms.
-const BOTTOM_SHEET_MODIFIERS =
-  process.env.EXPO_OS === 'ios'
-    ? [require('@expo/ui/swift-ui/modifiers').presentationBackgroundInteraction('enabled')]
-    : [];
+const BOTTOM_SHEET_MODIFIERS = [presentationBackgroundInteraction('enabled')];
 
 // Fill the sheet height and pin content to the top (vs. SwiftUI centering it).
-const TOP_ALIGN_MODIFIERS =
-  process.env.EXPO_OS === 'ios'
-    ? [require('@expo/ui/swift-ui/modifiers').frame({ maxHeight: Infinity, alignment: 'top' })]
-    : [];
+const TOP_ALIGN_MODIFIERS = [frame({ maxHeight: Infinity, alignment: 'top' })];
 
-const XMARK_CIRCLE_FILLED = Icon.select({
-  ios: 'xmark.circle.fill',
-  android: require('@expo/material-symbols/cancel.xml'),
-});
+const XMARK_CIRCLE_FILLED = 'xmark.circle.fill';
 
 function parseTime(timeStr: string): { hours: number; minutes: number } | null {
   const lower = timeStr.toLowerCase().trim();
