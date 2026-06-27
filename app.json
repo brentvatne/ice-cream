@@ -6,7 +6,9 @@
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "ice-cream",
-    "platforms": ["ios"],
+    "platforms": [
+      "ios"
+    ],
     "userInterfaceStyle": "automatic",
     "ios": {
       "supportsTablet": true,
@@ -44,7 +46,8 @@
       "expo-image",
       "expo-sqlite",
       "expo-asset",
-      "@bacons/apple-colors"
+      "@bacons/apple-colors",
+      "expo-build-properties"
     ],
     "experiments": {
       "typedRoutes": true,
